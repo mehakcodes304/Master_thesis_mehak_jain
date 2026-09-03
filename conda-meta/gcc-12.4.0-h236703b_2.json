@@ -1,0 +1,96 @@
+{
+  "name": "gcc",
+  "version": "12.4.0",
+  "build": "h236703b_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "gcc-12.4.0-h236703b_2.conda",
+  "md5": "ec54d965fd9d276c256ae3cf1d3aface",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/gcc-12.4.0-h236703b_2.conda",
+  "sha256": "ebe2dabb0a6f0ef05039d3a26b9c6b0aa050d7e791c6ab77ee91653b2098cdc3",
+  "depends": [
+    "gcc_impl_linux-64 12.4.0.*"
+  ],
+  "constrains": [],
+  "license": "BSD-3-Clause",
+  "timestamp": 1740240489000,
+  "size": 55424,
+  "requested_spec": "gcc=12",
+  "package_tarball_full_path": "/home/mjain/miniconda3/pkgs/gcc-12.4.0-h236703b_2.conda",
+  "extracted_package_dir": "/home/mjain/miniconda3/pkgs/gcc-12.4.0-h236703b_2",
+  "files": [
+    "bin/cc",
+    "bin/cpp",
+    "bin/gcc",
+    "bin/gcc-ar",
+    "bin/gcc-nm",
+    "bin/gcc-ranlib",
+    "bin/gcov",
+    "bin/gcov-dump",
+    "bin/gcov-tool"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/cc",
+        "path_type": "softlink",
+        "sha256": "92edc7d479c63429559dc49bc080aa919bc91a484fba5fc815fa793b07c8098d",
+        "size_in_bytes": 1350184
+      },
+      {
+        "_path": "bin/cpp",
+        "path_type": "softlink",
+        "sha256": "7c5ab17c1ba10b7fea55f317051770cd631aca84081dbd9d2ff661d1346dd010",
+        "size_in_bytes": 1354280
+      },
+      {
+        "_path": "bin/gcc",
+        "path_type": "softlink",
+        "sha256": "92edc7d479c63429559dc49bc080aa919bc91a484fba5fc815fa793b07c8098d",
+        "size_in_bytes": 1350184
+      },
+      {
+        "_path": "bin/gcc-ar",
+        "path_type": "softlink",
+        "sha256": "62927d14f4623db26b145ab3a28a26a984df3a70087274c82d9af953c20d9108",
+        "size_in_bytes": 35368
+      },
+      {
+        "_path": "bin/gcc-nm",
+        "path_type": "softlink",
+        "sha256": "cccd13704e10ad33316b3cc2cd1d1486d12566c580ecc06e531e46321cf26310",
+        "size_in_bytes": 35368
+      },
+      {
+        "_path": "bin/gcc-ranlib",
+        "path_type": "softlink",
+        "sha256": "5ba0a7738601e7a1efabc2d964926fe5f9682b76e4527f8f988edd086da5580c",
+        "size_in_bytes": 35368
+      },
+      {
+        "_path": "bin/gcov",
+        "path_type": "softlink",
+        "sha256": "27c332fd5d97f2c84a03a13de0f6235c1f60c746d1b5739f2068286a80e58e06",
+        "size_in_bytes": 802472
+      },
+      {
+        "_path": "bin/gcov-dump",
+        "path_type": "softlink",
+        "sha256": "d8c221956c53432a7da3b72b81073b9962a59407338b958131d0b3d8074d2a8a",
+        "size_in_bytes": 638568
+      },
+      {
+        "_path": "bin/gcov-tool",
+        "path_type": "softlink",
+        "sha256": "2c57dbf2bef21efa1cc2ce403efc593404dfa7b519166232f24ddbd14f730021",
+        "size_in_bytes": 663240
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/mjain/miniconda3/pkgs/gcc-12.4.0-h236703b_2",
+    "type": 1
+  }
+}

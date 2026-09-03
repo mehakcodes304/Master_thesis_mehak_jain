@@ -1,0 +1,26 @@
+#track name="Super RNA-RNA interactions of samples: condition1" description="Segments of interacting RNA clusters derived from DDD-Experiment" itemRgb="On"
+#columns color=16
+tRNA_Asp_1_3_URS000009EE82_511145	36	54	tRNA_Asp_1_3_URS000009EE82_511145	56	77	super_interaction0	.	+	+	condition1:cluster24;	condition1:gene_tRNA_Asp_1_3;	condition1:gene_tRNA_Asp_1_3;	1	0	35,44,143
+tRNA_Phe_1_1_URS00005AA258_511145	0	31	tRNA_Phe_1_1_URS00005AA258_511145	60	76	super_interaction1	.	+	+	condition1:cluster22;	condition1:gene_tRNA_Phe_1_1;	condition1:gene_tRNA_Phe_1_1;	1	0	196,76,180
+tRNA_Phe_1_1_URS00005AA258_511145	0	15	tRNA_Phe_1_1_URS00005AA258_511145	20	38	super_interaction2	.	+	+	condition1:cluster23;	condition1:gene_tRNA_Phe_1_1;	condition1:gene_tRNA_Phe_1_1;	1	0	198,36,7
+tRNA_Pro_1_1_URS00002E063F_511145	0	11	tRNA_Pro_1_1_URS00002E063F_511145	68	77	super_interaction3	.	+	+	condition1:cluster20;	condition1:gene_tRNA_Pro_1_1;	condition1:gene_tRNA_Pro_1_1;	1	0	239,124,231
+tRNA_Gly_1_1_URS00004CF48A_511145	34	52	tRNA_Gly_1_1_URS00004CF48A_511145	59	75	super_interaction4	.	+	+	condition1:cluster21;	condition1:gene_tRNA_Gly_1_1;	condition1:gene_tRNA_Gly_1_1;	1	0	98,102,101
+tRNA_Gln_1_1_URS000059276A_511145	19	28	tRNA_Gly_1_1_URS00004CF48A_511145	34	40	super_interaction5	.	+	+	condition1:cluster19;	condition1:gene_tRNA_Gln_1_1;	condition1:gene_tRNA_Gly_1_1;	0	1	169,129,186
+tRNA_Gln_1_1_URS000059276A_511145	1	29	tRNA_Gln_1_1_URS000059276A_511145	54	75	super_interaction6	.	+	+	condition1:cluster18;	condition1:gene_tRNA_Gln_1_1;	condition1:gene_tRNA_Gln_1_1;	1	0	103,2,112
+tRNA_Cys_1_1_URS000003E908_511145	53	74	tRNA_Gln_1_1_URS000059276A_511145	12	18	super_interaction7	.	+	+	condition1:cluster16;	condition1:gene_tRNA_Cys_1_1;	condition1:gene_tRNA_Gln_1_1;	0	1	26,235,241
+tRNA_Cys_1_1_URS000003E908_511145	0	18	tRNA_Cys_1_1_URS000003E908_511145	53	74	super_interaction8	.	+	+	condition1:cluster17;	condition1:gene_tRNA_Cys_1_1;	condition1:gene_tRNA_Cys_1_1;	1	0	156,229,14
+tRNA_Glu_1_4_URS000037E2FF_511145	6	33	tRNA_Glu_1_4_URS000037E2FF_511145	36	76	super_interaction9	.	+	+	condition1:cluster14;	condition1:gene_tRNA_Glu_1_4;	condition1:gene_tRNA_Glu_1_4;	1	0	0,110,210
+tRNA_Glu_1_4_URS000037E2FF_511145	36	53	tRNA_Glu_1_4_URS000037E2FF_511145	56	76	super_interaction10	.	+	+	condition1:cluster15;	condition1:gene_tRNA_Glu_1_4;	condition1:gene_tRNA_Glu_1_4;	1	0	18,215,48
+tRNA_Tyr_1_1_URS00004C383B_511145	9	33	tRNA_Tyr_1_1_URS00004C383B_511145	36	62	super_interaction11	.	+	+	condition1:cluster13;	condition1:gene_tRNA_Tyr_1_1;	condition1:gene_tRNA_Tyr_1_1;	1	0	16,190,203
+tRNA_Ser_1_1_URS000016F1C4_511145	15	28	tRNA_Tyr_1_1_URS00004C383B_511145	3	26	super_interaction12	.	+	+	condition1:cluster12;	condition1:gene_tRNA_Ser_1_1;	condition1:gene_tRNA_Tyr_1_1;	0	1	53,111,217
+tRNA_Ser_1_1_URS000016F1C4_511145	0	28	tRNA_Ser_1_1_URS000016F1C4_511145	64	93	super_interaction13	.	+	+	condition1:cluster8;	condition1:gene_tRNA_Ser_1_1;	condition1:gene_tRNA_Ser_1_1;	1	0	45,69,121
+tRNA_Ser_1_1_URS000016F1C4_511145	22	70	tRNA_Ser_1_1_URS000016F1C4_511145	54	93	super_interaction14	.	+	+	condition1:cluster11,cluster10;	condition1:gene_tRNA_Ser_1_1,gene_tRNA_Ser_1_1;	condition1:gene_tRNA_Ser_1_1,gene_tRNA_Ser_1_1;	2	0	57,45,185
+tRNA_Ser_1_1_URS000016F1C4_511145	8	33	tRNA_Ser_1_1_URS000016F1C4_511145	37	63	super_interaction15	.	+	+	condition1:cluster9;	condition1:gene_tRNA_Ser_1_1;	condition1:gene_tRNA_Ser_1_1;	1	0	254,147,160
+tRNA_Leu_1_1_URS00005ABD4E_511145	0	16	tRNA_Leu_1_1_URS00005ABD4E_511145	20	39	super_interaction16	.	+	+	condition1:cluster6;	condition1:gene_tRNA_Leu_1_1;	condition1:gene_tRNA_Leu_1_1;	1	0	203,128,250
+tRNA_Leu_1_1_URS00005ABD4E_511145	11	32	tRNA_Leu_1_1_URS00005ABD4E_511145	36	64	super_interaction17	.	+	+	condition1:cluster7;	condition1:gene_tRNA_Leu_1_1;	condition1:gene_tRNA_Leu_1_1;	1	0	196,67,89
+tRNA_Arg_1_1_URS00003199EC_511145	10	36	tRNA_Arg_1_1_URS00003199EC_511145	37	68	super_interaction18	.	+	+	condition1:cluster4;	condition1:gene_tRNA_Arg_1_1;	condition1:gene_tRNA_Arg_1_1;	1	0	34,225,92
+tRNA_Arg_1_1_URS00003199EC_511145	37	54	tRNA_Arg_1_1_URS00003199EC_511145	57	74	super_interaction19	.	+	+	condition1:cluster5;	condition1:gene_tRNA_Arg_1_1;	condition1:gene_tRNA_Arg_1_1;	1	0	209,147,232
+tRNA_Arg_1_1_URS00003199EC_511145	0	6	tRNA_Arg_1_1_URS00003199EC_511145	64	77	super_interaction20	.	+	+	condition1:cluster3;	condition1:gene_tRNA_Arg_1_1;	condition1:gene_tRNA_Arg_1_1;	1	0	1,197,15
+tRNA_Val_1_1_URS000052A6C3_511145	56	77	tRNA_Arg_1_1_URS00003199EC_511145	21	27	super_interaction21	.	+	+	condition1:cluster2;	condition1:gene_tRNA_Val_1_1;	condition1:gene_tRNA_Arg_1_1;	0	1	51,173,162
+tRNA_Ala_1_1_URS00001C39A4_511145	6	31	tRNA_Ala_1_1_URS00001C39A4_511145	33	58	super_interaction22	.	+	+	condition1:cluster0;	condition1:gene_tRNA_Ala_1_1;	condition1:gene_tRNA_Ala_1_1;	1	0	44,39,63
+tRNA_Ala_1_1_URS00001C39A4_511145	33	53	tRNA_Ala_1_1_URS00001C39A4_511145	56	76	super_interaction23	.	+	+	condition1:cluster1;	condition1:gene_tRNA_Ala_1_1;	condition1:gene_tRNA_Ala_1_1;	1	0	109,252,159

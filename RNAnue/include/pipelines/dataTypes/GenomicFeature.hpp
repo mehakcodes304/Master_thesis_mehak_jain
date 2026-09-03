@@ -1,0 +1,111 @@
+#pragma once
+
+// Boost
+#include <boost/uuid/random_generator.hpp>
+#include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_generators.hpp>
+#include <boost/uuid/uuid_io.hpp>
+
+// Standard
+#include <optional>
+#include <ostream>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+// Internal
+#include "GenomicRegion.hpp"
+#include "TransparentStringMap.hpp"
+
+namespace dataTypes {
+
+struct GenomicFeature {
+   public:
+    GenomicFeature(std::string type, GenomicRegion genomicRegion, std::string featureID,
+                   std::optional<std::string> parentID, std::optional<std::string> geneName,
+                   util::TransparentStringMap attributes = {})
+        : type(std::move(type)),
+          genomicRegion(genomicRegion),
+          featureID(std::move(featureID)),
+          groupID(std::move(parentID)),
+          geneName(std::move(geneName)),
+          attributes(std::move(attributes)) {}
+
+    // Getters
+    [[nodiscard]] auto getType() const noexcept -> const std::string& { return type; }
+    [[nodiscard]] auto getGenomicRegion() const noexcept -> GenomicRegion { return genomicRegion; }
+    [[nodiscard]] auto getGenomicRegion() noexcept -> GenomicRegion& { return genomicRegion; }
+    [[nodiscard]] auto getID() const noexcept -> const std::string& { return featureID; }
+    [[nodiscard]] auto getParentID() const noexcept -> const std::optional<std::string>& {
+        return groupID;
+    }
+    [[nodiscard]] auto getGeneName() const noexcept -> const std::optional<std::string>& {
+        return geneName;
+    }
+    [[nodiscard]] auto getAttributes() const noexcept -> const util::TransparentStringMap& {
+        return attributes;
+    }
+
+    /**
+     * @brief Returns the annotation identifier for this genomic feature.
+     *
+     * If a group ID is provided, it is used as the annotation ID; otherwise, the feature ID is
+     * returned.
+     *
+     * @return std::string The annotation identifier.
+     */
+    [[nodiscard]] auto getAnnotationID() const noexcept -> std::string {
+        return groupID.value_or(featureID);
+    }
+
+    // Operators
+    auto operator<(const GenomicFeature& other) const -> bool {
+        return genomicRegion < other.getGenomicRegion();
+    }
+
+    auto operator>(const GenomicFeature& other) const -> bool { return other < *this; }
+
+    auto operator==(const GenomicFeature& other) const -> bool {
+        return genomicRegion == other.getGenomicRegion();
+    }
+
+   private:
+    std::string type;
+    GenomicRegion genomicRegion;
+    std::string featureID;
+    std::optional<std::string> groupID;
+    std::optional<std::string> geneName;
+    util::TransparentStringMap attributes;
+};
+
+// TODO Rewrite as constructor of GenomicFeature
+[[nodiscard]] inline auto asGenomicFeature(const GenomicRegion& region,
+                                           std::string&& featureType = "supplementary_feature")
+    -> GenomicFeature {
+    namespace uuids = boost::uuids;
+    const std::string uuid = uuids::to_string(uuids::random_generator()());
+
+    return {featureType, region, uuid, std::nullopt, std::nullopt};
+}
+
+inline auto operator<<(std::ostream& ostream, const GenomicFeature& genomicFeature)
+    -> std::ostream& {
+    ostream << "type: " << genomicFeature.getType() << ", id: " << genomicFeature.getID();
+
+    if (genomicFeature.getParentID()) {
+        ostream << ", parentID: " << genomicFeature.getParentID().value();
+    }
+
+    if (genomicFeature.getGeneName()) {
+        ostream << ", geneName: " << genomicFeature.getGeneName().value();
+    }
+
+    ostream << ", region: " << genomicFeature.getGenomicRegion();
+
+    return ostream;
+}
+
+using FeatureMap = std::unordered_map<int, std::vector<GenomicFeature>>;
+
+}  // namespace dataTypes

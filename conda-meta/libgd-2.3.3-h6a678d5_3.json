@@ -1,0 +1,276 @@
+{
+  "name": "libgd",
+  "version": "2.3.3",
+  "build": "h6a678d5_3",
+  "build_number": 3,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "subdir": "linux-64",
+  "fn": "libgd-2.3.3-h6a678d5_3.conda",
+  "md5": "5942d4d9af3071e68b528a53b1688ef8",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/libgd-2.3.3-h6a678d5_3.conda",
+  "sha256": "bcc05c8d5ea4a404353533c526ab911ec62de3cbe18827670613e8bccf422a79",
+  "depends": [
+    "expat >=2.4.9,<3.0a0",
+    "fontconfig >=2.14.1,<3.0a0",
+    "freetype >=2.10.4,<3.0a0",
+    "jpeg >=9e,<10a",
+    "libgcc-ng >=11.2.0",
+    "libpng >=1.6.37,<1.7.0a0",
+    "libpng >=1.6.39,<1.7.0a0",
+    "libstdcxx-ng >=11.2.0",
+    "libtiff >=4.1.0,<4.7.0",
+    "libwebp >=1.2.0,<1.3.0a0",
+    "libwebp-base >=1.2.4,<2.0a0",
+    "zlib >=1.2.13,<2.0.0a0"
+  ],
+  "constrains": [],
+  "license": "GD",
+  "timestamp": 1693516027000,
+  "size": 244553,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/home/mjain/miniconda3/pkgs/libgd-2.3.3-h6a678d5_3.conda",
+  "extracted_package_dir": "/home/mjain/miniconda3/pkgs/libgd-2.3.3-h6a678d5_3",
+  "files": [
+    "bin/annotate",
+    "bin/bdftogd",
+    "bin/gd2copypal",
+    "bin/gd2togif",
+    "bin/gd2topng",
+    "bin/gdcmpgif",
+    "bin/gdparttopng",
+    "bin/gdtopng",
+    "bin/giftogd2",
+    "bin/pngtogd",
+    "bin/pngtogd2",
+    "bin/webpng",
+    "include/gd.h",
+    "include/gd_color_map.h",
+    "include/gd_errors.h",
+    "include/gd_io.h",
+    "include/gdcache.h",
+    "include/gdfontg.h",
+    "include/gdfontl.h",
+    "include/gdfontmb.h",
+    "include/gdfonts.h",
+    "include/gdfontt.h",
+    "include/gdfx.h",
+    "include/gdpp.h",
+    "lib/libgd.a",
+    "lib/libgd.so",
+    "lib/libgd.so.3",
+    "lib/libgd.so.3.0.11",
+    "lib/pkgconfig/gdlib.pc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/annotate",
+        "path_type": "hardlink",
+        "sha256": "9e59e4fb2da4069f11d21bb2b2646d2b213efa1b359d5e54e9c6f045b5779a61",
+        "size_in_bytes": 16488,
+        "sha256_in_prefix": "9e59e4fb2da4069f11d21bb2b2646d2b213efa1b359d5e54e9c6f045b5779a61"
+      },
+      {
+        "_path": "bin/bdftogd",
+        "path_type": "hardlink",
+        "sha256": "79d3c53b78d95a1fb1951a36e2aac1d0942856dd70a156cb332cf5f305f06f95",
+        "size_in_bytes": 3997,
+        "sha256_in_prefix": "79d3c53b78d95a1fb1951a36e2aac1d0942856dd70a156cb332cf5f305f06f95"
+      },
+      {
+        "_path": "bin/gd2copypal",
+        "path_type": "hardlink",
+        "sha256": "02c521388a7acd59781595083282a09f6d720570f7640cdb3054c7813fd668e8",
+        "size_in_bytes": 15960,
+        "sha256_in_prefix": "02c521388a7acd59781595083282a09f6d720570f7640cdb3054c7813fd668e8"
+      },
+      {
+        "_path": "bin/gd2togif",
+        "path_type": "hardlink",
+        "sha256": "a2de32c44b6319f73b395a70ca3b86cba2c00f010fcaa80dabb41141ee0cab24",
+        "size_in_bytes": 15912,
+        "sha256_in_prefix": "a2de32c44b6319f73b395a70ca3b86cba2c00f010fcaa80dabb41141ee0cab24"
+      },
+      {
+        "_path": "bin/gd2topng",
+        "path_type": "hardlink",
+        "sha256": "61f87ffd8c4ea98ec6d4be4f606972c8ef12d59be75056538e0917ab48eca9d7",
+        "size_in_bytes": 16000,
+        "sha256_in_prefix": "61f87ffd8c4ea98ec6d4be4f606972c8ef12d59be75056538e0917ab48eca9d7"
+      },
+      {
+        "_path": "bin/gdcmpgif",
+        "path_type": "hardlink",
+        "sha256": "e3972adf872e527a68315164a3e55d1c23b855d8fbdc5cc4694c8f04d0d52fb4",
+        "size_in_bytes": 16000,
+        "sha256_in_prefix": "e3972adf872e527a68315164a3e55d1c23b855d8fbdc5cc4694c8f04d0d52fb4"
+      },
+      {
+        "_path": "bin/gdparttopng",
+        "path_type": "hardlink",
+        "sha256": "838de2b0145926de09510e6015a82bb4f9baa1bf826790e7233f5b258235b855",
+        "size_in_bytes": 16008,
+        "sha256_in_prefix": "838de2b0145926de09510e6015a82bb4f9baa1bf826790e7233f5b258235b855"
+      },
+      {
+        "_path": "bin/gdtopng",
+        "path_type": "hardlink",
+        "sha256": "c6e70cb293258601cff2e1d39110be74cb2e4321d3e972b7d91032f20e6b5c41",
+        "size_in_bytes": 15912,
+        "sha256_in_prefix": "c6e70cb293258601cff2e1d39110be74cb2e4321d3e972b7d91032f20e6b5c41"
+      },
+      {
+        "_path": "bin/giftogd2",
+        "path_type": "hardlink",
+        "sha256": "8cf9e3582c869bdabfcf264f1dec75e7e12a3b306193fe912b6b7fba8567103b",
+        "size_in_bytes": 15952,
+        "sha256_in_prefix": "8cf9e3582c869bdabfcf264f1dec75e7e12a3b306193fe912b6b7fba8567103b"
+      },
+      {
+        "_path": "bin/pngtogd",
+        "path_type": "hardlink",
+        "sha256": "3b86b5bcfea13504120dff10b7f916f33cd4c7dfbafde75e22072881524f730b",
+        "size_in_bytes": 15912,
+        "sha256_in_prefix": "3b86b5bcfea13504120dff10b7f916f33cd4c7dfbafde75e22072881524f730b"
+      },
+      {
+        "_path": "bin/pngtogd2",
+        "path_type": "hardlink",
+        "sha256": "446ae0be815931664a5a430c00b3c79a3c2e9bab9991007baa0513b5dd460cd9",
+        "size_in_bytes": 15952,
+        "sha256_in_prefix": "446ae0be815931664a5a430c00b3c79a3c2e9bab9991007baa0513b5dd460cd9"
+      },
+      {
+        "_path": "bin/webpng",
+        "path_type": "hardlink",
+        "sha256": "769c77b1b29319c28dc548dfbc066b0d76a79f78b7fcd46160cc6fb34652a34e",
+        "size_in_bytes": 17056,
+        "sha256_in_prefix": "769c77b1b29319c28dc548dfbc066b0d76a79f78b7fcd46160cc6fb34652a34e"
+      },
+      {
+        "_path": "include/gd.h",
+        "path_type": "hardlink",
+        "sha256": "9b50770ef2ae01636f258e33cb81c8c35d4f282f602e9216b73854e3c1a108fd",
+        "size_in_bytes": 60084,
+        "sha256_in_prefix": "9b50770ef2ae01636f258e33cb81c8c35d4f282f602e9216b73854e3c1a108fd"
+      },
+      {
+        "_path": "include/gd_color_map.h",
+        "path_type": "hardlink",
+        "sha256": "651690d56592975310220013e59a1fe9dba7d27f64fd77c004311ce7540c6b84",
+        "size_in_bytes": 478,
+        "sha256_in_prefix": "651690d56592975310220013e59a1fe9dba7d27f64fd77c004311ce7540c6b84"
+      },
+      {
+        "_path": "include/gd_errors.h",
+        "path_type": "hardlink",
+        "sha256": "b62365abcca9db1c61ab630e3a1582bee1d64ebc3392c5cc956a6d61367d98ca",
+        "size_in_bytes": 1503,
+        "sha256_in_prefix": "b62365abcca9db1c61ab630e3a1582bee1d64ebc3392c5cc956a6d61367d98ca"
+      },
+      {
+        "_path": "include/gd_io.h",
+        "path_type": "hardlink",
+        "sha256": "6169c37be0c79fa1040bfa980e3bf5597775f6332c97acf542618d26c07da80a",
+        "size_in_bytes": 2931,
+        "sha256_in_prefix": "6169c37be0c79fa1040bfa980e3bf5597775f6332c97acf542618d26c07da80a"
+      },
+      {
+        "_path": "include/gdcache.h",
+        "path_type": "hardlink",
+        "sha256": "1e917251274392ab183a080df2b6feabbb8819a2a107e314db1cefc9c09ade5f",
+        "size_in_bytes": 2994,
+        "sha256_in_prefix": "1e917251274392ab183a080df2b6feabbb8819a2a107e314db1cefc9c09ade5f"
+      },
+      {
+        "_path": "include/gdfontg.h",
+        "path_type": "hardlink",
+        "sha256": "be02beef98b36f7f3471e2bfcf9ed4d5b9eb929b07eef9f7ef459d7a34e38766",
+        "size_in_bytes": 553,
+        "sha256_in_prefix": "be02beef98b36f7f3471e2bfcf9ed4d5b9eb929b07eef9f7ef459d7a34e38766"
+      },
+      {
+        "_path": "include/gdfontl.h",
+        "path_type": "hardlink",
+        "sha256": "718fb4d1a992cb93cdd423bbb4e8c9688f19f43e0542d7e12398f9c9905a2d3c",
+        "size_in_bytes": 551,
+        "sha256_in_prefix": "718fb4d1a992cb93cdd423bbb4e8c9688f19f43e0542d7e12398f9c9905a2d3c"
+      },
+      {
+        "_path": "include/gdfontmb.h",
+        "path_type": "hardlink",
+        "sha256": "704e6f4c5fa60f85c44ea9d5f6f14c7489842784efe1a19bc23a472ca3399150",
+        "size_in_bytes": 519,
+        "sha256_in_prefix": "704e6f4c5fa60f85c44ea9d5f6f14c7489842784efe1a19bc23a472ca3399150"
+      },
+      {
+        "_path": "include/gdfonts.h",
+        "path_type": "hardlink",
+        "sha256": "281c5777fcdf9ad4c1cd2538af836c84d725f5d2e4a13f09160bc76111534829",
+        "size_in_bytes": 515,
+        "sha256_in_prefix": "281c5777fcdf9ad4c1cd2538af836c84d725f5d2e4a13f09160bc76111534829"
+      },
+      {
+        "_path": "include/gdfontt.h",
+        "path_type": "hardlink",
+        "sha256": "db4968e3f05c8e76feba9a821047c8c6f0f9103c3341371e0083e13a18f0d4f6",
+        "size_in_bytes": 546,
+        "sha256_in_prefix": "db4968e3f05c8e76feba9a821047c8c6f0f9103c3341371e0083e13a18f0d4f6"
+      },
+      {
+        "_path": "include/gdfx.h",
+        "path_type": "hardlink",
+        "sha256": "9e9f12e08e586ddb24ea3cee58611aefd403044ec40bf03a6861a77c91c56fbe",
+        "size_in_bytes": 496,
+        "sha256_in_prefix": "9e9f12e08e586ddb24ea3cee58611aefd403044ec40bf03a6861a77c91c56fbe"
+      },
+      {
+        "_path": "include/gdpp.h",
+        "path_type": "hardlink",
+        "sha256": "63fe761e0f8e249313a2dfdc48088c9764525eff1d4401b1b7f188a4aee8cd7f",
+        "size_in_bytes": 51975,
+        "sha256_in_prefix": "63fe761e0f8e249313a2dfdc48088c9764525eff1d4401b1b7f188a4aee8cd7f"
+      },
+      {
+        "_path": "lib/libgd.a",
+        "path_type": "hardlink",
+        "sha256": "b6d3ac3609b9deb5d144b4b1b7f3fb119a8cdb03ceac8add1362cf8031ca68d2",
+        "size_in_bytes": 636288,
+        "sha256_in_prefix": "b6d3ac3609b9deb5d144b4b1b7f3fb119a8cdb03ceac8add1362cf8031ca68d2"
+      },
+      {
+        "_path": "lib/libgd.so",
+        "path_type": "softlink",
+        "sha256": "28f7d6d02585569cf5faa240bb0177f496f90319acfff990623e7ebbaa5a95ff",
+        "size_in_bytes": 441544
+      },
+      {
+        "_path": "lib/libgd.so.3",
+        "path_type": "softlink",
+        "sha256": "28f7d6d02585569cf5faa240bb0177f496f90319acfff990623e7ebbaa5a95ff",
+        "size_in_bytes": 441544
+      },
+      {
+        "_path": "lib/libgd.so.3.0.11",
+        "path_type": "hardlink",
+        "sha256": "28f7d6d02585569cf5faa240bb0177f496f90319acfff990623e7ebbaa5a95ff",
+        "size_in_bytes": 441544,
+        "sha256_in_prefix": "28f7d6d02585569cf5faa240bb0177f496f90319acfff990623e7ebbaa5a95ff"
+      },
+      {
+        "_path": "lib/pkgconfig/gdlib.pc",
+        "prefix_placeholder": "/croot/libgd_1693515894047/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "sha256": "bd01bf2b8a54b63edc0c89b6bbce104771cc98c4a0543a4af1d1915d0b4b22ec",
+        "size_in_bytes": 574,
+        "sha256_in_prefix": "b5796007d8b4a4d8263e227efe789012fd14088d8e0f5007d5669e6f25458b0c"
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/mjain/miniconda3/pkgs/libgd-2.3.3-h6a678d5_3",
+    "type": 1
+  }
+}

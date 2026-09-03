@@ -1,0 +1,46 @@
+RNAnue --version
+RNAfold --version
+segemehl.x 2>&1 | grep VERSION
+
+RNAnue align --config /mnt/ceph/mjain/software/envs/bio/rnanue_run/human_tRNA/params.cfg --overwrite 2>&1 | grep -A3 "Mapping stats"
+/mnt/ceph/mjain/software/envs/bio/RNAnue/build/release/RNAnue align --config /mnt/ceph/mjain/software/envs/bio/rnanue_run/human_tRNA/params.cfg 
+
+python3 -c "
+import pandas as pd
+df = pd.read_csv('/mnt/ceph/mjain/software/envs/bio/human_tRNA_chimeric_reads.csv')
+print(df[['arm1_len','arm2_len']].describe().round(2))
+print('Max arm length:', df['arm1_len'].max())
+"
+
+/mnt/ceph/mjain/software/envs/bio/rnanue_run/human_tRNA/output/align/trtms/condition1/human_tRNA_chimeric_reads_matched.bam
+
+/mnt/ceph/mjain/software/envs/bio/RNAnue/build/release/RNAnue 
+path to RNAnue
+
+Read name = tRNA_Ala_8_1_URS00003D2CC9_9606_int2_read064_arm1_to_arm2
+Sample = sample1
+Library = library1
+Read group = A1
+Read length = 10 bp
+Flags = 16
+----------------------
+Mapping = Primary @ MAPQ 1
+Reference span = tRNA_Ala_8_1_URS00003D2CC9_9606:25-34 (-) = 10bp
+Cigar = 8=1X1=
+Clipping = None
+----------------------
+NH = 1
+HI = 0
+NM = 1
+YZ = 0
+Hidden tags: MD, RG
+------------------
+Location = tRNA_Ala_8_1_URS00003D2CC9_9606:33
+Base = A @ QV 40
+----------------------
+
+Read sequence = CGCTCGCTAA CGCUC GCUAA
+GGGGGAUUAGCUCAAAUGGUAGAGCGCUCGCUUAGCAUGCGAGAGGUAGCGGGAUCGAUGCCCGCAUCCUCCA
+
+Orig sequence = TTAGCGAGCG
+UUAGCGAGCG

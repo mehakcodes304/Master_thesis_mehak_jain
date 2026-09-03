@@ -1,0 +1,11 @@
+prefix=/mnt/ceph/mjain/software/envs
+exec_prefix=/mnt/ceph/mjain/software/envs
+libdir=/mnt/ceph/mjain/software/envs/lib
+includedir=/mnt/ceph/mjain/software/envs/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.41.3
+Cflags: -I${includedir}/uuid
+Libs.private:  -lpthread
+Libs: -L${libdir} -luuid

@@ -1,0 +1,627 @@
+{
+  "name": "libboost",
+  "version": "1.82.0",
+  "build": "h6fcfa73_6",
+  "build_number": 6,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "libboost-1.82.0-h6fcfa73_6.conda",
+  "md5": "05c40141d4184953616797d5c3d7947f",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/libboost-1.82.0-h6fcfa73_6.conda",
+  "sha256": "c820f1ca7a2844fc5589bb101cc33188e06205ccb022051e13a6398def22e8bf",
+  "depends": [
+    "bzip2 >=1.0.8,<2.0a0",
+    "icu >=73.2,<74.0a0",
+    "libgcc-ng >=12",
+    "libstdcxx-ng >=12",
+    "libzlib >=1.2.13,<2.0.0a0",
+    "xz >=5.2.6,<6.0a0",
+    "zstd >=1.5.5,<1.6.0a0"
+  ],
+  "constrains": [
+    "boost-cpp 1.82.0*"
+  ],
+  "license": "BSL-1.0",
+  "timestamp": 1696732023000,
+  "size": 2616318,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/home/mjain/miniconda3/pkgs/libboost-1.82.0-h6fcfa73_6.conda",
+  "extracted_package_dir": "/home/mjain/miniconda3/pkgs/libboost-1.82.0-h6fcfa73_6",
+  "files": [
+    "lib/libboost_atomic.so",
+    "lib/libboost_atomic.so.1.82.0",
+    "lib/libboost_chrono.so",
+    "lib/libboost_chrono.so.1.82.0",
+    "lib/libboost_container.so",
+    "lib/libboost_container.so.1.82.0",
+    "lib/libboost_context.so",
+    "lib/libboost_context.so.1.82.0",
+    "lib/libboost_contract.so",
+    "lib/libboost_contract.so.1.82.0",
+    "lib/libboost_coroutine.so",
+    "lib/libboost_coroutine.so.1.82.0",
+    "lib/libboost_date_time.so",
+    "lib/libboost_date_time.so.1.82.0",
+    "lib/libboost_exception.a",
+    "lib/libboost_fiber.so",
+    "lib/libboost_fiber.so.1.82.0",
+    "lib/libboost_filesystem.so",
+    "lib/libboost_filesystem.so.1.82.0",
+    "lib/libboost_graph.so",
+    "lib/libboost_graph.so.1.82.0",
+    "lib/libboost_iostreams.so",
+    "lib/libboost_iostreams.so.1.82.0",
+    "lib/libboost_json.so",
+    "lib/libboost_json.so.1.82.0",
+    "lib/libboost_locale.so",
+    "lib/libboost_locale.so.1.82.0",
+    "lib/libboost_log.so",
+    "lib/libboost_log.so.1.82.0",
+    "lib/libboost_log_setup.so",
+    "lib/libboost_log_setup.so.1.82.0",
+    "lib/libboost_math_c99.so",
+    "lib/libboost_math_c99.so.1.82.0",
+    "lib/libboost_math_c99f.so",
+    "lib/libboost_math_c99f.so.1.82.0",
+    "lib/libboost_math_c99l.so",
+    "lib/libboost_math_c99l.so.1.82.0",
+    "lib/libboost_math_tr1.so",
+    "lib/libboost_math_tr1.so.1.82.0",
+    "lib/libboost_math_tr1f.so",
+    "lib/libboost_math_tr1f.so.1.82.0",
+    "lib/libboost_math_tr1l.so",
+    "lib/libboost_math_tr1l.so.1.82.0",
+    "lib/libboost_nowide.so",
+    "lib/libboost_nowide.so.1.82.0",
+    "lib/libboost_prg_exec_monitor.so",
+    "lib/libboost_prg_exec_monitor.so.1.82.0",
+    "lib/libboost_program_options.so",
+    "lib/libboost_program_options.so.1.82.0",
+    "lib/libboost_random.so",
+    "lib/libboost_random.so.1.82.0",
+    "lib/libboost_regex.so",
+    "lib/libboost_regex.so.1.82.0",
+    "lib/libboost_serialization.so",
+    "lib/libboost_serialization.so.1.82.0",
+    "lib/libboost_stacktrace_addr2line.so",
+    "lib/libboost_stacktrace_addr2line.so.1.82.0",
+    "lib/libboost_stacktrace_basic.so",
+    "lib/libboost_stacktrace_basic.so.1.82.0",
+    "lib/libboost_stacktrace_noop.so",
+    "lib/libboost_stacktrace_noop.so.1.82.0",
+    "lib/libboost_system.so",
+    "lib/libboost_system.so.1.82.0",
+    "lib/libboost_test_exec_monitor.a",
+    "lib/libboost_thread.so",
+    "lib/libboost_thread.so.1.82.0",
+    "lib/libboost_timer.so",
+    "lib/libboost_timer.so.1.82.0",
+    "lib/libboost_type_erasure.so",
+    "lib/libboost_type_erasure.so.1.82.0",
+    "lib/libboost_unit_test_framework.so",
+    "lib/libboost_unit_test_framework.so.1.82.0",
+    "lib/libboost_url.so",
+    "lib/libboost_url.so.1.82.0",
+    "lib/libboost_wave.so",
+    "lib/libboost_wave.so.1.82.0",
+    "lib/libboost_wserialization.so",
+    "lib/libboost_wserialization.so.1.82.0"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "lib/libboost_atomic.so",
+        "path_type": "softlink",
+        "sha256": "759e253a456fa4843e5fadcc2a2af3657af197fdf7028ea98014086b17d3d9f8",
+        "size_in_bytes": 18096
+      },
+      {
+        "_path": "lib/libboost_atomic.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "759e253a456fa4843e5fadcc2a2af3657af197fdf7028ea98014086b17d3d9f8",
+        "size_in_bytes": 18096,
+        "sha256_in_prefix": "759e253a456fa4843e5fadcc2a2af3657af197fdf7028ea98014086b17d3d9f8"
+      },
+      {
+        "_path": "lib/libboost_chrono.so",
+        "path_type": "softlink",
+        "sha256": "35e1345c73061c9e6995b46bda95866720ea5612d3ec4ea5b919093331be270b",
+        "size_in_bytes": 45176
+      },
+      {
+        "_path": "lib/libboost_chrono.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "35e1345c73061c9e6995b46bda95866720ea5612d3ec4ea5b919093331be270b",
+        "size_in_bytes": 45176,
+        "sha256_in_prefix": "35e1345c73061c9e6995b46bda95866720ea5612d3ec4ea5b919093331be270b"
+      },
+      {
+        "_path": "lib/libboost_container.so",
+        "path_type": "softlink",
+        "sha256": "c9a7593c508a64d997f73a0303a734bc1357da9ab8538a120b96af5a431403e2",
+        "size_in_bytes": 111304
+      },
+      {
+        "_path": "lib/libboost_container.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "c9a7593c508a64d997f73a0303a734bc1357da9ab8538a120b96af5a431403e2",
+        "size_in_bytes": 111304,
+        "sha256_in_prefix": "c9a7593c508a64d997f73a0303a734bc1357da9ab8538a120b96af5a431403e2"
+      },
+      {
+        "_path": "lib/libboost_context.so",
+        "path_type": "softlink",
+        "sha256": "b27d06b6f753eb1d7dc9a9cfd2e8865a333c2203c7003c995c94bf2e1904f4c7",
+        "size_in_bytes": 16624
+      },
+      {
+        "_path": "lib/libboost_context.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "b27d06b6f753eb1d7dc9a9cfd2e8865a333c2203c7003c995c94bf2e1904f4c7",
+        "size_in_bytes": 16624,
+        "sha256_in_prefix": "b27d06b6f753eb1d7dc9a9cfd2e8865a333c2203c7003c995c94bf2e1904f4c7"
+      },
+      {
+        "_path": "lib/libboost_contract.so",
+        "path_type": "softlink",
+        "sha256": "3ca9084ab52200c62f04f324a1f3d368b501d86ebd89ccaf6411624be4dc5243",
+        "size_in_bytes": 147616
+      },
+      {
+        "_path": "lib/libboost_contract.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "3ca9084ab52200c62f04f324a1f3d368b501d86ebd89ccaf6411624be4dc5243",
+        "size_in_bytes": 147616,
+        "sha256_in_prefix": "3ca9084ab52200c62f04f324a1f3d368b501d86ebd89ccaf6411624be4dc5243"
+      },
+      {
+        "_path": "lib/libboost_coroutine.so",
+        "path_type": "softlink",
+        "sha256": "bb60ffe5fd434fd8579c044de02f399bc999e01e34e843f3b0e42a8de8e35ae0",
+        "size_in_bytes": 25224
+      },
+      {
+        "_path": "lib/libboost_coroutine.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "bb60ffe5fd434fd8579c044de02f399bc999e01e34e843f3b0e42a8de8e35ae0",
+        "size_in_bytes": 25224,
+        "sha256_in_prefix": "bb60ffe5fd434fd8579c044de02f399bc999e01e34e843f3b0e42a8de8e35ae0"
+      },
+      {
+        "_path": "lib/libboost_date_time.so",
+        "path_type": "softlink",
+        "sha256": "96c55ee6a3274b63e1ecb4a777e34f2232145fb867e92040c50d73e33095f674",
+        "size_in_bytes": 15344
+      },
+      {
+        "_path": "lib/libboost_date_time.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "96c55ee6a3274b63e1ecb4a777e34f2232145fb867e92040c50d73e33095f674",
+        "size_in_bytes": 15344,
+        "sha256_in_prefix": "96c55ee6a3274b63e1ecb4a777e34f2232145fb867e92040c50d73e33095f674"
+      },
+      {
+        "_path": "lib/libboost_exception.a",
+        "path_type": "hardlink",
+        "sha256": "3e26a1691f265f1df2a487bcb09b97c84432983b5387b14f2537295adba76163",
+        "size_in_bytes": 1822,
+        "sha256_in_prefix": "3e26a1691f265f1df2a487bcb09b97c84432983b5387b14f2537295adba76163"
+      },
+      {
+        "_path": "lib/libboost_fiber.so",
+        "path_type": "softlink",
+        "sha256": "a25f18b08945ca0168a2dc85c2d8f28897d44e4e1b77536639ff398ec96b2938",
+        "size_in_bytes": 103928
+      },
+      {
+        "_path": "lib/libboost_fiber.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "a25f18b08945ca0168a2dc85c2d8f28897d44e4e1b77536639ff398ec96b2938",
+        "size_in_bytes": 103928,
+        "sha256_in_prefix": "a25f18b08945ca0168a2dc85c2d8f28897d44e4e1b77536639ff398ec96b2938"
+      },
+      {
+        "_path": "lib/libboost_filesystem.so",
+        "path_type": "softlink",
+        "sha256": "d0f15cc39fc1413064c1c7999683bd99bae62a13e7d87a4cb4f289d42d17ad4b",
+        "size_in_bytes": 176216
+      },
+      {
+        "_path": "lib/libboost_filesystem.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "d0f15cc39fc1413064c1c7999683bd99bae62a13e7d87a4cb4f289d42d17ad4b",
+        "size_in_bytes": 176216,
+        "sha256_in_prefix": "d0f15cc39fc1413064c1c7999683bd99bae62a13e7d87a4cb4f289d42d17ad4b"
+      },
+      {
+        "_path": "lib/libboost_graph.so",
+        "path_type": "softlink",
+        "sha256": "04523f8ea3a050af1c200161fe3f692de6536287eef2ca840728ca20875dd33c",
+        "size_in_bytes": 498552
+      },
+      {
+        "_path": "lib/libboost_graph.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "04523f8ea3a050af1c200161fe3f692de6536287eef2ca840728ca20875dd33c",
+        "size_in_bytes": 498552,
+        "sha256_in_prefix": "04523f8ea3a050af1c200161fe3f692de6536287eef2ca840728ca20875dd33c"
+      },
+      {
+        "_path": "lib/libboost_iostreams.so",
+        "path_type": "softlink",
+        "sha256": "4766e9f61251ef7a9173e665bd80dccf4a1458e2e12f5e1d05db1940eefad57d",
+        "size_in_bytes": 132144
+      },
+      {
+        "_path": "lib/libboost_iostreams.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "4766e9f61251ef7a9173e665bd80dccf4a1458e2e12f5e1d05db1940eefad57d",
+        "size_in_bytes": 132144,
+        "sha256_in_prefix": "4766e9f61251ef7a9173e665bd80dccf4a1458e2e12f5e1d05db1940eefad57d"
+      },
+      {
+        "_path": "lib/libboost_json.so",
+        "path_type": "softlink",
+        "sha256": "e5246444fb744cbc09aa754a6a63fed963e741ccced6a6d33a2fca05b4fb6913",
+        "size_in_bytes": 364712
+      },
+      {
+        "_path": "lib/libboost_json.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "e5246444fb744cbc09aa754a6a63fed963e741ccced6a6d33a2fca05b4fb6913",
+        "size_in_bytes": 364712,
+        "sha256_in_prefix": "e5246444fb744cbc09aa754a6a63fed963e741ccced6a6d33a2fca05b4fb6913"
+      },
+      {
+        "_path": "lib/libboost_locale.so",
+        "path_type": "softlink",
+        "sha256": "93c45f87b0f03d3d605aebd4c96c3f3a440b846507eaedeb7825ef2c7735db36",
+        "size_in_bytes": 1120296
+      },
+      {
+        "_path": "lib/libboost_locale.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "93c45f87b0f03d3d605aebd4c96c3f3a440b846507eaedeb7825ef2c7735db36",
+        "size_in_bytes": 1120296,
+        "sha256_in_prefix": "93c45f87b0f03d3d605aebd4c96c3f3a440b846507eaedeb7825ef2c7735db36"
+      },
+      {
+        "_path": "lib/libboost_log.so",
+        "path_type": "softlink",
+        "sha256": "0df4cb12144a7af64f84a32636fc9da0ad1089cd0fba0c97f55d0df5a463b368",
+        "size_in_bytes": 1186360
+      },
+      {
+        "_path": "lib/libboost_log.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "0df4cb12144a7af64f84a32636fc9da0ad1089cd0fba0c97f55d0df5a463b368",
+        "size_in_bytes": 1186360,
+        "sha256_in_prefix": "0df4cb12144a7af64f84a32636fc9da0ad1089cd0fba0c97f55d0df5a463b368"
+      },
+      {
+        "_path": "lib/libboost_log_setup.so",
+        "path_type": "softlink",
+        "sha256": "21dbc6cbfe776bca2e06051cb73ca001bfd7d3de1078f3759150c6ab3a2611a5",
+        "size_in_bytes": 1352848
+      },
+      {
+        "_path": "lib/libboost_log_setup.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "21dbc6cbfe776bca2e06051cb73ca001bfd7d3de1078f3759150c6ab3a2611a5",
+        "size_in_bytes": 1352848,
+        "sha256_in_prefix": "21dbc6cbfe776bca2e06051cb73ca001bfd7d3de1078f3759150c6ab3a2611a5"
+      },
+      {
+        "_path": "lib/libboost_math_c99.so",
+        "path_type": "softlink",
+        "sha256": "b19b672400df463121eba56dcd50d929e60f9d51752e0cad9a52c1831b1f1866",
+        "size_in_bytes": 68224
+      },
+      {
+        "_path": "lib/libboost_math_c99.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "b19b672400df463121eba56dcd50d929e60f9d51752e0cad9a52c1831b1f1866",
+        "size_in_bytes": 68224,
+        "sha256_in_prefix": "b19b672400df463121eba56dcd50d929e60f9d51752e0cad9a52c1831b1f1866"
+      },
+      {
+        "_path": "lib/libboost_math_c99f.so",
+        "path_type": "softlink",
+        "sha256": "9607c74b9a535b24beb6473967ff46b1bb7185611ff48c766d4ace92e30184e7",
+        "size_in_bytes": 54248
+      },
+      {
+        "_path": "lib/libboost_math_c99f.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "9607c74b9a535b24beb6473967ff46b1bb7185611ff48c766d4ace92e30184e7",
+        "size_in_bytes": 54248,
+        "sha256_in_prefix": "9607c74b9a535b24beb6473967ff46b1bb7185611ff48c766d4ace92e30184e7"
+      },
+      {
+        "_path": "lib/libboost_math_c99l.so",
+        "path_type": "softlink",
+        "sha256": "9e292db835739f4ecc5978c1791c39ccb85cf6c211cb039620c3d2c1b54cab09",
+        "size_in_bytes": 57840
+      },
+      {
+        "_path": "lib/libboost_math_c99l.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "9e292db835739f4ecc5978c1791c39ccb85cf6c211cb039620c3d2c1b54cab09",
+        "size_in_bytes": 57840,
+        "sha256_in_prefix": "9e292db835739f4ecc5978c1791c39ccb85cf6c211cb039620c3d2c1b54cab09"
+      },
+      {
+        "_path": "lib/libboost_math_tr1.so",
+        "path_type": "softlink",
+        "sha256": "d181a6da7ecd1aa047602f7629764fd8c0595a2da82210b6350191dd820227c2",
+        "size_in_bytes": 389456
+      },
+      {
+        "_path": "lib/libboost_math_tr1.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "d181a6da7ecd1aa047602f7629764fd8c0595a2da82210b6350191dd820227c2",
+        "size_in_bytes": 389456,
+        "sha256_in_prefix": "d181a6da7ecd1aa047602f7629764fd8c0595a2da82210b6350191dd820227c2"
+      },
+      {
+        "_path": "lib/libboost_math_tr1f.so",
+        "path_type": "softlink",
+        "sha256": "6a533641262883552f01b0d92265a39a9af9443ef9bb85e281c18938199e3de5",
+        "size_in_bytes": 398480
+      },
+      {
+        "_path": "lib/libboost_math_tr1f.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "6a533641262883552f01b0d92265a39a9af9443ef9bb85e281c18938199e3de5",
+        "size_in_bytes": 398480,
+        "sha256_in_prefix": "6a533641262883552f01b0d92265a39a9af9443ef9bb85e281c18938199e3de5"
+      },
+      {
+        "_path": "lib/libboost_math_tr1l.so",
+        "path_type": "softlink",
+        "sha256": "98e529dfacf063b03d6f347718f64f3ecf6593a8e00afb2b81f1c2f60204e1a7",
+        "size_in_bytes": 384608
+      },
+      {
+        "_path": "lib/libboost_math_tr1l.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "98e529dfacf063b03d6f347718f64f3ecf6593a8e00afb2b81f1c2f60204e1a7",
+        "size_in_bytes": 384608,
+        "sha256_in_prefix": "98e529dfacf063b03d6f347718f64f3ecf6593a8e00afb2b81f1c2f60204e1a7"
+      },
+      {
+        "_path": "lib/libboost_nowide.so",
+        "path_type": "softlink",
+        "sha256": "6626e51e595da6ef542abe7f3f6f10461a67faaa21f3cc24aaa0f0e37092116a",
+        "size_in_bytes": 24032
+      },
+      {
+        "_path": "lib/libboost_nowide.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "6626e51e595da6ef542abe7f3f6f10461a67faaa21f3cc24aaa0f0e37092116a",
+        "size_in_bytes": 24032,
+        "sha256_in_prefix": "6626e51e595da6ef542abe7f3f6f10461a67faaa21f3cc24aaa0f0e37092116a"
+      },
+      {
+        "_path": "lib/libboost_prg_exec_monitor.so",
+        "path_type": "softlink",
+        "sha256": "bcff7383b153f26904ca01656612d77a1d7d116531adbeffa89fbb4c8b6ca3e4",
+        "size_in_bytes": 102896
+      },
+      {
+        "_path": "lib/libboost_prg_exec_monitor.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "bcff7383b153f26904ca01656612d77a1d7d116531adbeffa89fbb4c8b6ca3e4",
+        "size_in_bytes": 102896,
+        "sha256_in_prefix": "bcff7383b153f26904ca01656612d77a1d7d116531adbeffa89fbb4c8b6ca3e4"
+      },
+      {
+        "_path": "lib/libboost_program_options.so",
+        "path_type": "softlink",
+        "sha256": "d15415d7aa91da205310862c305981ad7559b235c1b1527fc049a900cb17d3d4",
+        "size_in_bytes": 429736
+      },
+      {
+        "_path": "lib/libboost_program_options.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "d15415d7aa91da205310862c305981ad7559b235c1b1527fc049a900cb17d3d4",
+        "size_in_bytes": 429736,
+        "sha256_in_prefix": "d15415d7aa91da205310862c305981ad7559b235c1b1527fc049a900cb17d3d4"
+      },
+      {
+        "_path": "lib/libboost_random.so",
+        "path_type": "softlink",
+        "sha256": "de859aac049d47f3fd905140a46af41f08323751337a1300f45bcefbda87abd3",
+        "size_in_bytes": 44456
+      },
+      {
+        "_path": "lib/libboost_random.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "de859aac049d47f3fd905140a46af41f08323751337a1300f45bcefbda87abd3",
+        "size_in_bytes": 44456,
+        "sha256_in_prefix": "de859aac049d47f3fd905140a46af41f08323751337a1300f45bcefbda87abd3"
+      },
+      {
+        "_path": "lib/libboost_regex.so",
+        "path_type": "softlink",
+        "sha256": "c3d416f511cf0c55598c8d1d16ae1e3dfd280dfce1d20c3a08bb25d5e697f5bc",
+        "size_in_bytes": 348656
+      },
+      {
+        "_path": "lib/libboost_regex.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "c3d416f511cf0c55598c8d1d16ae1e3dfd280dfce1d20c3a08bb25d5e697f5bc",
+        "size_in_bytes": 348656,
+        "sha256_in_prefix": "c3d416f511cf0c55598c8d1d16ae1e3dfd280dfce1d20c3a08bb25d5e697f5bc"
+      },
+      {
+        "_path": "lib/libboost_serialization.so",
+        "path_type": "softlink",
+        "sha256": "17a34921670e824ccbfd7d4ebef6a9aec497960ea1cb135bbec4fb6b7d782ba4",
+        "size_in_bytes": 484040
+      },
+      {
+        "_path": "lib/libboost_serialization.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "17a34921670e824ccbfd7d4ebef6a9aec497960ea1cb135bbec4fb6b7d782ba4",
+        "size_in_bytes": 484040,
+        "sha256_in_prefix": "17a34921670e824ccbfd7d4ebef6a9aec497960ea1cb135bbec4fb6b7d782ba4"
+      },
+      {
+        "_path": "lib/libboost_stacktrace_addr2line.so",
+        "path_type": "softlink",
+        "sha256": "047a6276dad7c6052680ec229f501dfb92b498ff5aac143711d178ec0e794326",
+        "size_in_bytes": 27608
+      },
+      {
+        "_path": "lib/libboost_stacktrace_addr2line.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "047a6276dad7c6052680ec229f501dfb92b498ff5aac143711d178ec0e794326",
+        "size_in_bytes": 27608,
+        "sha256_in_prefix": "047a6276dad7c6052680ec229f501dfb92b498ff5aac143711d178ec0e794326"
+      },
+      {
+        "_path": "lib/libboost_stacktrace_basic.so",
+        "path_type": "softlink",
+        "sha256": "7d0d81927382fc87b19e5987994bbc84f32eebb6b0af00164c268773a552e591",
+        "size_in_bytes": 22112
+      },
+      {
+        "_path": "lib/libboost_stacktrace_basic.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "7d0d81927382fc87b19e5987994bbc84f32eebb6b0af00164c268773a552e591",
+        "size_in_bytes": 22112,
+        "sha256_in_prefix": "7d0d81927382fc87b19e5987994bbc84f32eebb6b0af00164c268773a552e591"
+      },
+      {
+        "_path": "lib/libboost_stacktrace_noop.so",
+        "path_type": "softlink",
+        "sha256": "f51384c96d00512538a706c46b28effb52019ac543997f2e566bd5e2a573343c",
+        "size_in_bytes": 15848
+      },
+      {
+        "_path": "lib/libboost_stacktrace_noop.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "f51384c96d00512538a706c46b28effb52019ac543997f2e566bd5e2a573343c",
+        "size_in_bytes": 15848,
+        "sha256_in_prefix": "f51384c96d00512538a706c46b28effb52019ac543997f2e566bd5e2a573343c"
+      },
+      {
+        "_path": "lib/libboost_system.so",
+        "path_type": "softlink",
+        "sha256": "848e1fff76fb977e79ae28c0ef816a5441b16b8b81a7f9cf31a422aa4b443643",
+        "size_in_bytes": 15328
+      },
+      {
+        "_path": "lib/libboost_system.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "848e1fff76fb977e79ae28c0ef816a5441b16b8b81a7f9cf31a422aa4b443643",
+        "size_in_bytes": 15328,
+        "sha256_in_prefix": "848e1fff76fb977e79ae28c0ef816a5441b16b8b81a7f9cf31a422aa4b443643"
+      },
+      {
+        "_path": "lib/libboost_test_exec_monitor.a",
+        "path_type": "hardlink",
+        "sha256": "7f81c7ec2ead630ef76bb8fde0bd810552bdead30685679274f43bf382899d90",
+        "size_in_bytes": 2442676,
+        "sha256_in_prefix": "7f81c7ec2ead630ef76bb8fde0bd810552bdead30685679274f43bf382899d90"
+      },
+      {
+        "_path": "lib/libboost_thread.so",
+        "path_type": "softlink",
+        "sha256": "7dd2d252af4d1b229c7bc4ed6d7a6cfa62090c76f109bd8d7f7442164f42d9c9",
+        "size_in_bytes": 179176
+      },
+      {
+        "_path": "lib/libboost_thread.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "7dd2d252af4d1b229c7bc4ed6d7a6cfa62090c76f109bd8d7f7442164f42d9c9",
+        "size_in_bytes": 179176,
+        "sha256_in_prefix": "7dd2d252af4d1b229c7bc4ed6d7a6cfa62090c76f109bd8d7f7442164f42d9c9"
+      },
+      {
+        "_path": "lib/libboost_timer.so",
+        "path_type": "softlink",
+        "sha256": "ede500f22657736857bd531f1b96d66a732602cc96dbdbadb3b80df13f34d71c",
+        "size_in_bytes": 35648
+      },
+      {
+        "_path": "lib/libboost_timer.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "ede500f22657736857bd531f1b96d66a732602cc96dbdbadb3b80df13f34d71c",
+        "size_in_bytes": 35648,
+        "sha256_in_prefix": "ede500f22657736857bd531f1b96d66a732602cc96dbdbadb3b80df13f34d71c"
+      },
+      {
+        "_path": "lib/libboost_type_erasure.so",
+        "path_type": "softlink",
+        "sha256": "90c69707107f1c5ce4400e70b667ae03df4c9b0e7b5351d6fffb716b2aa1db24",
+        "size_in_bytes": 67296
+      },
+      {
+        "_path": "lib/libboost_type_erasure.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "90c69707107f1c5ce4400e70b667ae03df4c9b0e7b5351d6fffb716b2aa1db24",
+        "size_in_bytes": 67296,
+        "sha256_in_prefix": "90c69707107f1c5ce4400e70b667ae03df4c9b0e7b5351d6fffb716b2aa1db24"
+      },
+      {
+        "_path": "lib/libboost_unit_test_framework.so",
+        "path_type": "softlink",
+        "sha256": "c6df674f5c49411863eaafe6174eeb96e2f2b79f66fe1709bf9ff1b3b713aa42",
+        "size_in_bytes": 906728
+      },
+      {
+        "_path": "lib/libboost_unit_test_framework.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "c6df674f5c49411863eaafe6174eeb96e2f2b79f66fe1709bf9ff1b3b713aa42",
+        "size_in_bytes": 906728,
+        "sha256_in_prefix": "c6df674f5c49411863eaafe6174eeb96e2f2b79f66fe1709bf9ff1b3b713aa42"
+      },
+      {
+        "_path": "lib/libboost_url.so",
+        "path_type": "softlink",
+        "sha256": "68a7808804d955455e85e4beddf82e8adc6df95d610a2b64b5239d5eb96d61ac",
+        "size_in_bytes": 441840
+      },
+      {
+        "_path": "lib/libboost_url.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "68a7808804d955455e85e4beddf82e8adc6df95d610a2b64b5239d5eb96d61ac",
+        "size_in_bytes": 441840,
+        "sha256_in_prefix": "68a7808804d955455e85e4beddf82e8adc6df95d610a2b64b5239d5eb96d61ac"
+      },
+      {
+        "_path": "lib/libboost_wave.so",
+        "path_type": "softlink",
+        "sha256": "d78025285f6c01c3fa661303a9b00a677fb6a7cfcf0e86d1bfe658f6452c5404",
+        "size_in_bytes": 1554832
+      },
+      {
+        "_path": "lib/libboost_wave.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "d78025285f6c01c3fa661303a9b00a677fb6a7cfcf0e86d1bfe658f6452c5404",
+        "size_in_bytes": 1554832,
+        "sha256_in_prefix": "d78025285f6c01c3fa661303a9b00a677fb6a7cfcf0e86d1bfe658f6452c5404"
+      },
+      {
+        "_path": "lib/libboost_wserialization.so",
+        "path_type": "softlink",
+        "sha256": "0881e067d095942f5b1dfd16ecea5e2bb495c9fe755c64afa5fdc9cb38a39854",
+        "size_in_bytes": 331704
+      },
+      {
+        "_path": "lib/libboost_wserialization.so.1.82.0",
+        "path_type": "hardlink",
+        "sha256": "0881e067d095942f5b1dfd16ecea5e2bb495c9fe755c64afa5fdc9cb38a39854",
+        "size_in_bytes": 331704,
+        "sha256_in_prefix": "0881e067d095942f5b1dfd16ecea5e2bb495c9fe755c64afa5fdc9cb38a39854"
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/mjain/miniconda3/pkgs/libboost-1.82.0-h6fcfa73_6",
+    "type": 1
+  }
+}

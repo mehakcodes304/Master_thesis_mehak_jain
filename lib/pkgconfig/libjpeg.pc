@@ -1,0 +1,10 @@
+prefix=/mnt/ceph/mjain/software/envs/bio
+exec_prefix=/mnt/ceph/mjain/software/envs/bio
+libdir=/mnt/ceph/mjain/software/envs/bio/lib
+includedir=/mnt/ceph/mjain/software/envs/bio/include
+
+Name: libjpeg
+Description: A SIMD-accelerated JPEG codec that provides the libjpeg API
+Version: 2.1.4
+Libs: -L${libdir} -ljpeg
+Cflags: -I${includedir}

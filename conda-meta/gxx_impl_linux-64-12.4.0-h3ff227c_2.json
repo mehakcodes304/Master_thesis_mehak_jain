@@ -1,0 +1,102 @@
+{
+  "name": "gxx_impl_linux-64",
+  "version": "12.4.0",
+  "build": "h3ff227c_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "gxx_impl_linux-64-12.4.0-h3ff227c_2.conda",
+  "md5": "5f8ae076e514514aeeb0eb52dac2d55d",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/gxx_impl_linux-64-12.4.0-h3ff227c_2.conda",
+  "sha256": "548987d77c5d6d648c1166e9a1eb810032f25fb1d61692a0a5a072db126e5f3f",
+  "depends": [
+    "gcc_impl_linux-64 12.4.0 h26ba24d_2",
+    "libstdcxx-devel_linux-64 12.4.0 h1762d19_102",
+    "sysroot_linux-64",
+    "tzdata"
+  ],
+  "constrains": [],
+  "license": "GPL-3.0-only WITH GCC-exception-3.1",
+  "timestamp": 1740240582000,
+  "size": 12720023,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/home/mjain/miniconda3/pkgs/gxx_impl_linux-64-12.4.0-h3ff227c_2.conda",
+  "extracted_package_dir": "/home/mjain/miniconda3/pkgs/gxx_impl_linux-64-12.4.0-h3ff227c_2",
+  "files": [
+    "bin/x86_64-conda-linux-gnu-c++",
+    "bin/x86_64-conda-linux-gnu-g++",
+    "lib/-gdb.py",
+    "libexec/gcc/x86_64-conda-linux-gnu/12.4.0/cc1plus",
+    "share/gcc-12.4.0/python/libstdcxx/__init__.py",
+    "share/gcc-12.4.0/python/libstdcxx/v6/__init__.py",
+    "share/gcc-12.4.0/python/libstdcxx/v6/printers.py",
+    "share/gcc-12.4.0/python/libstdcxx/v6/xmethods.py"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/x86_64-conda-linux-gnu-c++",
+        "path_type": "hardlink",
+        "sha256": "ce445b39aa6d688102169aac8c8cc60bb5997c8cdd049a5ba8beabb01d023251",
+        "size_in_bytes": 1354280,
+        "sha256_in_prefix": "ce445b39aa6d688102169aac8c8cc60bb5997c8cdd049a5ba8beabb01d023251"
+      },
+      {
+        "_path": "bin/x86_64-conda-linux-gnu-g++",
+        "path_type": "hardlink",
+        "sha256": "ce445b39aa6d688102169aac8c8cc60bb5997c8cdd049a5ba8beabb01d023251",
+        "size_in_bytes": 1354280,
+        "sha256_in_prefix": "ce445b39aa6d688102169aac8c8cc60bb5997c8cdd049a5ba8beabb01d023251"
+      },
+      {
+        "_path": "lib/-gdb.py",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/gcc_compilers_1740238121525/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "sha256": "1e24c6299c6d457c7704aeb356c53843a777effd170cfd510ebf215a8255bc5a",
+        "size_in_bytes": 2886,
+        "sha256_in_prefix": "81a1e5c8a3b7cd94e94118d16101f5948de1457ec0e3c3dc0184153e72d5b7d5"
+      },
+      {
+        "_path": "libexec/gcc/x86_64-conda-linux-gnu/12.4.0/cc1plus",
+        "path_type": "hardlink",
+        "sha256": "67adc0c2228a6a69dcc4a9ad871ac3148a8e3714ce3db3a191b621d680b5a3d7",
+        "size_in_bytes": 38796720,
+        "sha256_in_prefix": "67adc0c2228a6a69dcc4a9ad871ac3148a8e3714ce3db3a191b621d680b5a3d7"
+      },
+      {
+        "_path": "share/gcc-12.4.0/python/libstdcxx/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1,
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "_path": "share/gcc-12.4.0/python/libstdcxx/v6/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "f904daea3a5c91d7b336377a93a85eaa0060842810230704f4c0b702b4154c6a",
+        "size_in_bytes": 1161,
+        "sha256_in_prefix": "f904daea3a5c91d7b336377a93a85eaa0060842810230704f4c0b702b4154c6a"
+      },
+      {
+        "_path": "share/gcc-12.4.0/python/libstdcxx/v6/printers.py",
+        "path_type": "hardlink",
+        "sha256": "b0bb96398d79800dbb7ecb57c1374bff0751b2139aad7c7491d1e790dc8a411c",
+        "size_in_bytes": 92692,
+        "sha256_in_prefix": "b0bb96398d79800dbb7ecb57c1374bff0751b2139aad7c7491d1e790dc8a411c"
+      },
+      {
+        "_path": "share/gcc-12.4.0/python/libstdcxx/v6/xmethods.py",
+        "path_type": "hardlink",
+        "sha256": "0701bb52c475b6a74646da9cf7d7d78e45db00401d16a38d237a65f3f8969168",
+        "size_in_bytes": 28943,
+        "sha256_in_prefix": "0701bb52c475b6a74646da9cf7d7d78e45db00401d16a38d237a65f3f8969168"
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/mjain/miniconda3/pkgs/gxx_impl_linux-64-12.4.0-h3ff227c_2",
+    "type": 1
+  }
+}

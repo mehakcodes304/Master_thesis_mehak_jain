@@ -1,0 +1,90 @@
+#include <gtest/gtest.h>
+
+// Standard
+#include <cstddef>
+#include <filesystem>
+#include <future>
+#include <iostream>
+#include <set>
+#include <stdexcept>
+#include <string>
+#include <thread>
+
+// seqan3
+#include <seqan3/io/sam_file/all.hpp>
+#include <seqan3/io/sam_file/input.hpp>
+#include <seqan3/io/views/async_input_buffer.hpp>
+
+// Internal
+#include "AsyncSplitReadGroupBuffer.hpp"
+#include "SamRecord.hpp"
+#include "TestFilePath.hpp"
+
+using namespace seqan3::literals;
+
+TEST(AsyncSplitReadGroupBufferTest, SingleThreaded) {
+    seqan3::sam_file_input fin{getTestFilePath("splitRecords.bam"), dataTypes::SamFieldIDs{}};
+
+    auto inputBuffer = fin | AsyncSplitReadGroupBuffer(2);
+
+    size_t groupCount = 0;
+
+    for (auto& group : inputBuffer) {
+        ASSERT_NE(group.size(), 0UL);
+
+        std::set<std::string> doubleIDs = {"SRR18331301.2", "SRR18331301.6", "SRR18331301.7"};
+        std::set<std::string> tripleIDs = {"SRR18331301.16", "SRR18331301.26"};
+
+        if (group.front().id() == "SRR18331301.1") {
+            EXPECT_EQ(group.size(), 1UL);
+        } else if (doubleIDs.contains(group.front().id())) {
+            EXPECT_EQ(group.size(), 2UL);
+        } else if (tripleIDs.contains(group.front().id())) {
+            EXPECT_EQ(group.size(), 3UL);
+        } else {
+            throw std::logic_error("File should not contain groups of size: " +
+                                   std::to_string(group.size()));
+        }
+
+        groupCount++;
+    }
+
+    EXPECT_EQ(groupCount, 6UL);
+};
+
+TEST(AsyncSplitReadGroupBufferTest, Multithreaded) {
+    seqan3::sam_file_input fin{getTestFilePath("splitRecords.bam"), dataTypes::SamFieldIDs{}};
+
+    auto asyncInputBuffer = fin | AsyncSplitReadGroupBuffer(2);
+
+    auto worker = [&asyncInputBuffer]() -> size_t {
+        size_t count = 0;
+
+        for (auto& group : asyncInputBuffer) {
+            std::cout << "Thread ID: " << std::this_thread::get_id() << "\n";
+            std::cout << "GROUP ID: " << group.front().id() << "\n";
+            count++;
+
+            std::set<std::string> doubleIDs = {"SRR18331301.2", "SRR18331301.6", "SRR18331301.7"};
+            std::set<std::string> tripleIDs = {"SRR18331301.16", "SRR18331301.26"};
+
+            if (group.front().id() == "SRR18331301.1") {
+                EXPECT_EQ(group.size(), 1UL);
+            } else if (doubleIDs.contains(group.front().id())) {
+                EXPECT_EQ(group.size(), 2UL);
+            } else if (tripleIDs.contains(group.front().id())) {
+                EXPECT_EQ(group.size(), 3UL);
+            } else {
+                throw std::logic_error("File should not contain groups of size: " +
+                                       std::to_string(group.size()));
+            }
+        }
+
+        return count;
+    };
+
+    auto workerOne = std::async(std::launch::async, worker);
+    auto workerTwo = std::async(std::launch::async, worker);
+
+    EXPECT_EQ(workerOne.get() + workerTwo.get(), 6UL);
+}

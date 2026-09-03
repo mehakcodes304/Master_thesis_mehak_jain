@@ -1,0 +1,13 @@
+prefix=/mnt/ceph/mjain/software/envs/bio
+exec_prefix=/mnt/ceph/mjain/software/envs/bio
+libdir=/mnt/ceph/mjain/software/envs/bio/lib
+includedir=/mnt/ceph/mjain/software/envs/bio/include
+
+Name: FreeType 2
+URL: https://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 26.5.20
+Requires: 
+Libs: -L/mnt/ceph/mjain/software/envs/bio/lib -lfreetype
+Libs.private: 
+Cflags: -I${includedir}/freetype2

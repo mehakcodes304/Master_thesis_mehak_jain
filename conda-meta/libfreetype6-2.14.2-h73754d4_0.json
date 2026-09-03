@@ -1,0 +1,53 @@
+{
+  "name": "libfreetype6",
+  "version": "2.14.2",
+  "build": "h73754d4_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "libfreetype6-2.14.2-h73754d4_0.conda",
+  "md5": "8eaba3d1a4d7525c6814e861614457fd",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/libfreetype6-2.14.2-h73754d4_0.conda",
+  "sha256": "aba65b94bdbed52de17ec3d0c6f2ebac2ef77071ad22d6900d1614d0dd702a0c",
+  "depends": [
+    "__glibc >=2.17,<3.0.a0",
+    "libgcc >=14",
+    "libpng >=1.6.55,<1.7.0a0",
+    "libzlib >=1.3.1,<2.0a0"
+  ],
+  "constrains": [
+    "freetype >=2.14.2"
+  ],
+  "license": "GPL-2.0-only OR FTL",
+  "timestamp": 1772757193000,
+  "size": 386316,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/home/mjain/miniconda3/pkgs/libfreetype6-2.14.2-h73754d4_0.conda",
+  "extracted_package_dir": "/home/mjain/miniconda3/pkgs/libfreetype6-2.14.2-h73754d4_0",
+  "files": [
+    "lib/libfreetype.so.6",
+    "lib/libfreetype.so.6.20.5"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "lib/libfreetype.so.6",
+        "path_type": "softlink",
+        "sha256": "854a00c493ddc6bd6ccc62140781e7f73224e1f53c7b79df2a43d986beec5b51",
+        "size_in_bytes": 874496
+      },
+      {
+        "_path": "lib/libfreetype.so.6.20.5",
+        "path_type": "hardlink",
+        "sha256": "854a00c493ddc6bd6ccc62140781e7f73224e1f53c7b79df2a43d986beec5b51",
+        "size_in_bytes": 874496,
+        "sha256_in_prefix": "854a00c493ddc6bd6ccc62140781e7f73224e1f53c7b79df2a43d986beec5b51"
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/mjain/miniconda3/pkgs/libfreetype6-2.14.2-h73754d4_0",
+    "type": 1
+  }
+}

@@ -1,0 +1,7 @@
+##gff-version 3
+rRNA_23S_URS000077EFF8_511145	RNAcentral	gene	1	2932	.	+	.	ID=gene_rRNA_23S;Name=rRNA_23S;gene_biotype=rRNA
+rRNA_23S_URS000077EFF8_511145	RNAcentral	rRNA	1	2932	.	+	.	ID=rRNA_rRNA_23S;Name=rRNA_23S;Parent=gene_rRNA_23S;gene_biotype=rRNA;product=Rrna
+rRNA_5S_URS0000049E57_511145	RNAcentral	gene	1	120	.	+	.	ID=gene_rRNA_5S;Name=rRNA_5S;gene_biotype=rRNA
+rRNA_5S_URS0000049E57_511145	RNAcentral	rRNA	1	120	.	+	.	ID=rRNA_rRNA_5S;Name=rRNA_5S;Parent=gene_rRNA_5S;gene_biotype=rRNA;product=Rrna
+rRNA_16S_URS0000801AEA_511145	RNAcentral	gene	1	1556	.	+	.	ID=gene_rRNA_16S;Name=rRNA_16S;gene_biotype=rRNA
+rRNA_16S_URS0000801AEA_511145	RNAcentral	rRNA	1	1556	.	+	.	ID=rRNA_rRNA_16S;Name=rRNA_16S;Parent=gene_rRNA_16S;gene_biotype=rRNA;product=Rrna

@@ -1,0 +1,53 @@
+{
+  "name": "segemehl",
+  "version": "0.3.4",
+  "build": "h3e6c209_13",
+  "build_number": 13,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "subdir": "linux-64",
+  "fn": "segemehl-0.3.4-h3e6c209_13.conda",
+  "md5": "0ed23fc6d1f8ce535a95dde5dbd9cb42",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/segemehl-0.3.4-h3e6c209_13.conda",
+  "sha256": "865c32f800c15c1dd119d02ca020b8704f22cb4cb5628efae5c448c974fec3dd",
+  "depends": [
+    "htslib >=1.22.1,<1.24.0a0",
+    "libgcc >=13",
+    "libstdcxx >=13",
+    "libzlib >=1.3.1,<2.0a0",
+    "ncurses >=6.5,<7.0a0"
+  ],
+  "constrains": [],
+  "license": "GPL-3.0-or-later",
+  "timestamp": 1759258475000,
+  "size": 868090,
+  "requested_spec": "segemehl",
+  "package_tarball_full_path": "/home/mjain/miniconda3/pkgs/segemehl-0.3.4-h3e6c209_13.conda",
+  "extracted_package_dir": "/home/mjain/miniconda3/pkgs/segemehl-0.3.4-h3e6c209_13",
+  "files": [
+    "bin/haarz.x",
+    "bin/segemehl.x"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/haarz.x",
+        "path_type": "hardlink",
+        "sha256": "5e94a868ba064dfc4ced467cfd96cef7fc16e657efb006e5fcc9b0ce6ab3dd55",
+        "size_in_bytes": 1694456,
+        "sha256_in_prefix": "5e94a868ba064dfc4ced467cfd96cef7fc16e657efb006e5fcc9b0ce6ab3dd55"
+      },
+      {
+        "_path": "bin/segemehl.x",
+        "path_type": "hardlink",
+        "sha256": "489d09a39a90b63a192dca93aff0a809b80a36ccfacbaba28c423fe17a2c7fa5",
+        "size_in_bytes": 2027064,
+        "sha256_in_prefix": "489d09a39a90b63a192dca93aff0a809b80a36ccfacbaba28c423fe17a2c7fa5"
+      }
+    ]
+  },
+  "link": {
+    "source": "/home/mjain/miniconda3/pkgs/segemehl-0.3.4-h3e6c209_13",
+    "type": 1
+  }
+}

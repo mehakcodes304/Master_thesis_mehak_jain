@@ -1,0 +1,13 @@
+##gff-version 3
+rRNA_5S_1_8_URS00000F9D45_9606	RNAcentral	gene	1	121	.	+	.	ID=gene_rRNA_5S_1_8;Name=rRNA_5S_1_8;gene_biotype=rRNA
+rRNA_5S_1_8_URS00000F9D45_9606	RNAcentral	rRNA	1	121	.	+	.	ID=rRNA_rRNA_5S_1_8;Name=rRNA_5S_1_8;Parent=gene_rRNA_5S_1_8;gene_biotype=rRNA;product=Rrna
+rRNA_28S_N5_URS000075EC78_9606	RNAcentral	gene	1	5070	.	+	.	ID=gene_rRNA_28S_N5;Name=rRNA_28S_N5;gene_biotype=rRNA
+rRNA_28S_N5_URS000075EC78_9606	RNAcentral	rRNA	1	5070	.	+	.	ID=rRNA_rRNA_28S_N5;Name=rRNA_28S_N5;Parent=gene_rRNA_28S_N5;gene_biotype=rRNA;product=Rrna
+rRNA_23S_URS0000918239_9606	RNAcentral	gene	1	1387	.	+	.	ID=gene_rRNA_23S;Name=rRNA_23S;gene_biotype=rRNA
+rRNA_23S_URS0000918239_9606	RNAcentral	rRNA	1	1387	.	+	.	ID=rRNA_rRNA_23S;Name=rRNA_23S;Parent=gene_rRNA_23S;gene_biotype=rRNA;product=Rrna
+rRNA_5_8S_N_1_3_URS0000005270_9606	RNAcentral	gene	1	157	.	+	.	ID=gene_rRNA_5_8S_N_1_3;Name=rRNA_5_8S_N_1_3;gene_biotype=rRNA
+rRNA_5_8S_N_1_3_URS0000005270_9606	RNAcentral	rRNA	1	157	.	+	.	ID=rRNA_rRNA_5_8S_N_1_3;Name=rRNA_5_8S_N_1_3;Parent=gene_rRNA_5_8S_N_1_3;gene_biotype=rRNA;product=Rrna
+rRNA_18S_N_2_4_URS0000704D22_9606	RNAcentral	gene	1	1869	.	+	.	ID=gene_rRNA_18S_N_2_4;Name=rRNA_18S_N_2_4;gene_biotype=rRNA
+rRNA_18S_N_2_4_URS0000704D22_9606	RNAcentral	rRNA	1	1869	.	+	.	ID=rRNA_rRNA_18S_N_2_4;Name=rRNA_18S_N_2_4;Parent=gene_rRNA_18S_N_2_4;gene_biotype=rRNA;product=Rrna
+rRNA_16S__URS0001B38474_9606	RNAcentral	gene	1	1556	.	+	.	ID=gene_rRNA_16S_;Name=rRNA_16S_;gene_biotype=rRNA
+rRNA_16S__URS0001B38474_9606	RNAcentral	rRNA	1	1556	.	+	.	ID=rRNA_rRNA_16S_;Name=rRNA_16S_;Parent=gene_rRNA_16S_;gene_biotype=rRNA;product=Rrna

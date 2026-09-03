@@ -1,0 +1,16 @@
+prefix=/mnt/ceph/mjain/software/envs/bio
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+sysconfdir=/mnt/ceph/mjain/software/envs/bio/etc
+localstatedir=/mnt/ceph/mjain/software/envs/bio/var
+confdir=/mnt/ceph/mjain/software/envs/bio/etc/fonts
+cachedir=/mnt/ceph/mjain/software/envs/bio/var/cache/fontconfig
+
+Name: Fontconfig
+Description: Font configuration and customization library
+Version: 2.17.1
+Requires.private: freetype2 >=  21.0.15, expat
+Libs: -L${libdir} -lfontconfig
+Libs.private: -pthread -lm
+Cflags: -I${includedir}

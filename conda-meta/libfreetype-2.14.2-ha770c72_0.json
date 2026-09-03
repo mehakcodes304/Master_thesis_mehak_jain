@@ -1,0 +1,31 @@
+{
+  "name": "libfreetype",
+  "version": "2.14.2",
+  "build": "ha770c72_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "libfreetype-2.14.2-ha770c72_0.conda",
+  "md5": "26c746d14402a3b6c684d045b23b9437",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/libfreetype-2.14.2-ha770c72_0.conda",
+  "sha256": "2e1bfe1e856eb707d258f669ef6851af583ceaffab5e64821b503b0f7cd09e9e",
+  "depends": [
+    "libfreetype6 >=2.14.2"
+  ],
+  "constrains": [],
+  "license": "GPL-2.0-only OR FTL",
+  "timestamp": 1772757210000,
+  "size": 8035,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/home/mjain/miniconda3/pkgs/libfreetype-2.14.2-ha770c72_0.conda",
+  "extracted_package_dir": "/home/mjain/miniconda3/pkgs/libfreetype-2.14.2-ha770c72_0",
+  "files": [],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": []
+  },
+  "link": {
+    "source": "/home/mjain/miniconda3/pkgs/libfreetype-2.14.2-ha770c72_0",
+    "type": 1
+  }
+}

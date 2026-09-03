@@ -1,0 +1,87 @@
+import pandas as pd, re
+
+detected = pd.read_csv("/mnt/ceph/mjain/software/envs/bio/rnanue_run/human_tRNA/output/04_analyze/treatment/condition1/condition1_interactions.tsv", sep="\t")
+known    = pd.read_csv("/mnt/ceph/mjain/software/envs/bio/stems2_human_tRNA.csv")
+
+detected["intramolecular"] = detected["fst_feat_id"] == detected["sec_feat_id"]
+intra = detected[detected["intramolecular"]]
+
+def parse_arms(val):
+    m = re.findall(r"\((\d+)-(\d+)\)", str(val))
+    if len(m) >= 2:
+        return (int(m[0][0]), int(m[0][1])), (int(m[1][0]), int(m[1][1]))
+    return None, None
+
+def overlaps(a_s, a_e, b_s, b_e, tol=5):
+    return a_s <= b_e + tol and b_s <= a_e + tol
+
+# Build matched_stems as before
+matched_stems = set()
+for _, row in intra.iterrows():
+    name = str(row["fst_feat_id"]).replace("gene_", "")
+    fst_s, fst_e = int(row["fst_seg_strt"]), int(row["fst_seg_end"])
+    sec_s, sec_e = int(row["sec_seg_strt"]), int(row["sec_seg_end"])
+    for _, sr in known[known["name"]==name].iterrows():
+        a1, a2 = parse_arms(sr["sub_interaction_stem"])
+        if not a1: continue
+        if (overlaps(fst_s,fst_e,a1[0],a1[1]) and overlaps(sec_s,sec_e,a2[0],a2[1])) or \
+           (overlaps(fst_s,fst_e,a2[0],a2[1]) and overlaps(sec_s,sec_e,a1[0],a1[1])):
+            matched_stems.add((name, sr["interaction_number"]))
+            break
+
+# Build full recovery table — one row per known stem
+records = []
+for _, sr in known.iterrows():
+    name   = sr["name"]
+    int_n  = sr["interaction_number"]
+    key    = (name, int_n)
+    recovered = key in matched_stems
+
+    # If recovered, find the matching detected cluster
+    cluster_id  = None
+    n_splits    = None
+    detected_pos = None
+    if recovered:
+        for _, row in intra.iterrows():
+            rname = str(row["fst_feat_id"]).replace("gene_", "")
+            if rname != name: continue
+            fst_s, fst_e = int(row["fst_seg_strt"]), int(row["fst_seg_end"])
+            sec_s, sec_e = int(row["sec_seg_strt"]), int(row["sec_seg_end"])
+            a1, a2 = parse_arms(sr["sub_interaction_stem"])
+            if not a1: continue
+            if (overlaps(fst_s,fst_e,a1[0],a1[1]) and overlaps(sec_s,sec_e,a2[0],a2[1])) or \
+               (overlaps(fst_s,fst_e,a2[0],a2[1]) and overlaps(sec_s,sec_e,a1[0],a1[1])):
+                cluster_id   = row["cluster_ID"]
+                n_splits     = int(row["no_splits"])
+                detected_pos = f"({fst_s}-{fst_e}),({sec_s}-{sec_e})"
+                break
+
+    records.append({
+        "tRNA":              name,
+        "interaction":       int_n,
+        "known_stem":        sr["sub_interaction_stem"],
+        "recovered":         "YES" if recovered else "NO",
+        "cluster_ID":        cluster_id  if recovered else "-",
+        "n_splits":          n_splits    if recovered else 0,
+        "detected_position": detected_pos if recovered else "-",
+    })
+
+recovery_df = pd.DataFrame(records)
+
+# Print full table
+print(recovery_df.to_string(index=False))
+
+# Summary per tRNA
+print("\n=== Recovery per RNA ===")
+summary = recovery_df.groupby("tRNA").apply(
+    lambda g: pd.Series({
+        "total_stems":     len(g),
+        "recovered":       (g["recovered"]=="YES").sum(),
+        "recovery_rate":   f"{100*(g['recovered']=='YES').mean():.0f}%"
+    })
+).reset_index()
+print(summary.to_string(index=False))
+
+# Save to CSV
+recovery_df.to_csv("stem_recovery_human_tRNA.csv", index=False)
+print("\nSaved to stem_recovery_human_tRNA.csv")

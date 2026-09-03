@@ -1,0 +1,167 @@
+nohup: ignoring input
+
+Warnings:
+  - human_rRNA: rRNA_16S_ int 1 arm1_to_arm2: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 1 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 11 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 13 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 17 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 19 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 21 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 23 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 32 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 37 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 39 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 42 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 44 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 49 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 52 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 53 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 57 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 58 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 65 arm2_to_arm1: generated 95/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 1 arm1_to_arm2: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 1 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 10 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 16 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 21 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 29 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 34 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 40 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 44 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 56 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 57 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 62 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 66 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 1 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 7 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 9 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 11 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 14 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 17 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 18 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 20 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 27 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 30 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 31 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 32 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 38 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 41 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 46 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_23S int 47 arm2_to_arm1: generated 27/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 6 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 10 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 11 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 13 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 14 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 46 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 53 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 55 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 57 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 61 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 66 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 70 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 73 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 79 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 82 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 83 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 89 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 98 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 102 arm2_to_arm1: generated 34/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 108 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 110 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 113 arm2_to_arm1: generated 89/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 114 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 118 arm2_to_arm1: generated 49/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 123 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 167 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 171 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 172 arm2_to_arm1: generated 61/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 173 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 174 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 185 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 186 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 191 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 196 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 203 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 204 arm2_to_arm1: generated 36/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 210 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 219 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_28S_N5 int 227 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_5S_1_8 int 1 arm1_to_arm2: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_5_8S_N_1_3 int 2 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 1 arm1_to_arm2: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 1 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 12 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 13 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 18 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 20 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 22 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 24 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 33 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 38 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 40 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 43 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 45 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 50 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 53 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 54 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 58 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 59 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 66 arm2_to_arm1: generated 98/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_16S int 72 arm2_to_arm1: generated 24/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 1 arm1_to_arm2: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 5 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 7 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 8 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 11 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 16 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 17 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 19 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 20 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 22 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 26 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 30 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 32 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 34 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 40 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 47 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 53 arm2_to_arm1: generated 39/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 60 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 68 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 69 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 75 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 77 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 83 arm2_to_arm1: generated 42/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 84 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 85 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 95 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 100 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 107 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 108 arm2_to_arm1: generated 26/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 114 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 116 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 118 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_23S int 120 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_5S int 1 arm1_to_arm2: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - ecoli_rRNA: rRNA_5S int 4 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+Processing human_rRNA
+  CSV:   /mnt/ceph/mjain/software/envs/bio/human_rRNA_chimeric_reads.csv
+  FASTA: /mnt/ceph/mjain/software/envs/bio/human_rRNA_chimeric_reads.fa
+  FASTQ: /mnt/ceph/mjain/software/envs/bio/human_rRNA_chimeric_reads.fastq
+  BED12: /mnt/ceph/mjain/software/envs/bio/human_rRNA_chimeric_reads.bed
+  BEDGraph: /mnt/ceph/mjain/software/envs/bio/human_rRNA_chimeric_reads_coverage.bedgraph
+  Coverage BED: /mnt/ceph/mjain/software/envs/bio/human_rRNA_chimeric_reads_coverage.bed
+  IGV ref FASTA: /mnt/ceph/mjain/software/envs/bio/human_rRNA_reference_for_igv.fa
+  IGV ref index: /mnt/ceph/mjain/software/envs/bio/human_rRNA_reference_for_igv.fa.fai
+  77491 reads over 428 interactions — min/max per interaction: 100/200 — orientations: {'arm1_to_arm2': 42700, 'arm2_to_arm1': 34791} — equal arm lengths: True
+Processing ecoli_rRNA
+  CSV:   /mnt/ceph/mjain/software/envs/bio/ecoli_rRNA_chimeric_reads.csv
+  FASTA: /mnt/ceph/mjain/software/envs/bio/ecoli_rRNA_chimeric_reads.fa
+  FASTQ: /mnt/ceph/mjain/software/envs/bio/ecoli_rRNA_chimeric_reads.fastq
+  BED12: /mnt/ceph/mjain/software/envs/bio/ecoli_rRNA_chimeric_reads.bed
+  BEDGraph: /mnt/ceph/mjain/software/envs/bio/ecoli_rRNA_chimeric_reads_coverage.bedgraph
+  Coverage BED: /mnt/ceph/mjain/software/envs/bio/ecoli_rRNA_chimeric_reads_coverage.bed
+  IGV ref FASTA: /mnt/ceph/mjain/software/envs/bio/ecoli_rRNA_reference_for_igv.fa
+  IGV ref index: /mnt/ceph/mjain/software/envs/bio/ecoli_rRNA_reference_for_igv.fa.fai
+  34129 reads over 196 interactions — min/max per interaction: 100/200 — orientations: {'arm1_to_arm2': 19400, 'arm2_to_arm1': 14729} — equal arm lengths: True

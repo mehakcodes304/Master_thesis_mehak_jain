@@ -1,0 +1,323 @@
+#include "Align.hpp"
+
+// Standard
+#include <algorithm>
+#include <cstddef>
+#include <cstdlib>
+#include <filesystem>
+#include <optional>
+#include <string>
+#include <variant>
+#include <vector>
+
+// segmehl
+#include "AnnotationFilePicker.hpp"
+#include "GenomePreprocessor.hpp"
+#include "ReferenceGenomeFilePicker.hpp"
+#include "hts.h"
+#include "segemehl.h"
+
+// Internal
+#include "AlignData.hpp"
+#include "AlignSample.hpp"
+#include "Constants.hpp"
+#include "Logger.hpp"
+#include "ReferenceGenome.hpp"
+#include "SamFileUtility.hpp"
+#include "SequenceFileUtility.hpp"
+#include "Utility.hpp"
+#include "VariantOverload.hpp"
+
+namespace pipelines::align {
+
+void Align::process(const AlignData &data) {
+    Logger::log(constants::pipelines::PROCESSING_TREATMENT_MESSAGE);
+
+    preprocessReferences();
+
+    for (const auto &sample : data.treatmentSamples) {
+        processSample(sample);
+    }
+
+    if (!data.controlSamples) {
+        return;
+    }
+
+    Logger::log(constants::pipelines::PROCESSING_CONTROL_MESSAGE);
+
+    for (const auto &sample : *data.controlSamples) {
+        processSample(sample);
+    }
+}
+
+void Align::preprocessReferences() {
+    if (!parameters.maskMultiCopyGenes) {
+        Logger::log("Gene copy masking disabled.");
+        return;
+    }
+
+    const auto genomePreprocessor = GenomePreprocessor{parameters};
+    const GenomePreprocessor::Output genomePreprocessingOutput = {
+        .preprocessedGenomePath = utility::ReferenceGenomeFilePicker::maskedFilePath(parameters),
+        .preprocessedAnnotationPath = utility::AnnotationFilePicker::maskedFilePath(parameters)};
+
+    genomePreprocessor.process(
+        {.refGenomePath = parameters.referenceGenome, .annotationPath = parameters.featuresInPath},
+        genomePreprocessingOutput);
+
+    Logger::log("Replacing provided reference genome and annotation with masked.");
+    parameters.referenceGenome = genomePreprocessingOutput.preprocessedGenomePath;
+    parameters.featuresInPath = genomePreprocessingOutput.preprocessedAnnotationPath;
+}
+
+void Align::processSample(const AlignSampleType &sample) {
+    buildIndex();
+
+    std::visit(overloaded{[this](const AlignSampleSingle &sample) { processSingleEnd(sample); },
+                          [this](const AlignSampleMergedPaired &sample) {
+                              processMergedPairedEnd(sample);
+                          }},
+               sample);
+}
+
+void Align::processSingleEnd(const AlignSampleSingle &sample) {
+    Logger::log("Processing single end reads");
+
+    alignSingleReads(sample.input.inputFastqPath, sample.output.outputAlignmentsPath);
+    sortAlignmentsByQueryName(sample.output.outputAlignmentsPath,
+                              sample.output.outputAlignmentsPath);
+}
+
+void Align::processMergedPairedEnd(const AlignSampleMergedPaired &sample) {
+    Logger::log("Processing merged paired end reads");
+
+    alignSingleReads(sample.input.inputMergedFastqPath,
+                     sample.output.outputAlignmentsMergedReadsPath);
+
+    alignSingleReads(sample.input.inputSingletonForwardFastqPath,
+                     sample.output.outputAlignmentsSingletonForwardReadsPath);
+
+    alignSingleReads(sample.input.inputSingletonReverseFastqPath,
+                     sample.output.outputAlignmentsSingletonReverseReadsPath);
+
+    alignPairedReads(sample.input.inputPairedForwardFastqPath,
+                     sample.input.inputPairedReverseFastqPath,
+                     sample.output.outputAlignmentsPairedReadsPath);
+
+    std::vector<fs::path> samFiles{sample.output.outputAlignmentsMergedReadsPath,
+                                   sample.output.outputAlignmentsSingletonForwardReadsPath,
+                                   sample.output.outputAlignmentsSingletonReverseReadsPath,
+                                   sample.output.outputAlignmentsPairedReadsPath};
+
+    Logger::log("Merging alignment files");
+
+    helper::mergeSamFiles(samFiles, sample.output.outputAlignmentsPath, referenceFromGenome());
+
+    sortAlignmentsByQueryName(sample.output.outputAlignmentsPath,
+                              sample.output.outputAlignmentsPath);
+}
+
+auto Align::findIndex(const fs::path &referenceGenomePath) const -> std::optional<fs::path> {
+    // Check if index exists in the same directory as the reference genome
+    fs::path indexFileName = referenceGenomePath.filename().replace_extension(".idx");
+    fs::path indexFilePath = referenceGenomePath.parent_path() / indexFileName;
+
+    Logger::log("Searching for reference index at: ", indexFilePath);
+
+    if (fs::exists(indexFilePath)) {
+        return indexFilePath;
+    }
+
+    // Check if index exists in the output directory
+    indexFilePath = parameters.outputDir / indexFileName;
+
+    Logger::log("Searching for reference index at: ", indexFilePath);
+
+    if (fs::exists(indexFilePath)) {
+        return indexFilePath;
+    }
+
+    Logger::log("Did not find reference index");
+
+    return std::nullopt;
+}
+
+void Align::buildIndex() {
+    fs::path referencePath = parameters.referenceGenome;
+    size_t const threads = parameters.threadCount;
+
+    const auto indexFilePath = findIndex(referencePath);
+
+    if (indexFilePath.has_value()) {
+        Logger::log("Existing index found: ", indexFilePath);
+        indexPath = *indexFilePath;
+        return;
+    }
+
+    // Index file is written to same location as reference genome
+    indexPath = referencePath.parent_path() / referencePath.filename().replace_extension(".idx");
+
+    Logger::log("Building index");
+    std::vector<std::string> args = {"-x", indexPath.string(),     "-d", referencePath.string(),
+                                     "-t", std::to_string(threads)};
+
+    auto c_args = convertToCStrings(args);
+
+    int result = segemehl(static_cast<int>(c_args.size()) - 1, c_args.data());
+
+    if (result != 0) {
+        Logger::log<IncludeSourceLocation, LogLevel::ERROR>("Could not create index for: ",
+                                                            referencePath);
+    }
+}
+
+[[nodiscard]] auto Align::threadsAdaptedToEntries(const fs::path &inputPath) const -> size_t {
+    const bool hasSufficientEntries =
+        SequenceFileUtility::hasAtLeastEntries(inputPath, parameters.threadCount);
+
+    size_t threads = parameters.threadCount;
+
+    if (not hasSufficientEntries) {
+        threads = SequenceFileUtility::countEntries(inputPath) > 0 ? 1 : 0;
+    }
+
+    return threads;
+}
+
+[[nodiscard]] auto Align::getGeneralAlignmentArgs(size_t threadCount) const
+    -> std::vector<std::string> {
+    return {"-b", "-S",
+            "-A", std::to_string(parameters.accuracy),
+            "-U", std::to_string(parameters.minimumFragmentScore),
+            "-W", std::to_string(parameters.minimumSpliceCoverage),
+            "-Z", std::to_string(parameters.minimumFragmentLength),
+            "-t", std::to_string(threadCount),
+            "-m", std::to_string(parameters.minLengthThreshold),
+            "-i", indexPath.string(),
+            "-d", parameters.referenceGenome.string()};
+}
+
+auto Align::referenceFromGenome() const -> dataTypes::SamReference {
+    const ReferenceGenome referenceGenome{parameters.referenceGenome};
+
+    auto referenceIDs = referenceGenome.getReferenceIndexMapping().sortedReferenceIDs();
+    std::vector<size_t> referenceLengths;
+    referenceLengths.reserve(referenceIDs.size());
+
+    for (size_t index = 0; index < referenceIDs.size(); ++index) {
+        referenceLengths.push_back(referenceGenome.getSequence(static_cast<int>(index)).size());
+    }
+
+    return dataTypes::SamReference{std::move(referenceIDs), std::move(referenceLengths)};
+}
+
+void Align::writeEmptyAlignments(const fs::path& alignmentsOutPath,
+                                 const fs::path& emptyInputPath) const {
+    Logger::log("File has no entries: ", emptyInputPath,
+                "; writing header-only alignments: ", alignmentsOutPath);
+    SamFileUtility::writeHeaderOnlyFile(alignmentsOutPath, referenceFromGenome());
+}
+
+void Align::runSegemehlAlignment(std::vector<std::string> args, const fs::path& outputPath,
+                                 const std::string& errorMessage) const {
+    constexpr size_t VALIDATION_ATTEMPTS = 6;
+    constexpr size_t INITIAL_RETRY_DELAY_MS = 500;
+    constexpr size_t ALIGNMENT_ATTEMPTS = 2;
+
+    for (size_t attempt = 1; attempt <= ALIGNMENT_ATTEMPTS; ++attempt) {
+        auto c_args = convertToCStrings(args);
+
+        const int result = segemehl(static_cast<int>(c_args.size()) - 1, c_args.data());
+
+        if (result != 0) {
+            Logger::log<IncludeSourceLocation, LogLevel::ERROR>(errorMessage);
+        }
+
+        const auto inspection =
+            SamFileUtility::inspectWithRetries(outputPath, VALIDATION_ATTEMPTS,
+                                               INITIAL_RETRY_DELAY_MS);
+        if (inspection.isReadable()) {
+            if (inspection.hasMissingEof()) {
+                Logger::log<LogLevel::WARNING>(
+                    "Alignment output is readable but missing the BGZF EOF marker; sorting will "
+                    "repair it: ",
+                    SamFileUtility::describe(inspection));
+            }
+            return;
+        }
+
+        if (attempt == ALIGNMENT_ATTEMPTS) {
+            Logger::log<IncludeSourceLocation, LogLevel::ERROR>(
+                errorMessage, "; output failed validation after retry: ",
+                SamFileUtility::describe(inspection));
+        }
+
+        Logger::log<LogLevel::WARNING>(
+            "Alignment output failed validation after segemehl; regenerating once: ",
+            SamFileUtility::describe(inspection));
+
+        std::error_code ignoredError;
+        fs::remove(outputPath, ignoredError);
+    }
+}
+
+void Align::alignSingleReads(const fs::path &queryFastqInPath,
+                             const fs::path &alignmentsFastqOutPath) const {
+    const size_t threads = threadsAdaptedToEntries(queryFastqInPath);
+
+    if (threads == 0) {
+        writeEmptyAlignments(alignmentsFastqOutPath, queryFastqInPath);
+        return;
+    }
+
+    auto args = getGeneralAlignmentArgs(threads);
+
+    args.insert(args.end(),
+                {"-q", queryFastqInPath.string(), "-o", alignmentsFastqOutPath.string(), "-H",
+                 std::to_string(static_cast<int>(!parameters.multimapAlignments))});
+
+    runSegemehlAlignment(std::move(args), alignmentsFastqOutPath, "Could not align reads");
+}
+
+void Align::alignPairedReads(const fs::path &queryForwardFastqInPath,
+                             const fs::path &queryReverseFastqInPath,
+                             const fs::path &alignmentsFastqOutPath) const {
+    const size_t forwardThreads = threadsAdaptedToEntries(queryForwardFastqInPath);
+    const size_t reverseThreads = threadsAdaptedToEntries(queryReverseFastqInPath);
+
+    if (forwardThreads == 0 || reverseThreads == 0) {
+        writeEmptyAlignments(alignmentsFastqOutPath,
+                             forwardThreads == 0 ? queryForwardFastqInPath
+                                                 : queryReverseFastqInPath);
+        return;
+    }
+
+    const size_t threads = std::min(forwardThreads, reverseThreads);
+
+    auto args = getGeneralAlignmentArgs(threads);
+
+    args.insert(args.end(),
+                {"-q", queryForwardFastqInPath.string(), "-p", queryReverseFastqInPath.string(),
+                 "-o", alignmentsFastqOutPath.string(), "-H",
+                 std::to_string(static_cast<int>(!parameters.multimapAlignments))});
+
+    runSegemehlAlignment(std::move(args), alignmentsFastqOutPath, "Could not align reads");
+}
+
+void Align::sortAlignmentsByQueryName(const fs::path &alignmentsPath,
+                                      const fs::path &sortedAlignmentsPath) const {
+    Logger::log("Sorting alignments");
+    SamFileUtility::sortByQueryName(alignmentsPath, sortedAlignmentsPath, parameters.threadCount);
+    Logger::log("Sorting alignments done");
+}
+
+auto Align::convertToCStrings(std::vector<std::string> &args) -> std::vector<char *> {
+    std::vector<char *> c_args(args.size() + 1);
+    std::ranges::transform(args, c_args.begin(), [](std::string &arg) { return arg.data(); });
+
+    c_args.back() = nullptr;  // argv must be null terminated
+
+    return c_args;
+}
+
+}  // namespace pipelines::align

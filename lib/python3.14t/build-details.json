@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "base_prefix": "/mnt/ceph/mjain/software/envs",
+  "base_interpreter": "/mnt/ceph/mjain/software/envs/bin/python3.14",
+  "platform": "linux-x86_64",
+  "language": {
+    "version": "3.14",
+    "version_info": {
+      "major": 3,
+      "minor": 14,
+      "micro": 3,
+      "releaselevel": "final",
+      "serial": 0
+    }
+  },
+  "implementation": {
+    "name": "cpython",
+    "cache_tag": "cpython-314",
+    "version": {
+      "major": 3,
+      "minor": 14,
+      "micro": 3,
+      "releaselevel": "final",
+      "serial": 0
+    },
+    "hexversion": 51250160,
+    "_multiarch": "x86_64-linux-gnu",
+    "supports_isolated_interpreters": true
+  },
+  "abi": {
+    "flags": [
+      "t"
+    ],
+    "extension_suffix": ".cpython-314t-x86_64-linux-gnu.so",
+    "stable_abi_suffix": ".abi3.so"
+  },
+  "suffixes": {
+    "source": [
+      ".py"
+    ],
+    "bytecode": [
+      ".pyc"
+    ],
+    "extensions": [
+      ".cpython-314t-x86_64-linux-gnu.so",
+      ".abi3.so",
+      ".so"
+    ]
+  },
+  "libpython": {
+    "dynamic": "/mnt/ceph/mjain/software/envs/lib/libpython3.14t.so",
+    "dynamic_stableabi": "/mnt/ceph/mjain/software/envs/lib/libpython3.so",
+    "link_extensions": false,
+    "static": "/mnt/ceph/mjain/software/envs/lib/libpython3.14t.a"
+  },
+  "c_api": {
+    "headers": "/mnt/ceph/mjain/software/envs/include/python3.14t",
+    "pkgconfig_path": "/mnt/ceph/mjain/software/envs/lib/pkgconfig"
+  }
+}
