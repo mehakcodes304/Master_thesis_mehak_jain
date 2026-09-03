@@ -140,39 +140,40 @@ RRNA_PARAMS = SimParams(
 # =============================================================================
 
 BASE_DIR = Path(__file__).resolve().parent
+REF_ROOT = Path("/mnt/ceph/mjain/software/envs/bio/custom_ref_genome")
 
 # Set "enabled": False to skip a dataset without deleting its config.
 DATASETS = [
     {
         "label":            "human_tRNA",
         "enabled":          True,
-        "sequence_csv":     "human_tRNA.csv",
-        "interactions_csv": "stems2_human_tRNA.csv",
-        "output_prefix":    "human_tRNA_chimeric_reads",
+        "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_tRNA/human_tRNA.csv",
+        "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/human_tRNA/stems2_human_tRNA.csv",
+        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads_3_9",
         "params":           TRNA_PARAMS,
     },
     {
         "label":            "ecoli_tRNA",
         "enabled":          True,
-        "sequence_csv":     "ecoli_tRNA.csv",
-        "interactions_csv": "stems2_ecoli_tRNA.csv",
-        "output_prefix":    "ecoli_tRNA_chimeric_reads",
+        "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_tRNA/ecoli_tRNA.csv",
+        "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/ecoli_tRNA/stems2_ecoli_tRNA.csv",
+        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads_3_9",
         "params":           TRNA_PARAMS,
     },
     {
         "label":            "human_rRNA",
-        "enabled":          False,          # flip on once filenames confirmed
-        "sequence_csv":     "human_rRNA.csv",
-        "interactions_csv": "stems2_human_rRNA.csv",
-        "output_prefix":    "human_rRNA_chimeric_reads",
+        "enabled":          True,         
+        "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_rRNA/human_rRNA.csv",
+        "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/human_rRNA/stems2_human_rRNA.csv",
+        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads_3_9",
         "params":           RRNA_PARAMS,
     },
     {
         "label":            "ecoli_rRNA",
-        "enabled":          False,          # flip on once filenames confirmed
-        "sequence_csv":     "ecoli_rRNA.csv",
-        "interactions_csv": "stems2_ecoli_rRNA.csv",
-        "output_prefix":    "ecoli_rRNA_chimeric_reads",
+        "enabled":          True,          
+        "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_rRNA/ecoli_rRNA.csv",
+        "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/ecoli_rRNA/stems2_ecoli_rRNA.csv",
+        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads_3_9",
         "params":           RRNA_PARAMS,
     },
 ]
@@ -928,13 +929,12 @@ def run_generation() -> list[str]:
                 )
 
         if MAKE_REFERENCE_FASTA_FOR_IGV:
-            ref = path_here(f"{label}_reference_for_igv.fa")
+            ref = REF_ROOT / label / f"{label}_reference_for_igv.fa"
             write_reference_fasta_and_fai(seq_df, ref, as_dna=False)
-            print(f"  IGV ref FASTA: {ref}")
             print(f"  IGV ref index: {ref}.fai")
 
         if MAKE_REFERENCE_FASTA_DNA:
-            ref_dna = path_here(f"{label}_reference_dna.fa")
+            ref_dna = REF_ROOT / label / f"{label}_reference_dna.fa"
             write_reference_fasta_and_fai(seq_df, ref_dna, as_dna=True)
             print(f"  DNA ref FASTA: {ref_dna}   (index with: segemehl.x -x {ref_dna.stem}.idx -d {ref_dna.name})")
 
