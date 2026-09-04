@@ -1,0 +1,403 @@
+RUN3: at min arm len at 4 and min len at 8:
+segemehl.x \
+    -d human_tRNA_igv_dna.fasta \
+    -i human_tRNA_igv_dna.idx \
+    -q human_tRNA_chimeric_reads_dna.fa \
+    -S -Z 4 -U 6 -W 50 -A 90 \
+    -o human_tRNA_chimeric_reads_aligned.sam
+
+    output 
+    [SEGEMEHL] Tue Jun 30 14:19:15 2026: Mapping stats:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17400   7707    44.29%  6653    38.24%  1054    6.06%   7127    40.96%
+
+RUN 4: at min arm len at 5 and min len at 10. 
+Rule 1 — Core overlap (≥1 nt)
+  Each arm fragment must touch at least 1 nucleotide of the core arm.
+  Ensures the read genuinely comes from this stem interaction.
+
+Rule 2 — Junction constraint (MAX_JUNCTION_UNPAIRED = 2)
+  The ligation-facing end of each fragment can go at most 2 nt
+  past the core boundary toward the other arm.
+  Biologically: allows 0–2 unpaired bases at the chimeric junction,
+  matching what real DDD reads show.
+
+Rule 3 — No within-read arm overlap (checked in make_one_read)
+  first_frag.overlaps(second_frag) → rejected.
+  The two arm fragments of one read must never overlap in sequence space.
+
+segemehl.x     -d human_tRNA_igv_dna.fasta     -i human_tRNA_igv_dna.idx     
+-q human_tRNA_chimeric_reads_dna.fa     -S -Z 5 -U 6 -W 100 -A 90     
+-o human_tRNA_chimeric_reads_aligned.sam
+
+[SEGEMEHL] Thu Jul  2 09:45:24 2026: Mapping stats:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17400   3401    19.55%  3060    17.59%  341     1.96%   1858    10.68%
+
+
+RUN: 5
+segemehl.x     -d human_tRNA_igv_dna.fasta     -i human_tRNA_igv_dna.idx     
+-q human_tRNA_chimeric_reads_dna.fa     -S -Z 5 -U 6 -W 90 -A 90     
+-o human_tRNA_chimeric_reads_aligned.sam
+
+
+[SEGEMEHL] Thu Jul  2 10:43:50 2026: Mapping stats:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17400   3788    21.77%  3363    19.33%  425     2.44%   2364    13.59%
+
+run:5 
+MIN_READ_LEN      = 10
+MAX_READ_LEN      = 40
+MIN_ARM_LEN       = 5
+MAX_ARM_LEN       = 20
+MAX_ARM_EXTENSION    = 100
+MAX_JUNCTION_UNPAIRED = 2   
+
+segemehl.x     -d human_tRNA_igv_dna.fasta     -i human_tRNA_igv_dna.idx     
+-q human_tRNA_chimeric_reads_dna.fa     -S -Z 5 -U 6 -W 90 -A 90     
+-o human_tRNA_chimeric_reads_aligned.sam
+
+[SEGEMEHL] Thu Jul  2 11:15:45 2026: Mapping stats:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17400   4254    24.45%  3828    22.00%  426     2.45%   2791    16.04%
+
+run6:
+segemehl.x \
+    -d human_tRNA_igv_dna.fasta \
+    -i human_tRNA_igv_dna.idx \
+    -q human_tRNA_chimeric_reads_dna.fa \
+    -S \
+    -E 10 \
+    -D 0 \
+    -Z 5 \
+    -U 6 \
+    -W 90 \
+    -A 90 \
+    -o human_tRNA_chimeric_reads_aligned.sam
+
+[SEGEMEHL] Thu Jul  2 12:19:21 2026: Mapping stats:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17400   14290   82.13%  3891    22.36%  10399   59.76%  0       0.00%
+
+
+run 7: re-made the index
+segemehl.x \
+    -d human_tRNA_reference_for_igv.fa \
+    -i human_tRNA_igv.idx \
+    -q human_tRNA_chimeric_reads.fa \
+    -S \
+    -E 10 \
+    -D 0 \
+    -Z 5 \
+    -U 6 \
+    -W 90 \
+    -A 90 \
+    -o human_tRNA_chimeric_reads_aligned.sam
+
+    output:        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17400   4222    24.26%  3837    22.05%  385     2.21%   2848    16.37%
+
+run8:
+MIN_READ_LEN      = 12
+MAX_READ_LEN      = 50
+MIN_ARM_LEN       = 6
+MAX_ARM_LEN       = 25
+MAX_ARM_EXTENSION    =100
+MAX_JUNCTION_UNPAIRED = 4 
+    
+ segemehl.x \
+    -d human_tRNA_reference_for_igv.fa \
+    -i human_tRNA_igv.idx \
+    -q human_tRNA_chimeric_reads.fa \
+    -S \
+    -E 10 \
+    -D 0 \
+    -Z 5 \
+    -U 6 \
+    -W 90 \
+    -A 90 \
+    -o human_tRNA_chimeric_reads_aligned.sam   
+    
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17400   6306    36.24%  5938    34.13%  368     2.11%   3588    20.62%
+
+10-08-26 run with human_tRNA_chimeric _reads1.fastq 
+preprocess:  Finished processing sample: 15557 passed records, 1843 failed records
+
+align:         total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+        all     15557   11548   74.23%  10595   68.10%  953     6.13%   10907   70.11%
+
+detect: Preprocessed 15539 read groups. Of which 11532 had at least one passed hit group and 4007 failed completely. 
+        Complementarity evaluation resulted in 4671 passed split hit groups and 14 failed split hit groups. 
+        Hybridization evalutaion resulted in 4474 passed split hit groups and 197 failed split hit groups. 
+        Postprocessed 11530 read groups with a total contribution score of 11530.000000000004.
+
+analyze: [INFO] [2026-08-10 10:33:53]  After filtering kept 80 split interactions
+[INFO] [2026-08-10 10:33:53]  Of which 72 are intramolecular interactions
+[INFO] [2026-08-10 10:33:53]  Of which 8 are intermolecular interactions
+
+10-08-26 run with human_tRNA_chimeric _reads2.fastq
+preprocess: Finished processing sample: 17400 passed records, 0 failed records
+
+align: total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+        all     17400   14218   81.71%  13144   75.54%  1074    6.17%   12206   70.15%
+
+detect: Preprocessed 17386 read groups. Of which 14206 had at least one passed hit group and 3180 failed completely. 
+        Complementarity evaluation resulted in 5555 passed split hit groups and 37 failed split hit groups. 
+        Hybridization evalutaion resulted in 5408 passed split hit groups and 147 failed split hit groups. 
+        Postprocessed 14204 read groups with a total contribution score of 14204.
+
+analyze: [INFO] [2026-08-10 10:56:11]  After filtering kept 76 split interactions
+[INFO] [2026-08-10 10:56:11]  Of which 48 are intramolecular interactions
+[INFO] [2026-08-10 10:56:11]  Of which 28 are intermolecular interactions
+
+run with ecoli_trna:
+preprocess: Finished processing sample: 17596 passed records, 4 failed records
+
+align:         total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+        all     17596   12375   70.33%  11768   66.88%  607     3.45%   11065   62.88%
+
+detect:   Preprocessed 17591 read groups. Of which 12369 had at least one passed hit group and 5222 failed completely. 
+        Complementarity evaluation resulted in 917 passed split hit groups and 12 failed split hit groups. 
+        Hybridization evalutaion resulted in 911 passed split hit groups and 6 failed split hit groups. 
+        Postprocessed 12369 read groups with a total contribution score of 12368.999999999998.
+
+
+analyze: [INFO] [2026-08-11 08:53:54]  After filtering kept 25 split interactions
+[INFO] [2026-08-11 08:53:54]  Of which 21 are intramolecular interactions
+[INFO] [2026-08-11 08:53:54]  Of which 4 are intermolecular interactions
+
+run with old human tRNA file again:
+preprocess:  Finished processing sample: 17400 passed records, 0 failed records
+
+align:         total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+        all     17400   13589   78.10%  12219   70.22%  1370    7.87%   12585   72.33%
+
+detect:        Preprocessed 17364 read groups. Of which 13557 had at least one passed hit group and 3807 failed completely. 
+        Complementarity evaluation resulted in 4454 passed split hit groups and 21 failed split hit groups. 
+        Hybridization evalutaion resulted in 4354 passed split hit groups and 100 failed split hit groups. 
+        Postprocessed 13553 read groups with a total contribution score of 13553.000000000002.
+
+analyze: [INFO] [2026-08-11 09:29:04]  After filtering kept 94 split interactions
+[INFO] [2026-08-11 09:29:04]  Of which 78 are intramolecular interactions
+[INFO] [2026-08-11 09:29:04]  Of which 16 are intermolecular interactions
+
+=== Correct Results ===
+True Positives:            70
+False Positives (total):   16
+  → wrong intramolecular:  0
+  → cross-mapped interR:   16
+False Negatives:           17
+
+Recall:    80.5%  ##BEST RUN
+Precision: 74.5%
+F1 score:  77.3%
+
+run after changing clustfrac to 0.6
+=== Correct Results ===
+True Positives:            65
+False Positives (total):   16
+  → wrong intramolecular:  0
+  → cross-mapped interR:   16
+False Negatives:           22
+
+Recall:    74.7%
+Precision: 80.2%
+F1 score:  77.4%
+
+human tRNA run after generating from unified script: (04.09)
+[INFO] [2026-09-04 00:32:50]  After filtering kept 74 split interactions
+[INFO] [2026-09-04 00:32:50]  Of which 65 are intramolecular interactions
+[INFO] [2026-09-04 00:32:50]  Of which 9 are intermolecular interactions
+
+[SEGEMEHL] Fri Sep  4 00:32:47 2026: Mapping stats:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17399   13751   79.03%  11595   66.64%  2156    12.39%  12492   71.80%
+
+ Preprocessed 17350 read groups. Of which 13702 had at least one passed hit group and 3648 failed completely. 
+        Complementarity evaluation resulted in 3537 passed split hit groups and 20 failed split hit groups. 
+        Hybridization evalutaion resulted in 3458 passed split hit groups and 79 failed split hit groups. 
+        Postprocessed 13702 read groups with a total contribution score of 13701.999999999995.
+
+        Intramolecular: 65
+Intermolecular: 9
+Missed stems:
+  tRNA_Ala_8_1 int3: [(27-31), (39-43)]
+  tRNA_Arg_4_1 int3: [(28-32), (40-44)]
+  tRNA_Asp_1_1 int2: [(10-13), (22-25)]
+  tRNA_Asp_1_1 int3: [(27-31), (39-43)]
+  tRNA_Asp_1_1 int4: [(48-52), (60-64)]
+  tRNA_Cys_7_1 int3: [(27-31), (39-43)]
+  tRNA_Cys_7_1 int4: [(49-53), (61-65)]
+  tRNA_Gln_12_1 int2: [(10-13), (22-25)]
+  tRNA_Gln_12_1 int3: [(27-31), (39-43)]
+  tRNA_Glu_4_1 int2: [(10-13), (22-25)]
+  tRNA_Glu_4_1 int3: [(27-31), (39-43)]
+  tRNA_Gly_1_1 int3: [(27-31), (39-43)]
+  tRNA_His_1_1 int3: [(27-31), (39-43)]
+  tRNA_Ile_2_1 int2: [(10-13), (23-26)]
+  tRNA_Leu_6_1 int5: [(60-64), (72-76)]
+  tRNA_Lys_3_4 int3: [(27-31), (39-43)]
+  tRNA_Lys_3_4 int4: [(49-53), (61-65)]
+  tRNA_Met_1_1 int3: [(27-30), (40-43)]
+  tRNA_Phe_4_1 int3: [(27-31), (39-44)]
+  tRNA_Pro_3_1 int2: [(10-12), (22-24)]
+  tRNA_SeC_1_1 int5: [(63-66), (74-77)]
+  tRNA_Ser_6_1 int2: [(12-14), (25-27)]
+  tRNA_Thr_3_1 int3: [(28-32), (40-44)]
+  tRNA_Thr_3_1 int4: [(50-54), (62-66)]
+  tRNA_Trp_1_1 int3: [(26-30), (38-42)]
+  tRNA_Tyr_5_1 int4: [(49-53), (61-65)]
+  tRNA_Val_2_1 int3: [(27-31), (39-43)]
+
+=== Correct Results ===
+True Positives:            60
+False Positives (total):   9
+  → wrong intramolecular:  0
+  → cross-mapped interR:   9
+False Negatives:           27
+
+Recall:    69.0%
+Precision: 81.1%
+F1 score:  74.5%
+
+ecoli tRNA run after generating from unified script: (04.09)
+ After filtering kept 23 split interactions
+[INFO] [2026-09-04 01:03:49]  Of which 20 are intramolecular interactions
+[INFO] [2026-09-04 01:03:49]  Of which 3 are intermolecular interactions
+
+Preprocessed 17492 read groups. Of which 11648 had at least one passed hit group and 5844 failed completely. 
+        Complementarity evaluation resulted in 680 passed split hit groups and 10 failed split hit groups. 
+        Hybridization evalutaion resulted in 666 passed split hit groups and 14 failed split hit groups. 
+        Postprocessed 11648 read groups with a total contribution score of 11648.
+
+                total   mapped  (%)     unique  (%)     multi   (%)     split (%)
+all     17492   11649   66.60%  11040   63.11%  609     3.48%   10921 62.43%
+
+Intramolecular: 20
+Intermolecular: 3
+Missed stems:
+  tRNA_Ala_1_1 int1: [(1-7), (66-72)]
+  tRNA_Ala_1_1 int2: [(10-13), (22-25)]
+  tRNA_Arg_1_1 int1: [(1-7), (67-73)]
+  tRNA_Arg_1_1 int2: [(10-13), (23-26)]
+  tRNA_Asn_1_4 int1: [(1-7), (66-72)]
+  tRNA_Asn_1_4 int2: [(10-13), (22-25)]
+  tRNA_Asn_1_4 int3: [(27-31), (39-43)]
+  tRNA_Asn_1_4 int4: [(49-53), (61-65)]
+  tRNA_Asp_1_3 int1: [(1-7), (67-73)]
+  tRNA_Asp_1_3 int2: [(10-13), (23-26)]
+  tRNA_Asp_1_3 int3: [(28-32), (40-44)]
+  tRNA_Cys_1_1 int1: [(1-7), (64-70)]
+  tRNA_Cys_1_1 int2: [(10-12), (22-24)]
+  tRNA_Cys_1_1 int3: [(26-30), (38-42)]
+  tRNA_Cys_1_1 int4: [(47-51), (59-63)]
+  tRNA_Gln_1_1 int1: [(1-7), (65-71)]
+  tRNA_Gln_1_1 int2: [(10-12), (22-24)]
+  tRNA_Gln_1_1 int3: [(26-30), (38-42)]
+  tRNA_Gln_1_1 int4: [(48-52), (60-64)]
+  tRNA_Glu_1_4 int1: [(1-7), (66-74)]
+  tRNA_Glu_1_4 int2: [(10-13), (23-26)]
+  tRNA_Gly_1_1 int1: [(1-7), (65-71)]
+  tRNA_Gly_1_1 int2: [(10-12), (23-25)]
+  tRNA_Gly_1_1 int3: [(27-31), (39-43)]
+  tRNA_Gly_1_1 int4: [(48-52), (60-64)]
+  tRNA_His_1_1 int1: [(1-7), (66-72)]
+  tRNA_His_1_1 int2: [(10-13), (22-25)]
+  tRNA_His_1_1 int3: [(27-31), (39-43)]
+  tRNA_His_1_1 int4: [(49-53), (61-65)]
+  tRNA_Ile2_2_1 int1: [(1-7), (66-72)]
+  tRNA_Ile2_2_1 int2: [(10-13), (22-25)]
+  tRNA_Ile2_2_1 int3: [(27-31), (39-43)]
+  tRNA_Ile2_2_1 int4: [(49-53), (61-65)]
+  tRNA_Leu_1_1 int1: [(1-7), (77-83)]
+  tRNA_Leu_1_1 int2: [(10-12), (24-26)]
+  tRNA_Leu_1_1 int4: [(46-48), (55-57)]
+  tRNA_Leu_1_1 int5: [(60-64), (72-76)]
+  tRNA_Lys_1_6 int1: [(1-7), (66-72)]
+  tRNA_Lys_1_6 int2: [(10-13), (22-25)]
+  tRNA_Lys_1_6 int3: [(27-31), (39-43)]
+  tRNA_Lys_1_6 int4: [(49-53), (61-65)]
+  tRNA_Met_1_1 int1: [(1-7), (67-73)]
+  tRNA_Met_1_1 int2: [(10-13), (23-26)]
+  tRNA_Phe_1_1 int3: [(27-31), (39-43)]
+  tRNA_Phe_1_1 int4: [(49-53), (61-65)]
+  tRNA_Pro_1_1 int2: [(10-13), (23-26)]
+  tRNA_Pro_1_1 int4: [(50-54), (62-66)]
+  tRNA_SeC_1_1 int1: [(1-8), (84-91)]
+  tRNA_SeC_1_1 int2: [(11-16), (21-26)]
+  tRNA_SeC_1_1 int4: [(46-53), (58-65)]
+  tRNA_SeC_1_1 int5: [(67-71), (79-83)]
+  tRNA_Ser_1_1 int1: [(1-7), (83-89)]
+  tRNA_Ser_1_1 int2: [(10-12), (24-26)]
+  tRNA_Ser_1_1 int4: [(46-51), (59-64)]
+  tRNA_Thr_1_1 int2: [(10-13), (22-25)]
+  tRNA_Thr_1_1 int4: [(49-53), (61-65)]
+  tRNA_Trp_1_1 int1: [(1-7), (66-72)]
+  tRNA_Trp_1_1 int2: [(10-13), (22-25)]
+  tRNA_Trp_1_1 int3: [(27-31), (39-43)]
+  tRNA_Trp_1_1 int4: [(49-53), (61-65)]
+  tRNA_Tyr_1_1 int1: [(1-7), (75-81)]
+  tRNA_Tyr_1_1 int2: [(10-12), (24-26)]
+  tRNA_Tyr_1_1 int4: [(46-48), (52-54)]
+  tRNA_Tyr_1_1 int5: [(58-62), (70-74)]
+  tRNA_Val_1_1 int1: [(1-7), (67-73)]
+  tRNA_Val_1_1 int2: [(10-13), (23-26)]
+  tRNA_Val_1_1 int3: [(28-32), (40-44)]
+  tRNA_Val_1_1 int4: [(50-54), (62-66)]
+
+=== Correct Results ===
+True Positives:            20
+False Positives (total):   3
+  → wrong intramolecular:  0
+  → cross-mapped interR:   3
+False Negatives:           68
+
+Recall:    22.7%
+Precision: 87.0%
+F1 score:  36.0%
+
+ecoli trna run 2 after correcting the index:
+[INFO] [2026-09-04 01:31:38]  After filtering kept 88 split interactions
+[INFO] [2026-09-04 01:31:38]  Of which 78 are intramolecular interactions
+[INFO] [2026-09-04 01:31:38]  Of which 10 are intermolecular interactions
+
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17492   13442   76.85%  11398   65.16%  2044    11.69%  12416   70.98%
+
+Intramolecular: 78
+Intermolecular: 10
+Missed stems:
+  tRNA_Ala_1_1 int3: [(27-31), (39-43)]
+  tRNA_Arg_1_1 int3: [(28-32), (40-44)]
+  tRNA_Arg_1_1 int4: [(50-54), (62-66)]
+  tRNA_Asp_1_3 int2: [(10-13), (23-26)]
+  tRNA_Cys_1_1 int3: [(26-30), (38-42)]
+  tRNA_Gln_1_1 int2: [(10-12), (22-24)]
+  tRNA_Gln_1_1 int3: [(26-30), (38-42)]
+  tRNA_Glu_1_4 int3: [(28-32), (40-44)]
+  tRNA_Gly_1_1 int3: [(27-31), (39-43)]
+  tRNA_Ile2_2_1 int3: [(27-31), (39-43)]
+  tRNA_Ile2_2_1 int4: [(49-53), (61-65)]
+  tRNA_Leu_1_1 int2: [(10-12), (24-26)]
+  tRNA_Leu_1_1 int3: [(28-32), (40-44)]
+  tRNA_Lys_1_6 int2: [(10-13), (22-25)]
+  tRNA_Lys_1_6 int3: [(27-31), (39-43)]
+  tRNA_Phe_1_1 int3: [(27-31), (39-43)]
+  tRNA_Pro_1_1 int3: [(28-32), (40-44)]
+  tRNA_Ser_1_1 int3: [(28-32), (40-44)]
+  tRNA_Trp_1_1 int3: [(27-31), (39-43)]
+  tRNA_Tyr_1_1 int2: [(10-12), (24-26)]
+  tRNA_Tyr_1_1 int4: [(46-48), (52-54)]
+  tRNA_Val_1_1 int3: [(28-32), (40-44)]
+
+=== Correct Results ===
+True Positives:            66
+False Positives (total):   10
+  → wrong intramolecular:  0
+  → cross-mapped interR:   10
+False Negatives:           22
+
+Recall:    75.0%  #BEST RUN
+Precision: 75.0%
+F1 score:  75.0%

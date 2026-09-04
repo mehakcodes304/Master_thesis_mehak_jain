@@ -1,0 +1,97 @@
+import pandas as pd
+
+detected = pd.read_csv("/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/04_analyze/treatment/condition1/condition1_interactions.tsv", sep="\t")
+known    = pd.read_csv("/mnt/ceph/mjain/software/envs/bio/stems/ecoli_rRNA/stems2_ecoli_rRNA.csv")
+
+detected["intramolecular"] = detected["fst_feat_id"] == detected["sec_feat_id"]
+intra = detected[detected["intramolecular"]]
+inter = detected[~detected["intramolecular"]]
+
+print(f"Intramolecular: {len(intra)}")
+print(f"Intermolecular: {len(inter)}")
+
+import re
+
+def parse_arms(val):
+    m = re.findall(r"\((\d+)-(\d+)\)", str(val))
+    if len(m) >= 2:
+        return (int(m[0][0]), int(m[0][1])), (int(m[1][0]), int(m[1][1]))
+    return None, None
+
+def overlaps(a_start, a_end, b_start, b_end, tolerance=5):
+    """
+    Two ranges overlap if they share any position within tolerance.
+    tolerance=5 allows for slight positional shifts due to arm extension.
+    """
+    return a_start <= b_end + tolerance and b_start <= a_end + tolerance
+
+
+matched_stems    = set()   # (tRNA_name, interaction_number) pairs that were found
+true_positives   = 0
+false_positives  = 0
+
+for _, row in intra.iterrows():
+    tna_name = str(row["fst_feat_id"]).replace("gene_", "")
+    fst_s = int(row["fst_seg_strt"])
+    fst_e = int(row["fst_seg_end"])
+    sec_s = int(row["sec_seg_strt"])
+    sec_e = int(row["sec_seg_end"])
+
+    # Look for a matching known stem for this tRNA
+    tna_stems = known[known["name"] == tna_name]
+    found = False
+
+    for _, stem_row in tna_stems.iterrows():
+        a1, a2 = parse_arms(stem_row["sub_interaction_stem"])
+        if not a1:
+            continue
+        # Check both orientations (detected arms can be in either order)
+        forward = overlaps(fst_s, fst_e, a1[0], a1[1]) and \
+                  overlaps(sec_s, sec_e, a2[0], a2[1])
+        reverse = overlaps(fst_s, fst_e, a2[0], a2[1]) and \
+                  overlaps(sec_s, sec_e, a1[0], a1[1])
+
+        if forward or reverse:
+            matched_stems.add((tna_name, stem_row["interaction_number"]))
+            found = True
+            break
+
+    if found:
+        true_positives += 1
+    else:
+        false_positives += 1
+
+all_known_stems = set(zip(known["name"], known["interaction_number"]))
+missed_stems    = all_known_stems - matched_stems
+false_negatives = len(missed_stems)
+
+print("Missed stems:")
+for name, int_num in sorted(missed_stems):
+    row = known[(known["name"]==name) & (known["interaction_number"]==int_num)].iloc[0]
+    print(f"  {name} int{int_num}: {row['sub_interaction_stem']}")
+
+total_known         = len(known)                    # 87
+total_intra         = len(intra)                    # 86
+total_inter         = len(inter)                    # 83
+total_all_detected  = total_intra + total_inter     # 169
+
+true_positives      = len(matched_stems)            # 86 (or 85)
+intra_false_pos     = false_positives               # 0  (wrong intramolecular calls)
+inter_false_pos     = total_inter                   # 83 (cross-mapped intermolecular)
+total_false_pos     = intra_false_pos + inter_false_pos  # 83
+
+false_negatives     = len(missed_stems)             # 2 (or 1)
+
+precision = true_positives / total_all_detected
+recall    = true_positives / total_known
+f1        = 2 * precision * recall / (precision + recall)
+
+print(f"\n=== Correct Results ===")
+print(f"True Positives:            {true_positives}")
+print(f"False Positives (total):   {total_false_pos}")
+print(f"  → wrong intramolecular:  {intra_false_pos}")
+print(f"  → cross-mapped interR:   {inter_false_pos}")
+print(f"False Negatives:           {false_negatives}")
+print(f"\nRecall:    {recall:.1%}")
+print(f"Precision: {precision:.1%}")
+print(f"F1 score:  {f1:.1%}")

@@ -166,7 +166,7 @@ TRNA_PARAMS = SimParams(
 # a validated setting. Raise MAX_ARM_EXTENSION if long arms get rejected too
 # often in short stems (watch the "generated N/200 reads" warnings).
 RRNA_PARAMS = SimParams(
-    min_read_len=36,
+    min_read_len=38,
     max_read_len=50,
     min_arm_len=18,
     max_arm_len=25,
