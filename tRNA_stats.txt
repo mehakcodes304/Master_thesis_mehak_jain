@@ -189,7 +189,7 @@ False Positives (total):   16
   → cross-mapped interR:   16
 False Negatives:           17
 
-Recall:    80.5%  ##BEST RUN
+Recall:    80.5%  
 Precision: 74.5%
 F1 score:  77.3%
 
@@ -398,6 +398,535 @@ False Positives (total):   10
   → cross-mapped interR:   10
 False Negatives:           22
 
-Recall:    75.0%  #BEST RUN
+Recall:    75.0%  
 Precision: 75.0%
 F1 score:  75.0%
+
+ecoli trna new run after correcting analysis script:
+RNAnue predictions:
+  Intramolecular:  78
+  Intermolecular:  10  (out-of-scope — reported separately)
+Known stems:       88
+
+=== Matched stems (True Positives) ===
+  tRNA_Ala_1_1 int1: [(1-7), (66-72)]
+  tRNA_Ala_1_1 int2: [(10-13), (22-25)]
+  tRNA_Ala_1_1 int4: [(49-53), (61-65)]
+  tRNA_Arg_1_1 int1: [(1-7), (67-73)]
+  tRNA_Arg_1_1 int2: [(10-13), (23-26)]
+  tRNA_Arg_1_1 int3: [(28-32), (40-44)]
+  tRNA_Asn_1_4 int1: [(1-7), (66-72)]
+  tRNA_Asn_1_4 int2: [(10-13), (22-25)]
+  tRNA_Asn_1_4 int3: [(27-31), (39-43)]
+  tRNA_Asn_1_4 int4: [(49-53), (61-65)]
+  tRNA_Asp_1_3 int1: [(1-7), (67-73)]
+  tRNA_Asp_1_3 int3: [(28-32), (40-44)]
+  tRNA_Asp_1_3 int4: [(50-54), (62-66)]
+  tRNA_Cys_1_1 int1: [(1-7), (64-70)]
+  tRNA_Cys_1_1 int2: [(10-12), (22-24)]
+  tRNA_Cys_1_1 int3: [(26-30), (38-42)]
+  tRNA_Cys_1_1 int4: [(47-51), (59-63)]
+  tRNA_Gln_1_1 int1: [(1-7), (65-71)]
+  tRNA_Gln_1_1 int3: [(26-30), (38-42)]
+  tRNA_Gln_1_1 int4: [(48-52), (60-64)]
+  tRNA_Glu_1_4 int1: [(1-7), (66-74)]
+  tRNA_Glu_1_4 int2: [(10-13), (23-26)]
+  tRNA_Glu_1_4 int3: [(28-32), (40-44)]
+  tRNA_Glu_1_4 int4: [(49-53), (61-65)]
+  tRNA_Gly_1_1 int1: [(1-7), (65-71)]
+  tRNA_Gly_1_1 int2: [(10-12), (23-25)]
+  tRNA_Gly_1_1 int3: [(27-31), (39-43)]
+  tRNA_Gly_1_1 int4: [(48-52), (60-64)]
+  tRNA_His_1_1 int1: [(1-7), (66-72)]
+  tRNA_His_1_1 int2: [(10-13), (22-25)]
+  tRNA_His_1_1 int3: [(27-31), (39-43)]
+  tRNA_His_1_1 int4: [(49-53), (61-65)]
+  tRNA_Ile2_2_1 int1: [(1-7), (66-72)]
+  tRNA_Ile2_2_1 int2: [(10-13), (22-25)]
+  tRNA_Ile2_2_1 int3: [(27-31), (39-43)]
+  tRNA_Leu_1_1 int1: [(1-7), (77-83)]
+  tRNA_Leu_1_1 int4: [(46-48), (55-57)]
+  tRNA_Leu_1_1 int5: [(60-64), (72-76)]
+  tRNA_Lys_1_6 int1: [(1-7), (66-72)]
+  tRNA_Lys_1_6 int4: [(49-53), (61-65)]
+  tRNA_Met_1_1 int1: [(1-7), (67-73)]
+  tRNA_Met_1_1 int2: [(10-13), (23-26)]
+  tRNA_Met_1_1 int3: [(28-32), (40-44)]
+  tRNA_Met_1_1 int4: [(50-54), (62-66)]
+  tRNA_Phe_1_1 int1: [(1-7), (66-72)]
+  tRNA_Phe_1_1 int2: [(10-13), (22-25)]
+  tRNA_Phe_1_1 int4: [(49-53), (61-65)]
+  tRNA_Pro_1_1 int1: [(1-7), (67-73)]
+  tRNA_Pro_1_1 int2: [(10-13), (23-26)]
+  tRNA_Pro_1_1 int3: [(28-32), (40-44)]
+  tRNA_Pro_1_1 int4: [(50-54), (62-66)]
+  tRNA_SeC_1_1 int1: [(1-8), (84-91)]
+  tRNA_SeC_1_1 int2: [(11-16), (21-26)]
+  tRNA_SeC_1_1 int3: [(28-32), (40-44)]
+  tRNA_SeC_1_1 int4: [(46-53), (58-65)]
+  tRNA_SeC_1_1 int5: [(67-71), (79-83)]
+  tRNA_Ser_1_1 int1: [(1-7), (83-89)]
+  tRNA_Ser_1_1 int2: [(10-12), (24-26)]
+  tRNA_Ser_1_1 int4: [(46-51), (59-64)]
+  tRNA_Ser_1_1 int5: [(66-70), (78-82)]
+  tRNA_Thr_1_1 int1: [(1-7), (66-72)]
+  tRNA_Thr_1_1 int2: [(10-13), (22-25)]
+  tRNA_Thr_1_1 int3: [(28-31), (39-42)]
+  tRNA_Thr_1_1 int4: [(49-53), (61-65)]
+  tRNA_Trp_1_1 int1: [(1-7), (66-72)]
+  tRNA_Trp_1_1 int2: [(10-13), (22-25)]
+  tRNA_Trp_1_1 int3: [(27-31), (39-43)]
+  tRNA_Trp_1_1 int4: [(49-53), (61-65)]
+  tRNA_Tyr_1_1 int1: [(1-7), (75-81)]
+  tRNA_Tyr_1_1 int3: [(28-32), (40-44)]
+  tRNA_Tyr_1_1 int5: [(58-62), (70-74)]
+  tRNA_Val_1_1 int1: [(1-7), (67-73)]
+  tRNA_Val_1_1 int2: [(10-13), (23-26)]
+  tRNA_Val_1_1 int3: [(28-32), (40-44)]
+  tRNA_Val_1_1 int4: [(50-54), (62-66)]
+
+=== Missed stems (False Negatives) ===
+  tRNA_Ala_1_1 int3: [(27-31), (39-43)]
+  tRNA_Arg_1_1 int4: [(50-54), (62-66)]
+  tRNA_Asp_1_3 int2: [(10-13), (23-26)]
+  tRNA_Gln_1_1 int2: [(10-12), (22-24)]
+  tRNA_Ile2_2_1 int4: [(49-53), (61-65)]
+  tRNA_Leu_1_1 int2: [(10-12), (24-26)]
+  tRNA_Leu_1_1 int3: [(28-32), (40-44)]
+  tRNA_Lys_1_6 int2: [(10-13), (22-25)]
+  tRNA_Lys_1_6 int3: [(27-31), (39-43)]
+  tRNA_Phe_1_1 int3: [(27-31), (39-43)]
+  tRNA_Ser_1_1 int3: [(28-32), (40-44)]
+  tRNA_Tyr_1_1 int2: [(10-12), (24-26)]
+  tRNA_Tyr_1_1 int4: [(46-48), (52-54)]
+
+=== Unmatched intramolecular clusters (False Positives) ===
+  cluster41
+  cluster54
+  cluster59
+
+=== Results ===
+Known stems (ground truth):          88
+Intramolecular clusters (RNAnue):    78
+Intermolecular clusters (excluded):  10
+
+True Positives  (TP):                75
+False Positives (FP):                13
+  — unmatched intramolecular:        3
+  — all intermolecular:              10
+False Negatives (FN):                13
+
+Recall:     85.2%   (TP / known stems) 
+Precision:  85.2%   (TP / all clusters, intra + inter)
+F1 score:   85.2%
+ecoli mapping results same as before
+
+human trna run after correcting analysis script:
+RNAnue predictions:
+  Intramolecular:  65
+  Intermolecular:  9  (out-of-scope — reported separately)
+Known stems:       87
+
+=== Matched stems (True Positives) ===
+  tRNA_Ala_8_1 int1: [(1-7), (66-72)]
+  tRNA_Ala_8_1 int2: [(10-13), (22-25)]
+  tRNA_Ala_8_1 int4: [(49-53), (61-65)]
+  tRNA_Arg_4_1 int1: [(1-7), (67-73)]
+  tRNA_Arg_4_1 int2: [(10-13), (23-26)]
+  tRNA_Arg_4_1 int3: [(28-32), (40-44)]
+  tRNA_Arg_4_1 int4: [(50-54), (62-66)]
+  tRNA_Asn_2_1 int1: [(1-7), (67-73)]
+  tRNA_Asn_2_1 int2: [(10-13), (23-26)]
+  tRNA_Asn_2_1 int3: [(28-32), (40-44)]
+  tRNA_Asn_2_1 int4: [(50-54), (62-66)]
+  tRNA_Asp_1_1 int1: [(1-7), (65-71)]
+  tRNA_Asp_1_1 int3: [(27-31), (39-43)]
+  tRNA_Cys_7_1 int1: [(1-7), (66-72)]
+  tRNA_Cys_7_1 int2: [(10-13), (22-25)]
+  tRNA_Cys_7_1 int3: [(27-31), (39-43)]
+  tRNA_Gln_12_1 int1: [(1-6), (66-72)]
+  tRNA_Gln_12_1 int4: [(48-52), (60-64)]
+  tRNA_Glu_4_1 int1: [(1-7), (65-71)]
+  tRNA_Glu_4_1 int4: [(48-52), (60-64)]
+  tRNA_Gly_1_1 int1: [(1-7), (65-71)]
+  tRNA_Gly_1_1 int2: [(10-13), (22-25)]
+  tRNA_Gly_1_1 int4: [(48-52), (60-64)]
+  tRNA_His_1_1 int1: [(1-7), (65-71)]
+  tRNA_His_1_1 int2: [(10-13), (22-25)]
+  tRNA_His_1_1 int4: [(48-52), (60-64)]
+  tRNA_Ile_2_1 int1: [(1-7), (67-73)]
+  tRNA_Ile_2_1 int3: [(28-32), (40-44)]
+  tRNA_Ile_2_1 int4: [(50-54), (62-66)]
+  tRNA_Leu_6_1 int1: [(1-7), (77-83)]
+  tRNA_Leu_6_1 int2: [(10-12), (25-27)]
+  tRNA_Leu_6_1 int3: [(30-33), (41-44)]
+  tRNA_Leu_6_1 int4: [(47-50), (54-57)]
+  tRNA_Lys_3_4 int1: [(1-7), (66-72)]
+  tRNA_Lys_3_4 int2: [(10-13), (22-25)]
+  tRNA_Met_1_1 int1: [(1-7), (66-72)]
+  tRNA_Met_1_1 int2: [(10-13), (22-25)]
+  tRNA_Met_1_1 int3: [(27-30), (40-43)]
+  tRNA_Met_1_1 int4: [(49-53), (61-65)]
+  tRNA_Phe_4_1 int1: [(1-7), (67-73)]
+  tRNA_Phe_4_1 int2: [(10-13), (22-25)]
+  tRNA_Phe_4_1 int4: [(50-54), (62-66)]
+  tRNA_Pro_3_1 int1: [(1-7), (72-78)]
+  tRNA_Pro_3_1 int3: [(26-30), (38-42)]
+  tRNA_Pro_3_1 int4: [(55-59), (67-71)]
+  tRNA_SeC_1_1 int1: [(1-9), (78-86)]
+  tRNA_SeC_1_1 int2: [(12-17), (22-27)]
+  tRNA_SeC_1_1 int3: [(28-33), (41-46)]
+  tRNA_SeC_1_1 int4: [(48-52), (57-61)]
+  tRNA_Ser_6_1 int1: [(1-7), (77-83)]
+  tRNA_Ser_6_1 int3: [(29-33), (41-45)]
+  tRNA_Ser_6_1 int4: [(47-50), (54-57)]
+  tRNA_Ser_6_1 int5: [(60-64), (72-76)]
+  tRNA_Thr_3_1 int1: [(1-7), (67-73)]
+  tRNA_Thr_3_1 int2: [(10-13), (23-26)]
+  tRNA_Thr_3_1 int3: [(28-32), (40-44)]
+  tRNA_Trp_1_1 int1: [(1-7), (65-71)]
+  tRNA_Trp_1_1 int2: [(10-13), (21-24)]
+  tRNA_Trp_1_1 int4: [(48-52), (60-64)]
+  tRNA_Tyr_5_1 int1: [(1-7), (66-72)]
+  tRNA_Tyr_5_1 int2: [(10-13), (22-25)]
+  tRNA_Tyr_5_1 int3: [(27-31), (39-43)]
+  tRNA_Val_2_1 int1: [(1-7), (66-72)]
+  tRNA_Val_2_1 int2: [(10-12), (23-25)]
+  tRNA_Val_2_1 int4: [(49-53), (61-65)]
+
+=== Missed stems (False Negatives) ===
+  tRNA_Ala_8_1 int3: [(27-31), (39-43)]
+  tRNA_Asp_1_1 int2: [(10-13), (22-25)]
+  tRNA_Asp_1_1 int4: [(48-52), (60-64)]
+  tRNA_Cys_7_1 int4: [(49-53), (61-65)]
+  tRNA_Gln_12_1 int2: [(10-13), (22-25)]
+  tRNA_Gln_12_1 int3: [(27-31), (39-43)]
+  tRNA_Glu_4_1 int2: [(10-13), (22-25)]
+  tRNA_Glu_4_1 int3: [(27-31), (39-43)]
+  tRNA_Gly_1_1 int3: [(27-31), (39-43)]
+  tRNA_His_1_1 int3: [(27-31), (39-43)]
+  tRNA_Ile_2_1 int2: [(10-13), (23-26)]
+  tRNA_Leu_6_1 int5: [(60-64), (72-76)]
+  tRNA_Lys_3_4 int3: [(27-31), (39-43)]
+  tRNA_Lys_3_4 int4: [(49-53), (61-65)]
+  tRNA_Phe_4_1 int3: [(27-31), (39-44)]
+  tRNA_Pro_3_1 int2: [(10-12), (22-24)]
+  tRNA_SeC_1_1 int5: [(63-66), (74-77)]
+  tRNA_Ser_6_1 int2: [(12-14), (25-27)]
+  tRNA_Thr_3_1 int4: [(50-54), (62-66)]
+  tRNA_Trp_1_1 int3: [(26-30), (38-42)]
+  tRNA_Tyr_5_1 int4: [(49-53), (61-65)]
+  tRNA_Val_2_1 int3: [(27-31), (39-43)]
+
+=== Unmatched intramolecular clusters (False Positives) ===
+
+=== Results ===
+Known stems (ground truth):          87
+Intramolecular clusters (RNAnue):    65
+Intermolecular clusters (excluded):  9
+
+True Positives  (TP):                65
+False Positives (FP):                9
+  — unmatched intramolecular:        0
+  — all intermolecular:              9
+False Negatives (FN):                22
+
+Recall:     74.7%   (TP / known stems)
+Precision:  87.8%   (TP / all clusters, intra + inter)
+F1 score:   80.7%
+
+ total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17399   13751   79.03%  11595   66.64%  2156    12.39%  12492   71.80%
+
+human trna run after changing the analysis script properly for good:
+=== Results ===
+Known stems in stems2 CSV:              87
+  of which simulated:                   87
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       65
+Intermolecular clusters (out-of-scope): 9
+
+--- Stem-level ---
+True Positives  (TP stems):             73
+False Negatives (FN stems):             14
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          65
+FP clusters (matched 0 stems):          9
+  of which intramolecular FP:           0
+  of which intermolecular (always FP):  9
+
+Recall:     83.9%   (TP stems / simulated stems) #BEST RUN
+Precision:  87.8%   (TP clusters / all clusters)
+F1 score:   85.8%
+
+filtered bam splits reads:
+Filtering BAM...
+  Pass 1: identifying valid intramolecular read pairs...
+    Total records:                 6,916
+    Not in valid IDs (skipped):      936
+    Intermolecular (filtered):       118
+    Pairs kept:                    2,872
+    Records to write:              5,744  (2 per pair)
+  Pass 2: writing filtered BAM...
+    Records written: 5,744
+
+ecoli trna run with the same latest analysis script:
+=== Results ===
+Known stems in stems2 CSV:              88
+  of which simulated:                   88
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       78
+Intermolecular clusters (out-of-scope): 10
+
+--- Stem-level ---
+True Positives  (TP stems):             76
+False Negatives (FN stems):             12
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          78
+FP clusters (matched 0 stems):          10
+  of which intramolecular FP:           0
+  of which intermolecular (always FP):  10
+
+Recall:     86.4%   (TP stems / simulated stems) #BEST RUN
+Precision:  88.6%   (TP clusters / all clusters)
+F1 score:   87.5%
+
+filtered bam splits results:
+Filtering BAM...
+  Pass 1: identifying valid intramolecular read pairs...
+    Total records:                 6,872
+    Not in valid IDs (skipped):    1,076
+    Intermolecular (filtered):       119
+    Pairs kept:                    2,779
+    Records to write:              5,558  (2 per pair)
+  Pass 2: writing filtered BAM...
+    Records written: 5,558
+
+ecoli rnanue re-run after new chimeric read generation
+    === Results ===
+Known stems in stems2 CSV:              88
+  of which simulated:                   88
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       77
+Intermolecular clusters (out-of-scope): 11
+
+--- Stem-level ---
+True Positives  (TP stems):             75
+False Negatives (FN stems):             13
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          77
+FP clusters (matched 0 stems):          11
+  of which intramolecular FP:           0
+  of which intermolecular (always FP):  11
+
+Recall:     85.2%   (TP stems / simulated stems)
+Precision:  87.5%   (TP clusters / all clusters)
+F1 score:   86.3%
+
+ecoli trna with new chimeric read generation:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17496   13202   75.46%  11843   67.69%  1359    7.77%   12485   71.36%
+
+human trna with new chimeric read generation : (earlier was better mapping results)
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     17400   13009   74.76%  11444   65.77%  1565    8.99%   11900   68.39%
+
+human trna: (earlier was better)
+=== Missed stems (False Negatives — stem level) ===
+  tRNA_Ala_8_1 int4: [(49-53), (61-65)]
+  tRNA_Arg_4_1 int4: [(50-54), (62-66)]
+  tRNA_Asp_1_1 int2: [(10-13), (22-25)]
+  tRNA_Asp_1_1 int4: [(48-52), (60-64)]
+  tRNA_Cys_7_1 int3: [(27-31), (39-43)]
+  tRNA_Cys_7_1 int4: [(49-53), (61-65)]
+  tRNA_Gln_12_1 int2: [(10-13), (22-25)]
+  tRNA_Glu_4_1 int2: [(10-13), (22-25)]
+  tRNA_Gly_1_1 int2: [(10-13), (22-25)]
+  tRNA_Gly_1_1 int4: [(48-52), (60-64)]
+  tRNA_Leu_6_1 int2: [(10-12), (25-27)]
+  tRNA_Leu_6_1 int4: [(47-50), (54-57)]
+  tRNA_Leu_6_1 int5: [(60-64), (72-76)]
+  tRNA_Lys_3_4 int4: [(49-53), (61-65)]
+  tRNA_Met_1_1 int3: [(27-30), (40-43)]
+  tRNA_Phe_4_1 int4: [(50-54), (62-66)]
+  tRNA_Pro_3_1 int2: [(10-12), (22-24)]
+  tRNA_Pro_3_1 int4: [(55-59), (67-71)]
+  tRNA_SeC_1_1 int5: [(63-66), (74-77)]
+  tRNA_Ser_6_1 int2: [(12-14), (25-27)]
+  tRNA_Ser_6_1 int3: [(29-33), (41-45)]
+  tRNA_Thr_3_1 int4: [(50-54), (62-66)]
+  tRNA_Tyr_5_1 int4: [(49-53), (61-65)]
+  tRNA_Val_2_1 int2: [(10-12), (23-25)]
+  tRNA_Val_2_1 int4: [(49-53), (61-65)]
+
+=== Unmatched intramolecular clusters (Intra FP — cluster level) ===
+
+=== Results ===
+Known stems in stems2 CSV:              87
+  of which simulated:                   87
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       62
+Intermolecular clusters (out-of-scope): 23
+
+--- Stem-level ---
+True Positives  (TP stems):             62
+False Negatives (FN stems):             25
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          62
+FP clusters (matched 0 stems):          23
+  of which intramolecular FP:           0
+  of which intermolecular (always FP):  23
+
+Recall:     71.3%   (TP stems / simulated stems)
+Precision:  72.9%   (TP clusters / all clusters)
+F1 score:   72.1%
+
+ecoli trna:
+RNAnue predictions:
+  Intramolecular:  79
+  Intermolecular:  25  (out-of-scope — reported separately)
+Ground-truth stems (simulated): 88
+  (stems2 total: 88)
+Min overlap fraction: 50%  (each detected arm must have ≥50% of its nucleotides inside the known stem arm)
+
+=== Matched stems (True Positives — stem level) ===
+  tRNA_Ala_1_1 int1: [(1-7), (66-72)]
+  tRNA_Ala_1_1 int2: [(10-13), (22-25)]
+  tRNA_Ala_1_1 int3: [(27-31), (39-43)]
+  tRNA_Arg_1_1 int1: [(1-7), (67-73)]
+  tRNA_Arg_1_1 int2: [(10-13), (23-26)]
+  tRNA_Arg_1_1 int3: [(28-32), (40-44)]
+  tRNA_Asn_1_4 int1: [(1-7), (66-72)]
+  tRNA_Asn_1_4 int3: [(27-31), (39-43)]
+  tRNA_Asn_1_4 int4: [(49-53), (61-65)]
+  tRNA_Asp_1_3 int1: [(1-7), (67-73)]
+  tRNA_Asp_1_3 int3: [(28-32), (40-44)]
+  tRNA_Asp_1_3 int4: [(50-54), (62-66)]
+  tRNA_Cys_1_1 int1: [(1-7), (64-70)]
+  tRNA_Cys_1_1 int2: [(10-12), (22-24)]
+  tRNA_Cys_1_1 int4: [(47-51), (59-63)]
+  tRNA_Gln_1_1 int1: [(1-7), (65-71)]
+  tRNA_Gln_1_1 int3: [(26-30), (38-42)]
+  tRNA_Gln_1_1 int4: [(48-52), (60-64)]
+  tRNA_Glu_1_4 int1: [(1-7), (66-74)]
+  tRNA_Glu_1_4 int2: [(10-13), (23-26)]
+  tRNA_Glu_1_4 int3: [(28-32), (40-44)]
+  tRNA_Gly_1_1 int1: [(1-7), (65-71)]
+  tRNA_Gly_1_1 int2: [(10-12), (23-25)]
+  tRNA_Gly_1_1 int3: [(27-31), (39-43)]
+  tRNA_Gly_1_1 int4: [(48-52), (60-64)]
+  tRNA_His_1_1 int1: [(1-7), (66-72)]
+  tRNA_His_1_1 int2: [(10-13), (22-25)]
+  tRNA_His_1_1 int3: [(27-31), (39-43)]
+  tRNA_His_1_1 int4: [(49-53), (61-65)]
+  tRNA_Ile2_2_1 int1: [(1-7), (66-72)]
+  tRNA_Ile2_2_1 int2: [(10-13), (22-25)]
+  tRNA_Ile2_2_1 int3: [(27-31), (39-43)]
+  tRNA_Ile2_2_1 int4: [(49-53), (61-65)]
+  tRNA_Leu_1_1 int1: [(1-7), (77-83)]
+  tRNA_Leu_1_1 int3: [(28-32), (40-44)]
+  tRNA_Leu_1_1 int4: [(46-48), (55-57)]
+  tRNA_Lys_1_6 int1: [(1-7), (66-72)]
+  tRNA_Lys_1_6 int2: [(10-13), (22-25)]
+  tRNA_Met_1_1 int1: [(1-7), (67-73)]
+  tRNA_Met_1_1 int2: [(10-13), (23-26)]
+  tRNA_Met_1_1 int3: [(28-32), (40-44)]
+  tRNA_Met_1_1 int4: [(50-54), (62-66)]
+  tRNA_Phe_1_1 int1: [(1-7), (66-72)]
+  tRNA_Phe_1_1 int2: [(10-13), (22-25)]
+  tRNA_Phe_1_1 int3: [(27-31), (39-43)]
+  tRNA_Phe_1_1 int4: [(49-53), (61-65)]
+  tRNA_Pro_1_1 int1: [(1-7), (67-73)]
+  tRNA_Pro_1_1 int2: [(10-13), (23-26)]
+  tRNA_Pro_1_1 int3: [(28-32), (40-44)]
+  tRNA_Pro_1_1 int4: [(50-54), (62-66)]
+  tRNA_SeC_1_1 int1: [(1-8), (84-91)]
+  tRNA_SeC_1_1 int2: [(11-16), (21-26)]
+  tRNA_SeC_1_1 int3: [(28-32), (40-44)]
+  tRNA_SeC_1_1 int4: [(46-53), (58-65)]
+  tRNA_SeC_1_1 int5: [(67-71), (79-83)]
+  tRNA_Ser_1_1 int1: [(1-7), (83-89)]
+  tRNA_Ser_1_1 int2: [(10-12), (24-26)]
+  tRNA_Ser_1_1 int4: [(46-51), (59-64)]
+  tRNA_Ser_1_1 int5: [(66-70), (78-82)]
+  tRNA_Thr_1_1 int1: [(1-7), (66-72)]
+  tRNA_Thr_1_1 int2: [(10-13), (22-25)]
+  tRNA_Thr_1_1 int3: [(28-31), (39-42)]
+  tRNA_Trp_1_1 int1: [(1-7), (66-72)]
+  tRNA_Trp_1_1 int2: [(10-13), (22-25)]
+  tRNA_Trp_1_1 int3: [(27-31), (39-43)]
+  tRNA_Trp_1_1 int4: [(49-53), (61-65)]
+  tRNA_Tyr_1_1 int1: [(1-7), (75-81)]
+  tRNA_Tyr_1_1 int3: [(28-32), (40-44)]
+  tRNA_Tyr_1_1 int5: [(58-62), (70-74)]
+  tRNA_Val_1_1 int1: [(1-7), (67-73)]
+  tRNA_Val_1_1 int2: [(10-13), (23-26)]
+  tRNA_Val_1_1 int3: [(28-32), (40-44)]
+  tRNA_Val_1_1 int4: [(50-54), (62-66)]
+
+=== Missed stems (False Negatives — stem level) ===
+  tRNA_Ala_1_1 int4: [(49-53), (61-65)]
+  tRNA_Arg_1_1 int4: [(50-54), (62-66)]
+  tRNA_Asn_1_4 int2: [(10-13), (22-25)]
+  tRNA_Asp_1_3 int2: [(10-13), (23-26)]
+  tRNA_Cys_1_1 int3: [(26-30), (38-42)]
+  tRNA_Gln_1_1 int2: [(10-12), (22-24)]
+  tRNA_Glu_1_4 int4: [(49-53), (61-65)]
+  tRNA_Leu_1_1 int2: [(10-12), (24-26)]
+  tRNA_Leu_1_1 int5: [(60-64), (72-76)]
+  tRNA_Lys_1_6 int3: [(27-31), (39-43)]
+  tRNA_Lys_1_6 int4: [(49-53), (61-65)]
+  tRNA_Ser_1_1 int3: [(28-32), (40-44)]
+  tRNA_Thr_1_1 int4: [(49-53), (61-65)]
+  tRNA_Tyr_1_1 int2: [(10-12), (24-26)]
+  tRNA_Tyr_1_1 int4: [(46-48), (52-54)]
+
+=== Unmatched intramolecular clusters (Intra FP — cluster level) ===
+  cluster6
+  cluster15
+
+=== Results ===
+Known stems in stems2 CSV:              88
+  of which simulated:                   88
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       79
+Intermolecular clusters (out-of-scope): 25
+
+--- Stem-level ---
+True Positives  (TP stems):             73
+False Negatives (FN stems):             15
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          77
+FP clusters (matched 0 stems):          27
+  of which intramolecular FP:           2
+  of which intermolecular (always FP):  25
+
+Recall:     83.0%   (TP stems / simulated stems)
+Precision:  74.0%   (TP clusters / all clusters)
+F1 score:   78.2%
+
+human trna: (more records written earlier)
+  Pass 1: identifying valid intramolecular read pairs...
+    Total records:                 6,952
+    Not in valid IDs (skipped):      838
+    Intermolecular (filtered):       354
+    Pairs kept:                    2,703
+    Records to write:              5,406  (2 per pair)
+  Pass 2: writing filtered BAM...
+    Records written: 5,406
+
+
+ecoli trna:
+Pass 1: identifying valid intramolecular read pairs...
+    Total records:                 8,066
+    Not in valid IDs (skipped):      878
+    Intermolecular (filtered):       424
+    Pairs kept:                    3,170
+    Records to write:              6,340  (2 per pair)
+  Pass 2: writing filtered BAM...
+    Records written: 6,340

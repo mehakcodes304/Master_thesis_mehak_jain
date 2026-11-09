@@ -1,0 +1,7 @@
+#track name="Super RNA-RNA interactions of samples: condition1" description="Segments of interacting RNA clusters derived from DDD-Experiment" itemRgb="On"
+#columns color=16
+rRNA_5_8S_N_1_3_URS0000005270_9606	112	125	rRNA_5_8S_N_1_3_URS0000005270_9606	126	138	super_interaction0	.	+	+	condition1:cluster4,cluster5;	condition1:gene_rRNA_5_8S_N_1_3,gene_rRNA_5_8S_N_1_3;	condition1:gene_rRNA_5_8S_N_1_3,gene_rRNA_5_8S_N_1_3;	2	0	134,5,113
+rRNA_5_8S_N_1_3_URS0000005270_9606	58	73	rRNA_5_8S_N_1_3_URS0000005270_9606	85	100	super_interaction1	.	+	+	condition1:cluster3;	condition1:gene_rRNA_5_8S_N_1_3;	condition1:gene_rRNA_5_8S_N_1_3;	1	0	164,235,225
+rRNA_5_8S_N_1_3_URS0000005270_9606	36	49	rRNA_5_8S_N_1_3_URS0000005270_9606	92	106	super_interaction2	.	+	+	condition1:cluster0;	condition1:gene_rRNA_5_8S_N_1_3;	condition1:gene_rRNA_5_8S_N_1_3;	1	0	139,177,245
+rRNA_5_8S_N_1_3_URS0000005270_9606	51	63	rRNA_5_8S_N_1_3_URS0000005270_9606	101	108	super_interaction3	.	+	+	condition1:cluster2;	condition1:gene_rRNA_5_8S_N_1_3;	condition1:gene_rRNA_5_8S_N_1_3;	1	0	56,91,110
+rRNA_5_8S_N_1_3_URS0000005270_9606	39	49	rRNA_5_8S_N_1_3_URS0000005270_9606	53	63	super_interaction4	.	+	+	condition1:cluster1;	condition1:gene_rRNA_5_8S_N_1_3;	condition1:gene_rRNA_5_8S_N_1_3;	1	0	7,138,221

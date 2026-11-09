@@ -104,7 +104,7 @@ F1 score:  39.5%
 
 HUMAN rRNA:
 
-latest run: (12/08/26) #BEST RUN
+latest run: (12/08/26) 
         total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
 all     91099   76418   83.88%  68613   75.32%  7805    8.57%   72121   79.17%
 
@@ -660,6 +660,381 @@ False Positives (total):   0
   → cross-mapped interR:   0
 False Negatives:           156
 
-Recall:    20.8% #BEST RUN
+Recall:    20.8% 
 Precision: 100.0%
 F1 score:  34.5%
+
+ecoli rrna run after chnaging the maxselfoverlap value and clustfrac value to 0.9:
+True Positives:            121
+False Positives (total):   0
+  → wrong intramolecular:  0
+  → cross-mapped interR:   0
+False Negatives:           76
+
+Recall:    61.4% 
+Precision: 96.8%
+F1 score:  75.2% 
+
+
+human rRNA run on 18.09 with clustfrac and maxselfoverlap at 0.9 and multimap = false:
+ total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     85600   71620   83.67%  71589   83.63%  31      0.04%   66048   77.16%
+
+Known stems (ground truth):          430
+Intramolecular clusters (RNAnue):    269
+Intermolecular clusters (excluded):  0
+
+True Positives  (TP):                233
+False Positives (FP):                36
+False Negatives (FN):                197
+
+Recall:     54.2%   (TP / known stems) 
+Precision:  86.6%   (TP / intra clusters)
+F1 score:   66.7%
+
+
+
+/mnt/ceph/mjain/software/envs/bio/RNAnue/build/release/RNAnue complete --config /mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/params.cfg &>/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/run.log
+
+(base) mjain@rna-bio-info-4:/mnt/ceph/mjain/software/envs/bio/chimeric_reads$ /mnt/ceph/mjain/software/envs/bio/RNAnue/build/release/RNAnue complete --config /mnt/ceph/mjain/software/envs/bio/rnanue_run/human_rRNA/params.cfg &> run.log
+
+
+ecoli rrna run after re-generating chimeric reads to uniform coverage:
+total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     39400   32984   83.72%  32983   83.71%  1       0.00%   30656   77.81%
+
+=== Unmatched intramolecular clusters (False Positives) ===
+
+=== Results ===
+Known stems (ground truth):          197
+Intramolecular clusters (RNAnue):    127
+Intermolecular clusters (excluded):  0
+
+True Positives  (TP):                127
+False Positives (FP):                0
+  — unmatched intramolecular:        0
+  — all intermolecular:              0
+False Negatives (FN):                70
+
+Recall:     64.5%   (TP / known stems) 
+Precision:  100.0%   (TP / all clusters, intra + inter)
+F1 score:   78.4%
+
+new human rrna run with the same changes as ecoli:
+total   mapped  (%)     unique  (%)     multi   (%)     split       (%)
+all     85600   71022   82.97%  70996   82.94%  26      0.03%   66744       77.97%
+
+=== Results ===
+Known stems (ground truth):          428
+Intramolecular clusters (RNAnue):    264
+Intermolecular clusters (excluded):  0
+
+True Positives  (TP):                231
+False Positives (FP):                33
+  — unmatched intramolecular:        33
+  — all intermolecular:              0
+False Negatives (FN):                197
+
+Recall:     54.0%   (TP / known stems)
+Precision:  87.5%   (TP / all clusters, intra + inter)
+F1 score:   66.8%
+
+human rrna run after changing clustfrac to 0.95:
+=== Results ===
+Known stems (ground truth):          428
+Intramolecular clusters (RNAnue):    329
+Intermolecular clusters (excluded):  0
+
+True Positives  (TP):                254
+False Positives (FP):                75
+  — unmatched intramolecular:        75
+  — all intermolecular:              0
+False Negatives (FN):                174
+
+Recall:     59.3%   (TP / known stems) #BEST RUN
+Precision:  77.2%   (TP / all clusters, intra + inter)
+F1 score:   67.1%
+
+mapping results same as above
+
+latest ecoli run with newer analysis script:
+=== Results ===
+Known stems in stems2 CSV:              197
+  of which simulated:                   197
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       127
+Intermolecular clusters (out-of-scope): 0
+
+--- Stem-level ---
+True Positives  (TP stems):             196
+False Negatives (FN stems):             1
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          127
+FP clusters (matched 0 stems):          0
+  of which intramolecular FP:           0
+  of which intermolecular (always FP):  0
+
+Recall:     99.5%   (TP stems / simulated stems) #BEST RUN
+Precision:  100.0%   (TP clusters / all clusters)
+F1 score:   99.7%
+
+
+human rrna rerun after removing contamination: 
+=== Results ===
+Known stems in stems2 CSV:              311
+  of which simulated:                   311
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       218
+Intermolecular clusters (out-of-scope): 14
+
+--- Stem-level ---
+True Positives  (TP stems):             309
+False Negatives (FN stems):             2
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          207
+FP clusters (matched 0 stems):          25
+  of which intramolecular FP:           11
+  of which intermolecular (always FP):  14
+
+Recall:     99.4%   (TP stems / simulated stems)
+Precision:  89.2%   (TP clusters / all clusters)
+F1 score:   94.0%
+
+[SEGEMEHL] Fri Oct 16 12:41:17 2026: Mapping stats:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     62000   51729   83.43%  51702   83.39%  27      0.04%   48918   78.90%
+
+human rrna filter splits bam stats: 
+Filtering BAM...
+  Pass 1: identifying valid intramolecular read pairs...
+    Total records:                92,818
+    Not in valid IDs (skipped):    6,650
+    Intermolecular (filtered):         0
+    Pairs kept:                   43,084
+    Records to write:             86,168  (2 per pair)
+  Pass 2: writing filtered BAM...
+    Records written: 86,168
+
+rnafold comparison:
+ [rRNA_5S_1_8]
+    Ground truth base pairs: 35
+    Constrained: 34 pairs, energy=-33.80 kcal/mol
+      TP=16, FP=18, FN=19
+      Precision=47.1%, Recall=45.7%, F1=46.4%
+    Unconstrained: 39 pairs, energy=-50.50 kcal/mol
+      TP=33, FP=6, FN=2
+      Precision=84.6%, Recall=94.3%, F1=89.2%
+    F1 change (constrained vs unconstrained): -42.8%  ↓ worse
+    Energy cost of constraints: +16.70 kcal/mol
+    Detail report → rRNA_5S_1_8_comparison.txt
+
+  [rRNA_28S_N5]
+    Ground truth base pairs: 1495
+    Constrained: 1556 pairs, energy=-2187.60 kcal/mol
+      TP=767, FP=789, FN=728
+      Precision=49.3%, Recall=51.3%, F1=50.3%
+    Unconstrained: 1779 pairs, energy=-2813.20 kcal/mol
+      TP=843, FP=936, FN=652
+      Precision=47.4%, Recall=56.4%, F1=51.5%
+    F1 change (constrained vs unconstrained): -1.2%  ↓ worse
+    Energy cost of constraints: +625.60 kcal/mol
+    Detail report → rRNA_28S_N5_comparison.txt
+
+  [rRNA_5_8S_N_1_3]
+    Ground truth base pairs: 20
+    Constrained: 45 pairs, energy=-53.70 kcal/mol
+      TP=10, FP=35, FN=10
+      Precision=22.2%, Recall=50.0%, F1=30.8%
+    Unconstrained: 51 pairs, energy=-63.10 kcal/mol
+      TP=10, FP=41, FN=10
+      Precision=19.6%, Recall=50.0%, F1=28.2%
+    F1 change (constrained vs unconstrained): +2.6%  ↑ improved
+    Energy cost of constraints: +9.40 kcal/mol
+    Detail report → rRNA_5_8S_N_1_3_comparison.txt
+
+  [rRNA_18S_N_2_4]
+    Ground truth base pairs: 470
+    Constrained: 546 pairs, energy=-574.90 kcal/mol
+      TP=215, FP=331, FN=255
+      Precision=39.4%, Recall=45.7%, F1=42.3%
+    Unconstrained: 600 pairs, energy=-758.20 kcal/mol
+      TP=121, FP=479, FN=349
+      Precision=20.2%, Recall=25.7%, F1=22.6%
+    F1 change (constrained vs unconstrained): +19.7%  ↑ improved
+    Energy cost of constraints: +183.30 kcal/mol
+    Detail report → rRNA_18S_N_2_4_comparison.txt
+
+
+5.8S Human rRNA :
+
+RNAnue predictions:
+  Intramolecular:  23
+  Intermolecular:  0  (out-of-scope — reported separately)
+Ground-truth stems (simulated): 4
+  (stems2 total: 4)
+Min overlap fraction: 50%  (each detected arm must have ≥50% of its nucleotides inside the known stem arm)
+
+=== Matched stems (True Positives — stem level) ===
+  rRNA_5_8S_N_1_3 int1: [(42-44), (99-101)]
+  rRNA_5_8S_N_1_3 int2: [(45-47), (56-58)]
+  rRNA_5_8S_N_1_3 int3: [(64-68), (90-95)]
+  rRNA_5_8S_N_1_3 int4: [(114-121), (129-136)]
+
+=== Missed stems (False Negatives — stem level) ===
+
+=== Unmatched intramolecular clusters (Intra FP — cluster level) ===
+  cluster12
+  cluster13
+  cluster14
+  cluster15
+
+=== Results ===
+Known stems in stems2 CSV:              4
+  of which simulated:                   4
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       23
+Intermolecular clusters (out-of-scope): 0
+
+--- Stem-level ---
+True Positives  (TP stems):             4
+False Negatives (FN stems):             0
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          19
+FP clusters (matched 0 stems):          4
+  of which intramolecular FP:           4
+  of which intermolecular (always FP):  0
+
+Recall:     100.0%   (TP stems / simulated stems)
+Precision:  82.6%   (TP clusters / all clusters)
+F1 score:   90.5%
+
+ecoli rrna with new chimeric reads generation:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     39400   33653   85.41%  33653   85.41%  0       0.00%   30159   76.55%
+
+human rrna with new chimeric reads generation:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     62000   52144   84.10%  52116   84.06%  28      0.05%   48219   77.77%
+
+human 5.8Srrna:
+        total   mapped  (%)     unique  (%)     multi   (%)     split   (%)
+all     800     700     87.50%  700     87.50%  0       0.00%   689     86.12%
+
+5.8S Human rRNA :
+=== Results ===
+Known stems in stems2 CSV:              4
+  of which simulated:                   4
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       6
+Intermolecular clusters (out-of-scope): 0
+
+--- Stem-level ---
+True Positives  (TP stems):             4
+False Negatives (FN stems):             0
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          5
+FP clusters (matched 0 stems):          1
+  of which intramolecular FP:           1
+  of which intermolecular (always FP):  0
+
+Recall:     100.0%   (TP stems / simulated stems)
+Precision:  83.3%   (TP clusters / all clusters)
+F1 score:   90.9%
+
+human rrna:
+=== Missed stems (False Negatives — stem level) ===
+  rRNA_18S_N_2_4 int1: [(4-7), (17-20)]
+
+=== Unmatched intramolecular clusters (Intra FP — cluster level) ===
+  cluster66
+  cluster68
+  cluster71
+  cluster109
+  cluster110
+  cluster125
+  cluster134
+  cluster138
+  cluster139
+  cluster143
+  cluster144
+  cluster145
+
+=== Results ===
+Known stems in stems2 CSV:              311
+  of which simulated:                   311
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       183
+Intermolecular clusters (out-of-scope): 14
+
+--- Stem-level ---
+True Positives  (TP stems):             310
+False Negatives (FN stems):             1
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          171
+FP clusters (matched 0 stems):          26
+  of which intramolecular FP:           12
+  of which intermolecular (always FP):  14
+
+Recall:     99.7%   (TP stems / simulated stems)
+Precision:  86.8%   (TP clusters / all clusters)
+F1 score:   92.8%
+
+ecoli rrna:
+
+=== Results ===
+Known stems in stems2 CSV:              197
+  of which simulated:                   197
+  excluded (not simulated):             0
+Intramolecular clusters (RNAnue):       129
+Intermolecular clusters (out-of-scope): 0
+
+--- Stem-level ---
+True Positives  (TP stems):             197
+False Negatives (FN stems):             0
+
+--- Cluster-level ---
+TP clusters (matched ≥1 stem):          129
+FP clusters (matched 0 stems):          0
+  of which intramolecular FP:           0
+  of which intermolecular (always FP):  0
+
+Recall:     100.0%   (TP stems / simulated stems)
+Precision:  100.0%   (TP clusters / all clusters)
+F1 score:   100.0%
+
+human rrna:
+  Pass 1: identifying valid intramolecular read pairs...
+    Total records:                92,280
+    Not in valid IDs (skipped):    4,924
+    Intermolecular (filtered):        15
+    Pairs kept:                   43,663
+    Records to write:             87,326  (2 per pair)
+  Pass 2: writing filtered BAM...
+    Records written: 87,326
+
+
+ecoli rrna:
+Pass 1: identifying valid intramolecular read pairs...
+    Total records:                57,138
+    Not in valid IDs (skipped):      164
+    Intermolecular (filtered):         0
+    Pairs kept:                   28,487
+    Records to write:             56,974  (2 per pair)
+  Pass 2: writing filtered BAM...
+    Records written: 56,974
+
+human 5.8S rrna:
+  Pass 1: identifying valid intramolecular read pairs...
+    Total records:                   338
+    Not in valid IDs (skipped):       12
+    Intermolecular (filtered):         0
+    Pairs kept:                      163
+    Records to write:                326  (2 per pair)
+  Pass 2: writing filtered BAM...
+    Records written: 326
+

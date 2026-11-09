@@ -1,0 +1,51 @@
+=======================================================
+  rRNA_5S  (120 nt)
+=======================================================
+
+Ground truth base pairs: 33
+
+Constrained:
+  Structure: ((((((((((((.((((((((((....(((((((.............))))..)))...)))))).))..........((((((((...)))))))).....)).))..)))))))))).
+  Energy:    -46.10 kcal/mol
+  Pairs:     37
+  TP=31, FP=6, FN=2
+  Precision=83.8%, Recall=93.9%, F1=88.6%
+
+Unconstrained:
+  Structure: ((((((((((((((...)))).(((...))).((((((((((...((.((...(((..((...))..)))...)))).))))))))))..(((.(((....))))))..)))))))))).
+  Energy:    -50.90 kcal/mol
+  Pairs:     42
+  TP=10, FP=32, FN=23
+  Precision=23.8%, Recall=30.3%, F1=26.7%
+
+Improvement from DDD constraints:
+  F1:        +61.9%
+  Precision: +60.0%
+  Recall:    +63.6%
+  Energy cost of constraints: +4.80 kcal/mol
+
+Pairs only in constrained (new correct pairs added):
+  (16, 68)
+  (17, 67)
+  (18, 65)
+  (19, 64)
+  (20, 63)
+  (21, 62)
+  (22, 61)
+  (23, 60)
+  (28, 56)
+  (29, 55)
+  (30, 54)
+  (31, 51)
+  (32, 50)
+  (33, 49)
+  (34, 48)
+  (81, 95)
+  (82, 94)
+  (83, 93)
+  (84, 92)
+  (85, 91)
+  (86, 90)
+
+Pairs only in unconstrained (correct pairs lost):
+  (none)

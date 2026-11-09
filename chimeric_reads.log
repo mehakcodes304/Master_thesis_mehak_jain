@@ -1,0 +1,71 @@
+
+Warnings:
+  - ecoli_tRNA: tRNA_Tyr_1_1 int 4 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 1 arm1_to_arm2: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_16S_ int 1 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 1 arm1_to_arm2: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+  - human_rRNA: rRNA_18S_N_2_4 int 1 arm2_to_arm1: generated 0/100 reads. Relax length, gap, extension, or uniqueness settings.
+Processing human_tRNA
+  CSV:   /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads.csv
+  FASTA: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads.fa
+  FASTQ: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads_dna.fastq
+  BED12: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads.bed
+  BEDGraph: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads_coverage.bedgraph
+  Coverage BED: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads_coverage.bed
+  IGV ref FASTA: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_tRNA/human_tRNA_reference_for_igv.fa
+  IGV ref index: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_tRNA/human_tRNA_reference_for_igv.fa.fai
+  DNA ref FASTA: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_tRNA/human_tRNA_reference_dna.fa
+    index with:  cd /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_tRNA && segemehl.x -x human_tRNA_reference_dna.idx -d human_tRNA_reference_dna.fa
+  17400 reads over 87 interactions -- min/max per interaction: 200/200 -- orientations: {'arm1_to_arm2': 8700, 'arm2_to_arm1': 8700} -- equal arm lengths: True
+  placement=junction_clean, coverage=uniform, min_frag_gap=0, min_core_overlap=1
+  arm_len drawn from [5, 20] -> read lengths 10..40 (mean 16.7)
+  OK: all 87 interactions covered in both orientations.
+Processing ecoli_tRNA
+  CSV:   /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads.csv
+  FASTA: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads.fa
+  FASTQ: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads_dna.fastq
+  BED12: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads.bed
+  BEDGraph: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads_coverage.bedgraph
+  Coverage BED: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads_coverage.bed
+  IGV ref FASTA: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_tRNA/ecoli_tRNA_reference_for_igv.fa
+  IGV ref index: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_tRNA/ecoli_tRNA_reference_for_igv.fa.fai
+  DNA ref FASTA: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_tRNA/ecoli_tRNA_reference_dna.fa
+    index with:  cd /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_tRNA && segemehl.x -x ecoli_tRNA_reference_dna.idx -d ecoli_tRNA_reference_dna.fa
+  17500 reads over 88 interactions -- min/max per interaction: 100/200 -- orientations: {'arm1_to_arm2': 8800, 'arm2_to_arm1': 8700} -- equal arm lengths: True
+  placement=junction_clean, coverage=uniform, min_frag_gap=0, min_core_overlap=1
+  arm_len drawn from [5, 20] -> read lengths 10..40 (mean 17.1)
+  WARNING: 1/88 interactions have reads in ONE orientation only. Exclude them or report them separately -- they are systematically the short-loop stems.
+Processing human_rRNA
+  CSV:   /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads.csv
+  FASTA: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads.fa
+  FASTQ: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads_dna.fastq
+  BED12: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads.bed
+  BEDGraph: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads_coverage.bedgraph
+  Coverage BED: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads_coverage.bed
+  IGV ref FASTA: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_rRNA/human_rRNA_reference_for_igv.fa
+  IGV ref index: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_rRNA/human_rRNA_reference_for_igv.fa.fai
+  DNA ref FASTA: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_rRNA/human_rRNA_reference_dna.fa
+    index with:  cd /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_rRNA && segemehl.x -x human_rRNA_reference_dna.idx -d human_rRNA_reference_dna.fa
+  85600 reads over 428 interactions -- min/max per interaction: 200/200 -- orientations: {'arm1_to_arm2': 42800, 'arm2_to_arm1': 42800} -- equal arm lengths: True
+  placement=symmetric, coverage=gaussian, min_frag_gap=4, min_core_overlap=1
+  arm_len drawn from [19, 25] -> read lengths 38..50 (mean 43.6)
+  OK: all 428 interactions covered in both orientations.
+  note: fragments may cover as few as 1 nt of the stem core; raise min_core_overlap to tighten the read/interaction link.
+  OK: 0/85600 reads (0.0%) have arms below the 18 nt mappability floor.
+Processing ecoli_rRNA
+  CSV:   /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads.csv
+  FASTA: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads.fa
+  FASTQ: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads_dna.fastq
+  BED12: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads.bed
+  BEDGraph: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads_coverage.bedgraph
+  Coverage BED: /mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads_coverage.bed
+  IGV ref FASTA: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_rRNA/ecoli_rRNA_reference_for_igv.fa
+  IGV ref index: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_rRNA/ecoli_rRNA_reference_for_igv.fa.fai
+  DNA ref FASTA: /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_rRNA/ecoli_rRNA_reference_dna.fa
+    index with:  cd /mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_rRNA && segemehl.x -x ecoli_rRNA_reference_dna.idx -d ecoli_rRNA_reference_dna.fa
+  39400 reads over 197 interactions -- min/max per interaction: 200/200 -- orientations: {'arm1_to_arm2': 19700, 'arm2_to_arm1': 19700} -- equal arm lengths: True
+  placement=symmetric, coverage=gaussian, min_frag_gap=4, min_core_overlap=1
+  arm_len drawn from [19, 25] -> read lengths 38..50 (mean 43.5)
+  OK: all 197 interactions covered in both orientations.
+  note: fragments may cover as few as 1 nt of the stem core; raise min_core_overlap to tighten the read/interaction link.
+  OK: 0/39400 reads (0.0%) have arms below the 18 nt mappability floor.

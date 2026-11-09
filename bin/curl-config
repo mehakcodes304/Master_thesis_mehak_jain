@@ -74,7 +74,7 @@ while test "$#" -gt 0; do
     ;;
 
   --cc)
-    echo '/home/conda/feedstock_root/build_artifacts/curl_split_recipe_1773218154373/_build_env/bin/x86_64-conda-linux-gnu-cc'
+    echo '/home/conda/feedstock_root/build_artifacts/curl_split_recipe_1782802322823/_build_env/bin/x86_64-conda-linux-gnu-cc'
     ;;
 
   --prefix)
@@ -82,20 +82,20 @@ while test "$#" -gt 0; do
     ;;
 
   --feature|--features)
-    for feature in alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz NTLM SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd ''; do
+    for feature in alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd ''; do
       test -n "$feature" && echo "$feature"
     done
     ;;
 
   --protocols)
     # shellcheck disable=SC2043
-    for protocol in DICT FILE FTP FTPS GOPHER GOPHERS HTTP HTTPS IMAP IMAPS IPFS IPNS MQTT MQTTS POP3 POP3S RTSP SCP SFTP SMB SMBS SMTP SMTPS TELNET TFTP WS WSS; do
+    for protocol in DICT FILE FTP FTPS GOPHER GOPHERS HTTP HTTPS IMAP IMAPS IPFS IPNS MQTT MQTTS POP3 POP3S RTSP SCP SFTP SMTP SMTPS TELNET TFTP WS WSS; do
       echo "$protocol"
     done
     ;;
 
   --version)
-    echo 'libcurl 8.19.0'
+    echo 'libcurl 8.21.0'
     exit 0
     ;;
 
@@ -107,11 +107,11 @@ while test "$#" -gt 0; do
     # dash as that's used for things like version 1.2.3-pre1
     cpatch=`echo "$checkfor" | cut -d. -f3 | cut -d- -f1`
 
-    vmajor=`echo '8.19.0' | cut -d. -f1`
-    vminor=`echo '8.19.0' | cut -d. -f2`
+    vmajor=`echo '8.21.0' | cut -d. -f1`
+    vminor=`echo '8.21.0' | cut -d. -f2`
     # when extracting the patch part we strip off everything after a
     # dash as that's used for things like version 1.2.3-pre1
-    vpatch=`echo '8.19.0' | cut -d. -f3 | cut -d- -f1`
+    vpatch=`echo '8.21.0' | cut -d. -f3 | cut -d- -f1`
 
     if test "$vmajor" -gt "$cmajor"; then
       exit 0
@@ -127,12 +127,12 @@ while test "$#" -gt 0; do
       fi
     fi
 
-    echo "requested version $checkfor is newer than existing 8.19.0"
+    echo "requested version $checkfor is newer than existing 8.21.0"
     exit 1
     ;;
 
   --vernum)
-    echo '081300'
+    echo '081500'
     exit 0
     ;;
 
@@ -175,7 +175,7 @@ while test "$#" -gt 0; do
     ;;
 
   --configure)
-    echo " '--prefix=/mnt/ceph/mjain/software/envs/bio' '--host=x86_64-conda-linux-gnu' '--disable-ldap' '--enable-websockets' '--with-ca-bundle=/mnt/ceph/mjain/software/envs/bio/ssl/cacert.pem' '--with-openssl=/mnt/ceph/mjain/software/envs/bio' '--with-zlib=/mnt/ceph/mjain/software/envs/bio' '--with-zstd=/mnt/ceph/mjain/software/envs/bio' '--with-gssapi=/mnt/ceph/mjain/software/envs/bio' '--with-libssh2=/mnt/ceph/mjain/software/envs/bio' '--with-nghttp2=/mnt/ceph/mjain/software/envs/bio' '--without-libpsl' 'build_alias=x86_64-conda-linux-gnu' 'host_alias=x86_64-conda-linux-gnu' 'CC=/home/conda/feedstock_root/build_artifacts/curl_split_recipe_1773218154373/_build_env/bin/x86_64-conda-linux-gnu-cc' 'CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/ceph/mjain/software/envs/bio/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/curl_split_recipe_1773218154373/work=/usr/local/src/conda/curl_split_recipe-8.19.0 -fdebug-prefix-map=/mnt/ceph/mjain/software/envs/bio=/usr/local/src/conda-prefix -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /mnt/ceph/mjain/software/envs/bio/include' 'LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/mnt/ceph/mjain/software/envs/bio/lib -Wl,-rpath-link,/mnt/ceph/mjain/software/envs/bio/lib -L/mnt/ceph/mjain/software/envs/bio/lib' 'CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /mnt/ceph/mjain/software/envs/bio/include' 'CPP=/home/conda/feedstock_root/build_artifacts/curl_split_recipe_1773218154373/_build_env/bin/x86_64-conda-linux-gnu-cpp'"
+    echo " '--prefix=/mnt/ceph/mjain/software/envs/bio' '--host=x86_64-conda-linux-gnu' '--disable-ldap' '--enable-websockets' '--with-ca-bundle=/mnt/ceph/mjain/software/envs/bio/ssl/cacert.pem' '--with-openssl=/mnt/ceph/mjain/software/envs/bio' '--with-zlib=/mnt/ceph/mjain/software/envs/bio' '--with-zstd=/mnt/ceph/mjain/software/envs/bio' '--with-gssapi=/mnt/ceph/mjain/software/envs/bio' '--with-libssh2=/mnt/ceph/mjain/software/envs/bio' '--with-nghttp2=/mnt/ceph/mjain/software/envs/bio' '--without-libpsl' 'build_alias=x86_64-conda-linux-gnu' 'host_alias=x86_64-conda-linux-gnu' 'CC=/home/conda/feedstock_root/build_artifacts/curl_split_recipe_1782802322823/_build_env/bin/x86_64-conda-linux-gnu-cc' 'CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -fno-merge-constants -isystem /mnt/ceph/mjain/software/envs/bio/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/curl_split_recipe_1782802322823/work=/usr/local/src/conda/curl_split_recipe-8.21.0 -fdebug-prefix-map=/mnt/ceph/mjain/software/envs/bio=/usr/local/src/conda-prefix -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /mnt/ceph/mjain/software/envs/bio/include' 'LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/mnt/ceph/mjain/software/envs/bio/lib -Wl,-rpath-link,/mnt/ceph/mjain/software/envs/bio/lib -L/mnt/ceph/mjain/software/envs/bio/lib' 'CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /mnt/ceph/mjain/software/envs/bio/include' 'CPP=/home/conda/feedstock_root/build_artifacts/curl_split_recipe_1782802322823/_build_env/bin/x86_64-conda-linux-gnu-cpp'"
     ;;
 
   *)

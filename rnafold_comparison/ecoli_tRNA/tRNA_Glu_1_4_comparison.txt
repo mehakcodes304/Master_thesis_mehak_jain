@@ -1,0 +1,39 @@
+=======================================================
+  tRNA_Glu_1_4  (76 nt)
+=======================================================
+
+Ground truth base pairs: 21
+
+Constrained:
+  Structure: (((((((...........(((..(..((((((.......))))))..)..)))............)))))))....
+  Energy:    -29.10 kcal/mol
+  Pairs:     17
+  TP=11, FP=6, FN=10
+  Precision=64.7%, Recall=52.4%, F1=57.9%
+
+Unconstrained:
+  Structure: (((((((..((((.........))))((((((.......))))))...(((((.......))))))))))))....
+  Energy:    -32.80 kcal/mol
+  Pairs:     22
+  TP=20, FP=2, FN=1
+  Precision=90.9%, Recall=95.2%, F1=93.0%
+
+Improvement from DDD constraints:
+  F1:        -35.1%
+  Precision: -26.2%
+  Recall:    -42.9%
+  Energy cost of constraints: +3.70 kcal/mol
+
+Pairs only in constrained (new correct pairs added):
+  (none)
+
+Pairs only in unconstrained (correct pairs lost):
+  (10, 26)
+  (11, 25)
+  (12, 24)
+  (13, 23)
+  (49, 65)
+  (50, 64)
+  (51, 63)
+  (52, 62)
+  (53, 61)

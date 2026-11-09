@@ -1,0 +1,19 @@
+### /mnt/ceph/cadelmann/software/RNAnue/build/release/libexec/rnanue/STAR   --runMode genomeGenerate      --runThreadN 4   --genomeDir /mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/.rnanue-star-ZTf9EQ/index   --genomeFastaFiles /mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/human_rRNA_dna.fa      --genomeSAindexNbases 5   --outFileNamePrefix /mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/.rnanue-star-ZTf9EQ/index.
+### GstrandBit 32
+versionGenome	2.7.4a
+genomeType	Full
+genomeFastaFiles	/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/human_rRNA_dna.fa 
+genomeSAindexNbases	5
+genomeChrBinNbits	18
+genomeSAsparseD	1
+genomeTransformType	None
+genomeTransformVCF	-
+sjdbOverhang	0
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	-
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	1048576 59544

@@ -95,39 +95,39 @@ def stems_to_bed(sequence_csv: Path,
 
 if __name__ == "__main__":
     stems_to_bed(
-        sequence_csv = Path("human_tRNA.csv"),
-        input_csv    = Path("stems2_human_tRNA.csv"),
-        output_bed   = Path("human_tRNA_interactions.bed"),
-        track_name   = "human tRNA RNA-RNA interactions",
-        track_desc   = "Stem segments derived from human tRNA stem table",
+        sequence_csv = Path("/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_5_8S_rRNA/human_5_8S_rRNA.csv"),
+        input_csv    = Path("/mnt/ceph/mjain/software/envs/bio/stems/human_rRNA/stems2_human_rRNA_5_8S.csv"),
+        output_bed   = Path("/mnt/ceph/mjain/software/envs/bio/stems/human_rRNA/human_5_8S_rRNA_interactions.bed"),
+        track_name   = "human 5_8S rRNA RNA-RNA interactions",
+        track_desc   = "Stem segments derived from human 5_8S rRNA stem table",
     )
 
 
-if __name__ == "__main__":
-    stems_to_bed(
-        sequence_csv = Path("human_rRNA.csv"),
-        input_csv    = Path("stems2_human_rRNA.csv"),
-        output_bed   = Path("human_rRNA_interactions.bed"),
-        track_name   = "human rRNA RNA-RNA interactions",
-        track_desc   = "Stem segments derived from human rRNA stem table",
-    )
+#if __name__ == "__main__":
+    #stems_to_bed(
+        #sequence_csv = Path("human_rRNA.csv"),
+        #input_csv    = Path("stems2_human_rRNA.csv"),
+        #output_bed   = Path("human_rRNA_interactions.bed"),
+        #track_name   = "human rRNA RNA-RNA interactions",
+        #track_desc   = "Stem segments derived from human rRNA stem table",
+    #)
 
 
-if __name__ == "__main__":
-    stems_to_bed(
-        sequence_csv = Path("ecoli_tRNA.csv"),
-        input_csv    = Path("stems2_ecoli_tRNA.csv"),
-        output_bed   = Path("ecoli_tRNA_interactions.bed"),
-        track_name   = "ecoli tRNA RNA-RNA interactions",
-        track_desc   = "Stem segments derived from ecoli tRNA stem table",
-    )
+#if __name__ == "__main__":
+    #stems_to_bed(
+        #sequence_csv = Path("ecoli_tRNA.csv"),
+        #input_csv    = Path("stems2_ecoli_tRNA.csv"),
+        #output_bed   = Path("ecoli_tRNA_interactions.bed"),
+        #track_name   = "ecoli tRNA RNA-RNA interactions",
+        #track_desc   = "Stem segments derived from ecoli tRNA stem table",
+    #)
 
 
-if __name__ == "__main__":
-    stems_to_bed(
-        sequence_csv = Path("ecoli_rRNA.csv"),
-        input_csv    = Path("stems2_ecoli_rRNA.csv"),
-        output_bed   = Path("ecoli_rRNA_interactions.bed"),
-        track_name   = "ecoli rRNA RNA-RNA interactions",
-        track_desc   = "Stem segments derived from ecoli rRNA stem table",
-    )
+#if __name__ == "__main__":
+ #   stems_to_bed(
+  #      sequence_csv = Path("ecoli_rRNA.csv"),
+   #     input_csv    = Path("stems2_ecoli_rRNA.csv"),
+    #    output_bed   = Path("ecoli_rRNA_interactions.bed"),
+     #   track_name   = "ecoli rRNA RNA-RNA interactions",
+      #  track_desc   = "Stem segments derived from ecoli rRNA stem table",
+    #)

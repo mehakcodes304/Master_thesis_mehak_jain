@@ -1,0 +1,31 @@
+=======================================================
+  tRNA_Cys_1_1  (74 nt)
+=======================================================
+
+Ground truth base pairs: 20
+
+Constrained:
+  Structure: ((((((((.................(((((((...))))))).....((((.......))))))))))))....
+  Energy:    -26.20 kcal/mol
+  Pairs:     19
+  TP=16, FP=3, FN=4
+  Precision=84.2%, Recall=80.0%, F1=82.1%
+
+Unconstrained:
+  Structure: (((((((((((......))))..(((((((((...)))))).))).(((((.......))))))))))))....
+  Energy:    -28.30 kcal/mol
+  Pairs:     25
+  TP=16, FP=9, FN=4
+  Precision=64.0%, Recall=80.0%, F1=71.1%
+
+Improvement from DDD constraints:
+  F1:        +10.9%
+  Precision: +20.2%
+  Recall:    +0.0%
+  Energy cost of constraints: +2.10 kcal/mol
+
+Pairs only in constrained (new correct pairs added):
+  (26, 42)
+
+Pairs only in unconstrained (correct pairs lost):
+  (47, 63)

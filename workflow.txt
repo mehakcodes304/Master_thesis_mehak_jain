@@ -1,0 +1,16 @@
+base pairs parsing and forming stem/interaction regions
+chimeric read generation 
+rnanue 
+rnanue analysis 
+filtered bam generation 
+contact matrix 
+heatmap 
+rnafold input prep 
+rnafold 
+rnafold comparision analysis 
+    ecoli trna - only 2 trna perfoms better as constrained than unconstrained. so new chimeric reads perform worse
+    human trna - 9 trnas perform better contraiend than unconstrained. 
+    ecoli rrna- everything is better constrained than unconstrained. 
+    human rrna - 5S performs same constrained and unconstrained. 23S, 5.8S and 18S performs better constrained.
+    separate human 5.8S - performs worse constrained than unconstrained
+overlap mfe dotplot - done for all and 5.8S

@@ -1,0 +1,40 @@
+=======================================================
+  tRNA_Lys_1_6  (76 nt)
+=======================================================
+
+Ground truth base pairs: 21
+
+Constrained:
+  Structure: ((((((((((....(((.....)))...(((((...........)))))............))).)))))))....
+  Energy:    -15.20 kcal/mol
+  Pairs:     18
+  TP=7, FP=11, FN=14
+  Precision=38.9%, Recall=33.3%, F1=35.9%
+
+Unconstrained:
+  Structure: (((((((((.(......).))((.(((((((.......))))))).))(((((.......))))))))))))....
+  Energy:    -28.60 kcal/mol
+  Pairs:     24
+  TP=17, FP=7, FN=4
+  Precision=70.8%, Recall=81.0%, F1=75.6%
+
+Improvement from DDD constraints:
+  F1:        -39.7%
+  Precision: -31.9%
+  Recall:    -47.6%
+  Energy cost of constraints: +13.40 kcal/mol
+
+Pairs only in constrained (new correct pairs added):
+  (none)
+
+Pairs only in unconstrained (correct pairs lost):
+  (27, 43)
+  (28, 42)
+  (29, 41)
+  (30, 40)
+  (31, 39)
+  (49, 65)
+  (50, 64)
+  (51, 63)
+  (52, 62)
+  (53, 61)

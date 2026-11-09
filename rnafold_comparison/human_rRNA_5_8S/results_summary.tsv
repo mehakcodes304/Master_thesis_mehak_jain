@@ -1,0 +1,2 @@
+rna	seq_len	gt_pairs	constrained_pairs	recall_delta	constrained_energy	constrained_tp	constrained_fp	constrained_fn	constrained_precision	constrained_recall	constrained_f1	unconstrained_pairs	unconstrained_energy	unconstrained_tp	unconstrained_fp	unconstrained_fn	unconstrained_precision	unconstrained_recall	unconstrained_f1
+rRNA_5_8S_N_1_3	157	20	49	-0.15	-50.3	7	42	13	0.1429	0.35	0.2029	51	-63.1	10	41	10	0.1961	0.5	0.2817

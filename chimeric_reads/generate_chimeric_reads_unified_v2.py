@@ -141,6 +141,14 @@ class SimParams:
     # analysis). The run summary reports what fraction of arms fall below it.
     mappability_floor: int | None = None
 
+    # Minimum number of ground-truth base pairs that must be covered by the
+    # two fragments of a chimeric read (jointly). A pair (i, j) counts if
+    # position i falls in one fragment AND position j in the other, AND (i,j)
+    # is in the GT stem for that interaction.
+    # 0 = disabled (default, backward-compatible). Set to e.g. 3 to guarantee
+    # every generated read captures at least 3 real stem pairs.
+    min_gt_pairs: int = 3
+
     def arm_length_range(self) -> tuple[int, int]:
         """The closed interval that choose_arm_length() will draw from."""
         lo = max(self.min_arm_len, math.ceil(self.min_read_len / 2))
@@ -170,25 +178,13 @@ RRNA_PARAMS = SimParams(
     max_read_len=50,
     min_arm_len=18,
     max_arm_len=25,
-    max_arm_extension=100,      # from the rRNA generator; more room than tRNA
-    max_attempts_per_read=5000, # from the rRNA generator
-
-    # Symmetric placement is what makes arm2_to_arm1 possible at all for
-    # short-loop rRNA stems. Under junction_clean, every stem with
-    # 2*arm + loop < 2*frag_len produced 0/100 reads in that orientation.
+    max_arm_extension=100,
+    max_attempts_per_read=5000,
     placement_rule="symmetric",
-    min_core_overlap=1,         # raise to force fragments to cover more stem
-
-    coverage_profile="gaussian",
-    gaussian_sigma_frac=0.30,
-
-    min_frag_gap=4,             # PLACEHOLDER -- verify against segemehl's
-                                # split-vs-deletion threshold, do not inherit
-                                # this number unchecked
-
-    mappability_floor=18,       # PLACEHOLDER -- re-measure per reference
+    min_core_overlap=1,   
+    min_frag_gap=4, 
+    mappability_floor=18,
 )
-
 
 # =============================================================================
 # SETTINGS
@@ -209,7 +205,7 @@ DATASETS = [
         "enabled":          True,
         "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_tRNA/human_tRNA.csv",
         "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/human_tRNA/stems2_human_tRNA.csv",
-        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads",
+        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_tRNA/human_tRNA_chimeric_reads1",
         "params":           TRNA_PARAMS,
     },
     {
@@ -217,7 +213,7 @@ DATASETS = [
         "enabled":          True,
         "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_tRNA/ecoli_tRNA.csv",
         "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/ecoli_tRNA/stems2_ecoli_tRNA.csv",
-        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads",
+        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_tRNA/ecoli_tRNA_chimeric_reads1",
         "params":           TRNA_PARAMS,
     },
     {
@@ -225,17 +221,40 @@ DATASETS = [
         "enabled":          True,         
         "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_rRNA/human_rRNA.csv",
         "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/human_rRNA/stems2_human_rRNA.csv",
-        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads",
+        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA/human_rRNA_chimeric_reads1",
         "params":           RRNA_PARAMS,
     },
     {
         "label":            "ecoli_rRNA",
-        "enabled":          True,          
+        "enabled":          True,
         "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/ecoli_rRNA/ecoli_rRNA.csv",
         "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/ecoli_rRNA/stems2_ecoli_rRNA.csv",
-        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads",
+        "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/ecoli_rRNA/ecoli_rRNA_chimeric_reads1",
         "params":           RRNA_PARAMS,
     },
+
+   {
+    "label":            "human_rRNA_5_8S_fixed6",
+    "enabled":          True,
+    "sequence_csv":     "/mnt/ceph/mjain/software/envs/bio/custom_ref_genome/human_rRNA/human_rRNA.csv",
+    "interactions_csv": "/mnt/ceph/mjain/software/envs/bio/stems/human_rRNA/stems2_human_rRNA_5_8S.csv",
+    "output_prefix":    "/mnt/ceph/mjain/software/envs/bio/chimeric_reads/human_rRNA_5_8S_fixed6/human_rRNA_5_8S_fixed6_chimeric_reads",
+    "params": SimParams(
+        reads_per_interaction  = 200,
+        min_arm_len            = 8,
+        max_arm_len            = 8,
+        min_read_len           = 16,
+        max_read_len           = 16,
+        max_arm_extension      = 100,
+        max_attempts_per_read  = 5000,
+        placement_rule         = "symmetric",
+        min_core_overlap       = 3,
+        min_frag_gap           = 4,
+        min_gt_pairs           = 3,
+        mappability_floor      = None,   # can't apply 18nt floor to 6nt arms
+        seed                   = 42,
+    ),
+},
 ]
 
 MAKE_CSV                       = True
@@ -244,6 +263,8 @@ MAKE_FASTQ                     = True    # DNA alphabet (T), for segemehl/RNAnue
 MAKE_BED                       = True
 MAKE_REFERENCE_FASTA_FOR_IGV   = True    # RNA alphabet (U)
 MAKE_REFERENCE_FASTA_DNA       = True    # DNA alphabet (T), for segemehl index
+CHECK_GT_ARM_COVERAGE  = True   # print reads where either arm covers < 3 GT-paired nt
+MIN_GT_NT_PER_ARM      = 3      # the threshold
 
 FASTQ_QUALITY_CHAR = "I"    # Phred 40 — reads are simulated without errors
 
@@ -336,6 +357,41 @@ def parse_stem_ranges(value: str) -> tuple[Range1, Range1]:
         return tuple(sorted([arm1, arm2], key=lambda r: r.start))  # type: ignore[return-value]
 
     raise ValueError(f"Cannot parse sub_interaction_stem: {value!r}")
+
+
+def parse_stem_pair_set(value: str) -> set[tuple[int, int]]:
+    """
+    Parse one sub_interaction_stem cell into a set of (i, j) base-pair tuples
+    (1-based reference positions). Used to verify GT coverage of read fragments.
+
+    Supports two formats:
+      Range format:    "[(1-7), (66-72)]"
+        Arms are antiparallel, so position (1+k) pairs with (72-k) for k=0..6.
+      Pair-list format: "[(1, 72), (2, 71), (3, 70)]"
+        Pairs are listed explicitly.
+    """
+    text = str(value)
+    pairs: set[tuple[int, int]] = set()
+
+    # Pair-list format takes priority (contains commas inside parentheses)
+    pair_matches = re.findall(r"\((\d+)\s*,\s*(\d+)\)", text)
+    if pair_matches:
+        for a, b in pair_matches:
+            pairs.add((int(a), int(b)))
+        return pairs
+
+    # Range format: expand antiparallel stem pairing
+    dash_matches = re.findall(r"\((\d+)\s*-\s*(\d+)\)", text)
+    if len(dash_matches) >= 2:
+        arms = sorted([(int(a), int(b)) for a, b in dash_matches[:2]], key=lambda x: x[0])
+        a_start, a_end = arms[0]
+        b_start, b_end = arms[1]
+        n = min(a_end - a_start + 1, b_end - b_start + 1)
+        for k in range(n):
+            pairs.add((a_start + k, b_end - k))
+        return pairs
+
+    return pairs
 
 
 def interval_distance(a: Range1, b: Range1) -> int:
@@ -602,7 +658,8 @@ def make_one_read(seq:                str,
                   orientation:        str,
                   rng:                random.Random,
                   arm_index:          dict[str, list[ArmRecord]],
-                  p:                  SimParams) -> dict | None:
+                  p:                  SimParams,
+                  gt_pairs:           set[tuple[int, int]] | None = None) -> dict | None:
     """
     Attempt to sample one valid chimeric read for one interaction/orientation.
     """
@@ -625,6 +682,19 @@ def make_one_read(seq:                str,
 
     if first_frag.overlaps(second_frag):
         return None
+
+    # GT-pairs coverage check — only active when min_gt_pairs > 0.
+    # For each position in the first fragment paired with each position in the
+    # second fragment: if that (i, j) is a ground-truth base pair for this
+    # interaction, count it. Both orientations of the pair are checked.
+    if p.min_gt_pairs > 0 and gt_pairs:
+        n_gt = 0
+        for ref_i in range(first_frag.start, first_frag.end + 1):
+            for ref_j in range(second_frag.start, second_frag.end + 1):
+                if (ref_i, ref_j) in gt_pairs or (ref_j, ref_i) in gt_pairs:
+                    n_gt += 1
+        if n_gt < p.min_gt_pairs:
+            return None
 
     # NOTE: forbidden-arm (cross-interaction overlap) checks intentionally
     # disabled -- matches the exact behaviour of the 97.7%-recall run.
@@ -702,6 +772,7 @@ def generate_reads_for_dataset(sequence_csv:     Path,
         seq      = str(seq_meta["seq"])
         seq_len  = len(seq)
         core1, core2 = parse_stem_ranges(row["sub_interaction_stem"])
+        gt_pairs     = parse_stem_pair_set(row["sub_interaction_stem"]) if p.min_gt_pairs > 0 else None
 
         if core1.end > seq_len or core2.end > seq_len:
             warnings.append(f"Skipping {name} int {interaction_number} -- arm exceeds length {seq_len}.")
@@ -734,7 +805,8 @@ def generate_reads_for_dataset(sequence_csv:     Path,
                 attempts += 1
 
                 read = make_one_read(seq, seq_len, name, interaction_number,
-                                     core1, core2, orientation, rng, arm_index, p)
+                                     core1, core2, orientation, rng, arm_index, p,
+                                     gt_pairs=gt_pairs)
                 if read is None:
                     continue
 
@@ -970,6 +1042,8 @@ def validate_settings(p: SimParams, label: str) -> None:
         bad("min_core_overlap > 1 is only meaningful under symmetric placement")
     if p.min_stem_length is not None and p.min_stem_length < 1:
         bad("min_stem_length must be >= 1 or None")
+    if p.min_gt_pairs < 0:
+        bad("min_gt_pairs must be >= 0")
 
     lo, hi = p.arm_length_range()
     if lo > hi:
@@ -1033,6 +1107,55 @@ def summarize(reads: pd.DataFrame, p: SimParams) -> str:
             )
 
     return "\n".join(lines)
+
+def check_gt_arm_coverage(reads: pd.DataFrame,
+                           interactions: pd.DataFrame,
+                           min_gt_per_arm: int = 3) -> pd.DataFrame:
+    """
+    For every generated read, count how many GT base-pair positions are jointly
+    covered on EACH arm fragment:
+      - arm1_gt_nt: distinct positions i in frag_arm1 where (i,j) is a GT pair
+                    AND j is in frag_arm2.
+      - arm2_gt_nt: the matching j positions.
+    Returns a DataFrame of reads where either arm covers < min_gt_per_arm.
+    """
+    gt_lookup: dict[tuple[str, int], set[tuple[int, int]]] = {}
+    for _, row in interactions.iterrows():
+        key = (str(row["name"]), int(row["interaction_number"]))
+        gt_lookup[key] = parse_stem_pair_set(row["sub_interaction_stem"])
+
+    failures = []
+    for _, row in reads.iterrows():
+        key = (str(row["name"]), int(row["interaction_number"]))
+        gt_pairs = gt_lookup.get(key, set())
+        if not gt_pairs:
+            continue
+
+        f1s = int(row["frag_arm1_start"]); f1e = int(row["frag_arm1_end"])
+        f2s = int(row["frag_arm2_start"]); f2e = int(row["frag_arm2_end"])
+
+        arm1_covered: set[int] = set()
+        arm2_covered: set[int] = set()
+
+        for (i, j) in gt_pairs:
+            if f1s <= i <= f1e and f2s <= j <= f2e:
+                arm1_covered.add(i); arm2_covered.add(j)
+            elif f1s <= j <= f1e and f2s <= i <= f2e:
+                arm1_covered.add(j); arm2_covered.add(i)
+
+        n1, n2 = len(arm1_covered), len(arm2_covered)
+        if n1 < min_gt_per_arm or n2 < min_gt_per_arm:
+            failures.append({
+                "read_id":            row["read_id"],
+                "name":               row["name"],
+                "interaction_number": int(row["interaction_number"]),
+                "frag_arm1":          f"{f1s}-{f1e}",
+                "frag_arm2":          f"{f2s}-{f2e}",
+                "arm1_gt_nt":         n1,
+                "arm2_gt_nt":         n2,
+            })
+
+    return pd.DataFrame(failures)
 
 
 def run_generation() -> list[str]:
@@ -1124,6 +1247,25 @@ def run_generation() -> list[str]:
                   f"segemehl.x -x {ref_dna.stem}.idx -d {ref_dna.name}")
 
         print(f"  {summarize(reads, p)}")
+
+        if CHECK_GT_ARM_COVERAGE and not reads.empty:
+            _, interactions_reloaded = load_inputs(sequence_csv, interactions_csv)
+            # reload needed because interactions local var may be sorted/filtered
+            fail_df = check_gt_arm_coverage(reads, interactions_reloaded, MIN_GT_NT_PER_ARM)
+            if fail_df.empty:
+                print(f"  GT arm check: all {len(reads)} reads cover >= {MIN_GT_NT_PER_ARM} GT nt on each arm ✓")
+            else:
+                pct = 100.0 * len(fail_df) / len(reads)
+                print(f"  GT arm check: {len(fail_df)}/{len(reads)} reads ({pct:.1f}%) FAIL "
+                      f"(< {MIN_GT_NT_PER_ARM} GT-paired nt on at least one arm)", file=sys.stderr)
+                # Show up to 30 failing rows grouped by interaction
+                pd.set_option("display.max_rows", 30)
+                pd.set_option("display.width", 120)
+                print(fail_df.to_string(index=False), file=sys.stderr)
+                # Also save to file for full inspection
+                fail_path = output_prefix.parent / f"{output_prefix.stem}_gt_arm_failures.tsv"
+                fail_df.to_csv(fail_path, sep="\t", index=False)
+                print(f"  Full failure list: {fail_path}", file=sys.stderr)
 
     return all_warnings
 

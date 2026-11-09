@@ -1,4 +1,4 @@
-name: /mnt/ceph/mjain/software/envs/bio
+name: bio
 channels:
   - conda-forge
   - bioconda
@@ -6,50 +6,96 @@ channels:
 dependencies:
   - _openmp_mutex=4.5=20_gnu
   - bedtools=2.31.1=h13024bc_3
+  - binutils_impl_linux-64=2.45.1=default_hfdba357_101
   - bzip2=1.0.8=hda65f42_9
   - c-ares=1.34.6=hb03c661_0
-  - ca-certificates=2026.4.22=hbd8a1cb_0
+  - ca-certificates=2026.7.22=hbd8a1cb_0
+  - cmake=4.3.0=hc85cc9f_0
+  - expat=2.7.4=hecca717_0
+  - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
+  - font-ttf-inconsolata=3.000=h77eed37_0
+  - font-ttf-source-code-pro=2.038=h77eed37_0
+  - font-ttf-ubuntu=0.83=h77eed37_3
+  - fontconfig=2.17.1=h27c8c51_0
+  - fonts-conda-ecosystem=1=0
+  - fonts-conda-forge=1=hc364b38_1
+  - freetype=2.14.2=ha770c72_0
+  - gcc=12.4.0=h236703b_2
+  - gcc_impl_linux-64=12.4.0=h26ba24d_2
+  - giflib=5.2.2=hd590300_0
+  - gnuplot=5.0.3=4
+  - gxx=12.4.0=h236703b_2
+  - gxx_impl_linux-64=12.4.0=h3ff227c_2
   - htslib=1.23.1=h633afcb_0
-  - icu=78.2=h33c6efd_0
+  - icu=73.2=h59595ed_0
+  - jpeg=9e=h166bdaf_2
+  - kernel-headers_linux-64=5.14.0=he073ed8_3
   - keyutils=1.6.3=hb9d3cd8_0
   - krb5=1.22.2=ha1258a1_0
   - ld_impl_linux-64=2.45.1=default_hbd61a6d_101
   - libblas=3.11.0=5_h4a7cf45_openblas
+  - libboost=1.82.0=h6fcfa73_6
+  - libboost-devel=1.82.0=h00ab1b0_6
+  - libboost-headers=1.82.0=ha770c72_6
   - libcblas=3.11.0=5_h0358290_openblas
-  - libcurl=8.19.0=hcf29cc6_0
+  - libcurl=8.21.0=hcf29cc6_1
   - libdeflate=1.25=h17f619e_0
   - libedit=3.1.20250104=pl5321h7949ede_0
   - libev=4.33=hd590300_2
   - libexpat=2.7.4=hecca717_0
   - libffi=3.5.2=h3435931_0
+  - libfreetype=2.14.2=ha770c72_0
+  - libfreetype6=2.14.2=h73754d4_0
   - libgcc=15.2.0=he0feb66_18
+  - libgcc-devel_linux-64=12.4.0=h1762d19_102
   - libgcc-ng=15.2.0=h69a702a_18
+  - libgd=2.3.3=h6a678d5_3
   - libgfortran=15.2.0=h69a702a_18
   - libgfortran5=15.2.0=h68bc16d_18
   - libgomp=15.2.0=he0feb66_18
+  - libjpeg-turbo=2.1.4=h166bdaf_0
   - liblapack=3.11.0=5_h47877c9_openblas
-  - liblzma=5.8.2=hb03c661_0
+  - liblzma=5.8.3=hb03c661_1
+  - liblzma-devel=5.8.3=hb03c661_1
   - libmpdec=4.0.0=hb03c661_1
   - libnghttp2=1.68.1=h877daf1_0
   - libopenblas=0.3.30=pthreads_h94d23a6_4
-  - libsqlite=3.52.0=hf4e2dac_0
+  - libpng=1.6.55=h421ea60_0
+  - libsanitizer=12.4.0=ha732cd4_2
+  - libsqlite=3.52.0=h0c1763c_0
   - libssh2=1.11.1=hcf80075_0
   - libstdcxx=15.2.0=h934c35e_18
+  - libstdcxx-devel_linux-64=12.4.0=h1762d19_102
+  - libstdcxx-ng=15.2.0=hdf11a46_18
+  - libtiff=4.1.0=hecacb30_2
   - libuuid=2.41.3=h5347b49_0
-  - libzlib=1.3.1=hb9d3cd8_2
+  - libuv=1.52.1=h280c20c_0
+  - libwebp=1.2.4=h11a3e52_1
+  - libwebp-base=1.2.4=h166bdaf_0
+  - libzlib=1.3.2=h25fd6f3_3
   - ncurses=6.5=h2d0b736_3
   - numpy=2.4.2=py314hd4f4903_1
-  - openssl=3.6.2=h35e630c_0
+  - openssl=3.6.4=h781a0a9_0
   - pandas=3.0.1=py314hd70f1f7_0
   - pip=26.0.1=pyh145f28c_0
+  - pkg-config=0.29.2=h4bc722e_1009
+  - pysam=0.24.0=py314ha0fe93d_1
   - python=3.14.3=he1279bd_1_cp314t
   - python-dateutil=2.9.0.post0=pyhe01879c_2
   - python_abi=3.14=8_cp314t
   - readline=8.3=h853b02a_0
+  - rhash=1.4.6=hb9d3cd8_1
   - samtools=1.23.1=ha83d96e_0
+  - segemehl=0.3.4=h3e6c209_13
   - six=1.17.0=pyhe01879c_1
+  - sysroot_linux-64=2.34=h087de78_3
   - tk=8.6.13=noxft_h366c992_103
   - tzdata=2025c=hc9c84f9_1
+  - viennarna=2.4.7=py27_2
+  - xz=5.8.3=ha02ee65_1
+  - xz-gpl-tools=5.8.3=ha02ee65_1
+  - xz-tools=5.8.3=hb03c661_1
+  - zlib=1.3.2=h25fd6f3_3
   - zstd=1.5.7=hb78ec9c_6
   - pip:
       - networkx==3.6.1

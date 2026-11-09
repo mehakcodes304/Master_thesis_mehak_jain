@@ -1,0 +1,13 @@
+track name="condition1 RNA-RNA interactions" description="Segments of interacting RNA clusters derived from DDD-Experiment" itemRgb="On"
+rRNA_5_8S_N_1_3_URS0000005270_9606	36	49	cluster0_segment1	0	+	36	49	#826b45
+rRNA_5_8S_N_1_3_URS0000005270_9606	92	106	cluster0_segment2	0	+	92	106	#826b45
+rRNA_5_8S_N_1_3_URS0000005270_9606	39	49	cluster1_segment1	0	+	39	49	#77c1c4
+rRNA_5_8S_N_1_3_URS0000005270_9606	53	63	cluster1_segment2	0	+	53	63	#77c1c4
+rRNA_5_8S_N_1_3_URS0000005270_9606	51	63	cluster2_segment1	0	+	51	63	#ce8da2
+rRNA_5_8S_N_1_3_URS0000005270_9606	101	108	cluster2_segment2	0	+	101	108	#ce8da2
+rRNA_5_8S_N_1_3_URS0000005270_9606	58	73	cluster3_segment1	0	+	58	73	#c657a6
+rRNA_5_8S_N_1_3_URS0000005270_9606	85	100	cluster3_segment2	0	+	85	100	#c657a6
+rRNA_5_8S_N_1_3_URS0000005270_9606	112	121	cluster4_segment1	0	+	112	121	#cab100
+rRNA_5_8S_N_1_3_URS0000005270_9606	126	138	cluster4_segment2	0	+	126	138	#cab100
+rRNA_5_8S_N_1_3_URS0000005270_9606	117	125	cluster5_segment1	0	+	117	125	#139fda
+rRNA_5_8S_N_1_3_URS0000005270_9606	129	137	cluster5_segment2	0	+	129	137	#139fda

@@ -1,0 +1,172 @@
+[INFO] [2026-09-10 09:10:49]  RNAnue v1.0.0 - Detect RNA-RNA interactions from Direct-Duplex-Detection (DDD) data.
+[INFO] [2026-09-10 09:10:49]  Logging with level: info
+[INFO] [2026-09-10 09:10:49]  Running complete pipeline
+[INFO] [2026-09-10 09:10:49]  Running preprocess pipeline
+[WARNING] [2026-09-10 09:10:49]  Output directory already exists. Results will be overwritten.
+[INFO] [2026-09-10 09:10:49]  Single-end sample condition1 found
+[INFO] [2026-09-10 09:10:49]  Processing treatment data
+[INFO] [2026-09-10 09:10:49]  Processing sample (single-end): condition1
+[INFO] [2026-09-10 09:10:49]  Merging temporary files
+[INFO] [2026-09-10 09:10:49]  Finished processing sample: 39400 passed records, 0 failed records
+[INFO] [2026-09-10 09:10:49]  No control samples provided
+[INFO] [2026-09-10 09:10:49]  Running align pipeline
+[WARNING] [2026-09-10 09:10:49]  Output directory already exists. Results will be overwritten.
+[INFO] [2026-09-10 09:10:49]  Single-end sample condition1 found
+[INFO] [2026-09-10 09:10:49]  Processing treatment data
+[INFO] [2026-09-10 09:10:49]  Gene copy masking disabled.
+[INFO] [2026-09-10 09:10:49]  Searching for reference index at: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/ecoli_rRNA_dna.idx"
+[INFO] [2026-09-10 09:10:49]  Existing index found: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/ecoli_rRNA_dna.idx"
+[INFO] [2026-09-10 09:10:49]  Processing single end reads
+[SEGEMEHL] Thu Sep 10 09:10:49 2026: reading queries in '/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/01_preprocess/treatment/condition1/condition1_passed.fastq.gz'.
+[SEGEMEHL] Thu Sep 10 09:10:49 2026: 39400 query sequences found.
+[SEGEMEHL] Thu Sep 10 09:10:49 2026: reading database sequences.
+[SEGEMEHL] Thu Sep 10 09:10:49 2026: 3 database sequences found.
+[SEGEMEHL] Thu Sep 10 09:10:49 2026: total length of db sequences: 4608
+[SEGEMEHL] Thu Sep 10 09:10:49 2026: assigning all reads to default read group 'A1'.
+[SEGEMEHL] Thu Sep 10 09:10:49 2026: additional read group default values '	SM:sample1	LB:library1	PU:unit1	PL:illumina'
+[SEGEMEHL] Thu Sep 10 09:10:49 2026: reads assigned to read group 'A1'
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: compiled sam header.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: reading suffix array '/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/ecoli_rRNA_dna.idx' from disk.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: reading lcpc/vtab.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: reading childtab.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: reading suflinks.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: reading lsint id.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: read suffix array '/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/ecoli_rRNA_dna.idx' with 4611 elements.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: md5 keys of index and db match.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: reading the suffix array has taken 0.000000 seconds.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: opening bam file '/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/02_align/treatment/condition1/condition1_complete_aligned.bam'.
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: writing multi splits to '/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/02_align/treatment/condition1/condition1_complete_aligned.mult.bed'
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: writing sngle splits to '/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/02_align/treatment/condition1/condition1_complete_aligned.sngl.bed'
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: writing trans splits to '/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/02_align/treatment/condition1/condition1_complete_aligned.trns.txt'
+[SEGEMEHL] Thu Sep 10 09:10:50 2026: starting 4 threads.
+[SEGEMEHL] Thu Sep 10 09:10:57 2026: threaded matching w/ suffixarray has taken 7.000000 seconds.
+[SEGEMEHL] Thu Sep 10 09:10:57 2026: closing bam file.
+[SEGEMEHL] Thu Sep 10 09:10:57 2026: Mapping stats:
+	total	mapped	(%)	unique	(%)	multi	(%)	split	(%)
+all	39400	33377	84.71%	33375	84.71%	2	0.01%	30278	76.85%
+[SEGEMEHL] Thu Sep 10 09:10:57 2026: 
+Goodbye.
+ "Beertime!" (A. Torda)
+[INFO] [2026-09-10 09:10:57]  Sorting alignments
+[bam_sort_core] merging from 0 files and 4 in-memory blocks...
+[INFO] [2026-09-10 09:10:58]  Sorting alignments done
+[INFO] [2026-09-10 09:10:58]  Running detect pipeline
+[WARNING] [2026-09-10 09:10:58]  Output directory already exists. Results will be overwritten.
+[INFO] [2026-09-10 09:10:58]  Processing treatment data
+[INFO] [2026-09-10 09:10:58]  Parsed 3 features of type: rRNA. Found 3 parent groups.
+[INFO] [2026-09-10 09:10:58]  Processing sample: condition1
+[INFO] [2026-09-10 09:11:04]  Finished batch with metrics: Read count (8296); Singleton hit group count (1558); Chimeric hit group count (7129); Total hit group count (8687)
+[INFO] [2026-09-10 09:11:04]  Finished batch with metrics: Read count (8369); Singleton hit group count (1530); Chimeric hit group count (7202); Total hit group count (8732)
+[INFO] [2026-09-10 09:11:04]  Finished batch with metrics: Read count (8278); Singleton hit group count (1559); Chimeric hit group count (7099); Total hit group count (8658)
+[INFO] [2026-09-10 09:11:04]  Finished batch with metrics: Read count (8433); Singleton hit group count (1627); Chimeric hit group count (7205); Total hit group count (8832)
+[INFO] [2026-09-10 09:11:04]  Saving figure to: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/pre_processing_hit_group_contribution.svg"
+You need gnuplot 5.2.6+ to include legends
+
+gnuplot> unset warnings
+               ^
+         line 0: Unrecognized option.  See 'help unset'.
+
+
+gnuplot> set multiplot title "{/:Bold Pre Processing Hit Group Contribution}" font 'Helvetica,14' textcolor 'black'
+                                                                                                  ^
+         line 0: only valid in the context of an auto-layout command
+
+[INFO] [2026-09-10 09:11:05]  Saving figure to: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/complementarity_metrics_of_all_chimeric_hits.svg"
+
+gnuplot> unset mouse
+               ^
+         line 39407: Unrecognized option.  See 'help unset'.
+
+
+gnuplot> unset warnings
+               ^
+         line 0: Unrecognized option.  See 'help unset'.
+
+
+gnuplot> set multiplot title "{/:Bold Complementarity Metrics of all Chimeric Hits}" font 'Helvetica,14' textcolor 'black'
+                                                                                                         ^
+         line 0: only valid in the context of an auto-layout command
+
+[INFO] [2026-09-10 09:11:06]  Saving figure to: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/hybridization_metrics_of_all_chimeric_hits.svg"
+
+gnuplot> unset warnings
+               ^
+         line 0: Unrecognized option.  See 'help unset'.
+
+
+gnuplot> set multiplot title "{/:Bold Hybridization Metrics of all Chimeric Hits}" font 'Helvetica,14' textcolor 'black'
+                                                                                                       ^
+         line 0: only valid in the context of an auto-layout command
+
+
+gnuplot> unset mouse
+               ^
+         line 30275: Unrecognized option.  See 'help unset'.
+
+[INFO] [2026-09-10 09:11:06]  Saving figure to: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/post_processing_hit_group_contributions.svg"
+[INFO] [2026-09-10 09:11:06]  
+	Preprocessed 39400 read groups. Of which 33376 had at least one passed hit group and 6024 failed completely. 
+	Complementarity evaluation resulted in 28635 passed split hit groups and 1531 failed split hit groups. 
+	Hybridization evalutaion resulted in 28635 passed split hit groups and 0 failed split hit groups. 
+	Postprocessed 33376 read groups with a total contribution score of 33376.
+[INFO] [2026-09-10 09:11:06]  Merging files into: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/condition1_splits.bam"
+
+gnuplot> unset warnings
+               ^
+         line 0: Unrecognized option.  See 'help unset'.
+
+
+gnuplot> set multiplot title "{/:Bold Post Processing Hit Group Contributions}" font 'Helvetica,14' textcolor 'black'
+                                                                                                    ^
+         line 0: only valid in the context of an auto-layout command
+
+
+gnuplot> unset mouse
+               ^
+         line 571: Unrecognized option.  See 'help unset'.
+
+
+gnuplot> unset mouse
+               ^
+         line 29085: Unrecognized option.  See 'help unset'.
+
+[INFO] [2026-09-10 09:11:07]  Merging files into: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/condition1_multisplits.bam"
+[INFO] [2026-09-10 09:11:07]  Creating header-only SAM/BAM output: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/condition1_multisplits.bam"
+[INFO] [2026-09-10 09:11:07]  Merging files into: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/condition1_contiguous_unassigned_aligned.bam"
+[INFO] [2026-09-10 09:11:07]  Creating header-only SAM/BAM output: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/03_detect/treatment/condition1/condition1_contiguous_unassigned_aligned.bam"
+[INFO] [2026-09-10 09:11:07]  No control samples provided
+[INFO] [2026-09-10 09:11:07]  Running analyze pipeline
+[WARNING] [2026-09-10 09:11:07]  Output directory already exists. Results will be overwritten.
+[INFO] [2026-09-10 09:11:07]  Processing treatment data
+[INFO] [2026-09-10 09:11:07]  Parsed 3 features of type: rRNA. Found 3 parent groups.
+[INFO] [2026-09-10 09:11:07]  Processing sample: condition1
+[INFO] [2026-09-10 09:11:07]  Grouping clusters
+[INFO] [2026-09-10 09:11:07]  Finished grouping clusters into 12 independent groups
+[INFO] [2026-09-10 09:11:07]  Processed 1 clusters. Included 0 clusters, excluded 1 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 2 clusters. Included 0 clusters, excluded 2 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 9 clusters. Included 0 clusters, excluded 9 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 10 clusters. Included 0 clusters, excluded 10 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 11 clusters. Included 0 clusters, excluded 11 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 203 clusters. Included 79 clusters, excluded 124 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 205 clusters. Included 79 clusters, excluded 126 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 206 clusters. Included 79 clusters, excluded 127 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 207 clusters. Included 79 clusters, excluded 128 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 211 clusters. Included 79 clusters, excluded 132 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 330 clusters. Included 122 clusters, excluded 208 clusters
+[INFO] [2026-09-10 09:11:07]  Processed 334 clusters. Included 125 clusters, excluded 209 clusters
+[INFO] [2026-09-10 09:11:07]  Finished clustering. Total clusters after cluster contributions score filtering: 125
+[INFO] [2026-09-10 09:11:07]  Evaluating 125 clusters with abundance-corrected p-adj threshold: 1
+[INFO] [2026-09-10 09:11:08]  After filtering kept 125 split interactions
+[INFO] [2026-09-10 09:11:08]  Of which 125 are intramolecular interactions
+[INFO] [2026-09-10 09:11:08]  Of which 0 are intermolecular interactions
+[INFO] [2026-09-10 09:11:08]  No control samples provided
+[INFO] [2026-09-10 09:11:09]  Running postprocess pipeline
+[WARNING] [2026-09-10 09:11:09]  Output directory already exists. Results will be overwritten.
+[INFO] [2026-09-10 09:11:09]  Parsing interactions file: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/ecoli_rRNA/output/04_analyze/treatment/condition1/condition1_interactions.tsv"
+[INFO] [2026-09-10 09:11:09]  Parsed Interactions: 125
+[INFO] [2026-09-10 09:11:09]  Merging Interactions
+[INFO] [2026-09-10 09:11:09]  Sorting Interactions
+[INFO] [2026-09-10 09:11:09]  Finished sorting interactions
+[INFO] [2026-09-10 09:11:09]  Merged Interactions: 104
+[INFO] [2026-09-10 09:11:09]  Writing output files
+[INFO] [2026-09-10 09:11:09]  "Haha lustig, genauso wie deine Kinder im Puff sehen" - Biggi

@@ -1,0 +1,3 @@
+##gff-version 3
+rRNA_5_8S_N_1_3_URS0000005270_9606	RNAcentral	gene	1	157	.	+	.	ID=gene_rRNA_5_8S_N_1_3;Name=rRNA_5_8S_N_1_3;gene_biotype=rRNA
+rRNA_5_8S_N_1_3_URS0000005270_9606	RNAcentral	rRNA	1	157	.	+	.	ID=rRNA_rRNA_5_8S_N_1_3;Name=rRNA_5_8S_N_1_3;Parent=gene_rRNA_5_8S_N_1_3;gene_biotype=rRNA;product=Rrna

@@ -26,13 +26,13 @@ prefix=/mnt/ceph/mjain/software/envs/bio
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
-supported_protocols="DICT FILE FTP FTPS GOPHER GOPHERS HTTP HTTPS IMAP IMAPS IPFS IPNS MQTT MQTTS POP3 POP3S RTSP SCP SFTP SMB SMBS SMTP SMTPS TELNET TFTP WS WSS"
-supported_features="alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz NTLM SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd"
+supported_protocols="DICT FILE FTP FTPS GOPHER GOPHERS HTTP HTTPS IMAP IMAPS IPFS IPNS MQTT MQTTS POP3 POP3S RTSP SCP SFTP SMTP SMTPS TELNET TFTP WS WSS"
+supported_features="alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd"
 
 Name: libcurl
 URL: https://curl.se/
 Description: Library to transfer files with HTTP, FTP, etc.
-Version: 8.19.0
+Version: 8.21.0
 Requires: 
 Requires.private: zlib,libzstd,mit-krb5-gssapi,openssl,libssh2,libnghttp2
 Libs: -L${libdir} -lcurl 

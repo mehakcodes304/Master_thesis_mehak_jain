@@ -1,0 +1,41 @@
+[INFO] [2026-10-13 12:00:29]  RNAnue v1.0.0 - Detect RNA-RNA interactions from Direct-Duplex-Detection (DDD) data.
+[INFO] [2026-10-13 12:00:29]  Logging with level: info
+[INFO] [2026-10-13 12:00:29]  Running complete pipeline
+[INFO] [2026-10-13 12:00:29]  Running preprocess pipeline
+[WARNING] [2026-10-13 12:00:29]  Output directory already exists. Results will be overwritten.
+[INFO] [2026-10-13 12:00:29]  Single-end sample condition1 found
+[INFO] [2026-10-13 12:00:29]  Processing treatment data
+[INFO] [2026-10-13 12:00:29]  Processing sample (single-end): condition1
+[INFO] [2026-10-13 12:00:30]  Merging temporary files
+[INFO] [2026-10-13 12:00:30]  Finished processing sample: 62000 passed records, 0 failed records
+[INFO] [2026-10-13 12:00:30]  No control samples provided
+[INFO] [2026-10-13 12:00:30]  Running align pipeline
+[WARNING] [2026-10-13 12:00:30]  Output directory already exists. Results will be overwritten.
+[INFO] [2026-10-13 12:00:30]  Single-end sample condition1 found
+[INFO] [2026-10-13 12:00:30]  Processing treatment data
+[INFO] [2026-10-13 12:00:30]  Gene copy masking disabled.
+[INFO] [2026-10-13 12:00:30]  Searching for reference index at: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/human_rRNA_dna.idx"
+[INFO] [2026-10-13 12:00:30]  Existing index found: "/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/human_rRNA_dna.idx"
+[INFO] [2026-10-13 12:00:30]  Processing single end reads
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reading queries in '/mnt/ceph/mjain/software/envs/bio/rnanue_run/human_rRNA/output/01_preprocess/treatment/condition1/condition1_passed.fastq.gz'.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: 62000 query sequences found.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reading database sequences.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: 4 database sequences found.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: total length of db sequences: 7217
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: assigning all reads to default read group 'A1'.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: additional read group default values '	SM:sample1	LB:library1	PU:unit1	PL:illumina'
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reads assigned to read group 'A1'
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: compiled sam header.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reading suffix array '/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/human_rRNA_dna.idx' from disk.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reading lcpc/vtab.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reading childtab.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reading suflinks.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reading lsint id.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: read suffix array '/mnt/ceph/mjain/software/envs/bio/rnanue_run/refs/human_rRNA_dna.idx' with 7221 elements.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: md5 keys of index and db match.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: reading the suffix array has taken 0.000000 seconds.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: opening bam file '/mnt/ceph/mjain/software/envs/bio/rnanue_run/human_rRNA/output/02_align/treatment/condition1/condition1_complete_aligned.bam'.
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: writing multi splits to '/mnt/ceph/mjain/software/envs/bio/rnanue_run/human_rRNA/output/02_align/treatment/condition1/condition1_complete_aligned.mult.bed'
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: writing sngle splits to '/mnt/ceph/mjain/software/envs/bio/rnanue_run/human_rRNA/output/02_align/treatment/condition1/condition1_complete_aligned.sngl.bed'
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: writing trans splits to '/mnt/ceph/mjain/software/envs/bio/rnanue_run/human_rRNA/output/02_align/treatment/condition1/condition1_complete_aligned.trns.txt'
+[SEGEMEHL] Tue Oct 13 12:00:30 2026: starting 4 threads.

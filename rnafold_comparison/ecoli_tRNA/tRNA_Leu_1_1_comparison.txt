@@ -1,0 +1,43 @@
+=======================================================
+  tRNA_Leu_1_1  (87 nt)
+=======================================================
+
+Ground truth base pairs: 23
+
+Constrained:
+  Structure: (((((((..((((..((....)).......(((((..((((((.(((((....))))).).))))).))))))))))))))))....
+  Energy:    -29.50 kcal/mol
+  Pairs:     29
+  TP=10, FP=19, FN=13
+  Precision=34.5%, Recall=43.5%, F1=38.5%
+
+Unconstrained:
+  Structure: (((((((..(((...........))).(((((((...)))))))(((((....))))).(((((.......))))))))))))....
+  Energy:    -36.60 kcal/mol
+  Pairs:     27
+  TP=23, FP=4, FN=0
+  Precision=85.2%, Recall=100.0%, F1=92.0%
+
+Improvement from DDD constraints:
+  F1:        -53.5%
+  Precision: -50.7%
+  Recall:    -56.5%
+  Energy cost of constraints: +7.10 kcal/mol
+
+Pairs only in constrained (new correct pairs added):
+  (none)
+
+Pairs only in unconstrained (correct pairs lost):
+  (10, 26)
+  (11, 25)
+  (12, 24)
+  (28, 44)
+  (29, 43)
+  (30, 42)
+  (31, 41)
+  (32, 40)
+  (60, 76)
+  (61, 75)
+  (62, 74)
+  (63, 73)
+  (64, 72)

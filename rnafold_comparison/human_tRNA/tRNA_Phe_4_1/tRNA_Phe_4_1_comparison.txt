@@ -1,0 +1,32 @@
+=======================================================
+  tRNA_Phe_4_1  (74 nt)
+=======================================================
+
+Ground truth base pairs: 21
+
+Constrained:
+  Structure: (((((...(((((....((((((((............................))))..)))))))))))))).
+  Energy:    -18.10 kcal/mol
+  Pairs:     18
+  TP=5, FP=13, FN=16
+  Precision=27.8%, Recall=23.8%, F1=25.6%
+
+Unconstrained:
+  Structure: ((((((((.......((((((((((....((((............))))....))))..)))))))))))))).
+  Energy:    -26.10 kcal/mol
+  Pairs:     22
+  TP=7, FP=15, FN=14
+  Precision=31.8%, Recall=33.3%, F1=32.6%
+
+Improvement from DDD constraints:
+  F1:        -6.9%
+  Precision: -4.0%
+  Recall:    -9.5%
+  Energy cost of constraints: +8.00 kcal/mol
+
+Pairs only in constrained (new correct pairs added):
+  (none)
+
+Pairs only in unconstrained (correct pairs lost):
+  (6, 68)
+  (7, 67)

@@ -1,0 +1,9 @@
+track name="human 5_8S rRNA RNA-RNA interactions" description="Stem segments derived from human 5_8S rRNA stem table" itemRgb="On"
+rRNA_5_8S_N_1_3_URS0000005270_9606	41	44	cluster0_segment1	0	+	41	44	#e83337
+rRNA_5_8S_N_1_3_URS0000005270_9606	98	101	cluster0_segment2	0	-	98	101	#e83337
+rRNA_5_8S_N_1_3_URS0000005270_9606	44	47	cluster1_segment1	0	+	44	47	#02b4f6
+rRNA_5_8S_N_1_3_URS0000005270_9606	55	58	cluster1_segment2	0	-	55	58	#02b4f6
+rRNA_5_8S_N_1_3_URS0000005270_9606	63	68	cluster2_segment1	0	+	63	68	#f5a623
+rRNA_5_8S_N_1_3_URS0000005270_9606	89	95	cluster2_segment2	0	-	89	95	#f5a623
+rRNA_5_8S_N_1_3_URS0000005270_9606	113	121	cluster3_segment1	0	+	113	121	#7ed321
+rRNA_5_8S_N_1_3_URS0000005270_9606	128	136	cluster3_segment2	0	-	128	136	#7ed321

@@ -1,0 +1,33 @@
+=======================================================
+  tRNA_Pro_1_1  (77 nt)
+=======================================================
+
+Ground truth base pairs: 21
+
+Constrained:
+  Structure: ((((((((.((((.........)))).))(((((...))))).......(((((.......))))).))))))....
+  Energy:    -25.20 kcal/mol
+  Pairs:     22
+  TP=18, FP=4, FN=3
+  Precision=81.8%, Recall=85.7%, F1=83.7%
+
+Unconstrained:
+  Structure: (((((((..((((.........)))).(((((((...))))))).....(((((.......))))))))))))....
+  Energy:    -31.40 kcal/mol
+  Pairs:     23
+  TP=21, FP=2, FN=0
+  Precision=91.3%, Recall=100.0%, F1=95.5%
+
+Improvement from DDD constraints:
+  F1:        -11.7%
+  Precision: -9.5%
+  Recall:    -14.3%
+  Energy cost of constraints: +6.20 kcal/mol
+
+Pairs only in constrained (new correct pairs added):
+  (none)
+
+Pairs only in unconstrained (correct pairs lost):
+  (7, 67)
+  (28, 44)
+  (29, 43)

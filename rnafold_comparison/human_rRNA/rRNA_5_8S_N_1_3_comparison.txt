@@ -1,0 +1,31 @@
+=======================================================
+  rRNA_5_8S_N_1_3  (157 nt)
+=======================================================
+
+Ground truth base pairs: 20
+
+Constrained:
+  Structure: .........(((((.((....)).)).)))(.((((((((....(((((....)))))....((((((((..........)))))))))))))))).)..((.((((((..(((((((((((.....))))))))..)))..))....))))))...
+  Energy:    -56.00 kcal/mol
+  Pairs:     48
+  TP=10, FP=38, FN=10
+  Precision=20.8%, Recall=50.0%, F1=29.4%
+
+Unconstrained:
+  Structure: ((((.((((((((((.........((..((((((...(((((...((((....))))((..(((((((((..........)))))))))..))....))))).))))))..))(((((((((.....))))))))).)))).).))))).))))...
+  Energy:    -63.10 kcal/mol
+  Pairs:     51
+  TP=10, FP=41, FN=10
+  Precision=19.6%, Recall=50.0%, F1=28.2%
+
+Improvement from DDD constraints:
+  F1:        +1.2%
+  Precision: +1.2%
+  Recall:    +0.0%
+  Energy cost of constraints: +7.10 kcal/mol
+
+Pairs only in constrained (new correct pairs added):
+  (45, 58)
+
+Pairs only in unconstrained (correct pairs lost):
+  (114, 136)
